@@ -21,7 +21,7 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex), sprite2(tex);
 
-  Animation animation(&tex, sf::Vector2u(0,0), 2.0f, 2);
+  Animation animation(&tex, sf::Vector2u(2,3), 1.0f, 2);
   sprite.setOrigin(animation.getOrigin());
 
   Animation animation2(&tex, sf::Vector2u(2,3), 1.0f, 6);
@@ -84,7 +84,7 @@ int main() {
       }
     }
 
-    animation.Update(0, 0, deltaTime);
+    animation.Update(2, 2, deltaTime);
     sprite.setTextureRect(animation.getUVRect());
 
     animation2.Update(0, 0, deltaTime);

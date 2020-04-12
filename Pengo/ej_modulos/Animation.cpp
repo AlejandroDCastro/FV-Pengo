@@ -11,11 +11,11 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u coordPj, float changeTim
     uvRect.height = texture->getSize().y / 18;
 
     // Initial values...
-    totalTime = 0.0f;
-    actualCoord.y = (coordPj.y > 1) ? 1 : 0;
+    totalTime     = 0.0f;
+    actualCoord.y = 0;
     actualCoord.x = 0;
-    range.x = actualCoord.x;
-    range.y = range.x + numSprites-1;
+    range.x       = 0;
+    range.y       = numSprites-1;
 }
 
 
@@ -30,7 +30,7 @@ void Animation::Update(unsigned int row, unsigned int column, float deltaTime) {
     if (actualCoord.y != row  ||  (column<range.x || column>range.y)) {
         actualCoord.y = row;
         actualCoord.x = column;
-        range.y = range.y - range.x + 1;
+        range.y = range.y-range.x + column;
         range.x = column;
         totalTime = 0.0f;
     } else {
@@ -49,18 +49,12 @@ void Animation::Update(unsigned int row, unsigned int column, float deltaTime) {
         }
     }
 
-    // Adjust the row on the texture...
-    int _aditionalRow = 0;
-    if (coordPj.y > 1) {
-        _aditionalRow++;
-    }
-    if (coordPj.y > 2) {
-        _aditionalRow++;
-    }
-
     // Update uvRect...
     uvRect.left = (coordPj.x*8*uvRect.width) + (actualCoord.x*uvRect.width);
-    uvRect.top  = (coordPj.y*4*uvRect.height) + (actualCoord.y*uvRect.height) + (_aditionalRow*uvRect.height);
+    uvRect.top  = (coordPj.y*4*uvRect.height) + (actualCoord.y*uvRect.height);
+
+    // Adjust the last row on the texture...
+    uvRect.top += (coordPj.y == 3) ? uvRect.height : 0;
 }
 
 
