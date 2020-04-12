@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 SFML/Graphics.hpp
 -
 
-/home/alex/Desktop/plantilla-sfml_v2/include/config.h
+/home/alex/Desktop/FV-Pengo/Pengo/include/config.h
 
-/home/alex/Desktop/plantilla-sfml_v2/main.cpp
+/home/alex/Desktop/FV-Pengo/Pengo/main.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 include/config.h
-/home/alex/Desktop/plantilla-sfml_v2/include/config.h
+/home/alex/Desktop/FV-Pengo/Pengo/include/config.h
 ej_modulos/Animation.h
-/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 

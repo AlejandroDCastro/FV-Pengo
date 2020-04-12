@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp
+iostream
+-
 Animation.h
-/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 
-/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 SFML/Graphics.hpp
 -
 

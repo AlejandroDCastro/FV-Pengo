@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Desktop/plantilla-sfml_v2
+# Install script for directory: /home/alex/Desktop/FV-Pengo/Pengo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/alex/Desktop/plantilla-sfml_v2/build/ej_modulos/cmake_install.cmake")
+  include("/home/alex/Desktop/FV-Pengo/Pengo/build/ej_modulos/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alex/Desktop/plantilla-sfml_v2/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/Desktop/FV-Pengo/Pengo/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

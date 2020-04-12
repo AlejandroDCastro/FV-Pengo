@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp" "/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

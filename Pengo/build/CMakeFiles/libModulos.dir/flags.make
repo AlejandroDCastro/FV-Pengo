@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++1y -Wall -Wextra
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alex/Desktop/plantilla-sfml_v2/ej_modulos 
+CXX_INCLUDES = -I/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos 
 

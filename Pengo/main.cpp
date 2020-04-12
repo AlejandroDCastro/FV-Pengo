@@ -9,31 +9,35 @@
 int main() {
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(640, 480), "MSX Pengo");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("resources/Pengos-Sno-Bees.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
 
   //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite sprite(tex);
+  sf::Sprite sprite(tex), sprite2(tex);
 
-  //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
-  //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  Animation animation(&tex, sf::Vector2u(0,0), 2.0f, 2);
+  sprite.setOrigin(animation.getOrigin());
+
+  Animation animation2(&tex, sf::Vector2u(2,3), 1.0f, 6);
+  sprite2.setOrigin(animation.getOrigin());
 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
-
+  sprite2.setPosition(400, 240);
+  sf::Clock clock;
   //Bucle del juego
   while (window.isOpen()) {
+    float deltaTime = clock.restart().asSeconds();
     //Bucle de obtención de eventos
     sf::Event event;
     while (window.pollEvent(event)) {
+      
 
       switch (event.type) {
 
@@ -50,26 +54,20 @@ int main() {
 
         //Mapeo del cursor
         case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Escala por defecto
-          sprite.setScale(1, 1);
           sprite.move(kVel, 0);
           break;
 
         case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Reflejo vertical
-          sprite.setScale(-1, 1);
           sprite.move(-kVel, 0);
           break;
 
         case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
           sprite.move(0, -kVel);
           break;
 
         case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
           sprite.move(0, kVel);
           break;
 
@@ -86,8 +84,15 @@ int main() {
       }
     }
 
+    animation.Update(0, 0, deltaTime);
+    sprite.setTextureRect(animation.getUVRect());
+
+    animation2.Update(0, 0, deltaTime);
+    sprite2.setTextureRect(animation2.getUVRect());
+
     window.clear();
     window.draw(sprite);
+    window.draw(sprite2);
     window.display();
   }
 

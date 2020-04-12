@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex/Desktop/plantilla-sfml_v2
+CMAKE_SOURCE_DIR = /home/alex/Desktop/FV-Pengo/Pengo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex/Desktop/plantilla-sfml_v2/build
+CMAKE_BINARY_DIR = /home/alex/Desktop/FV-Pengo/Pengo/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/libModulos.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/libModulos.dir/flags.make
 
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o: ../ej_modulos/Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o -c /home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp > CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp > CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.i
 
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp -o CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp -o CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
 
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.requires:
 
@@ -91,7 +91,7 @@ libModulos_EXTERNAL_OBJECTS =
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/libModulos.dir/clean:
 .PHONY : CMakeFiles/libModulos.dir/clean
 
 CMakeFiles/libModulos.dir/depend:
-	cd /home/alex/Desktop/plantilla-sfml_v2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/Desktop/plantilla-sfml_v2 /home/alex/Desktop/plantilla-sfml_v2 /home/alex/Desktop/plantilla-sfml_v2/build /home/alex/Desktop/plantilla-sfml_v2/build /home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alex/Desktop/FV-Pengo/Pengo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/Desktop/FV-Pengo/Pengo /home/alex/Desktop/FV-Pengo/Pengo /home/alex/Desktop/FV-Pengo/Pengo/build /home/alex/Desktop/FV-Pengo/Pengo/build /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/libModulos.dir/depend
 
