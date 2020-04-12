@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.cpp
+Animation.h
+/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+
+/home/alex/Desktop/plantilla-sfml_v2/ej_modulos/Animation.h
+SFML/Graphics.hpp
+-
+

@@ -1,0 +1,6 @@
+/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/rebuild_cache.dir
+/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/edit_cache.dir
+/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/MiJuego.dir
+/home/alex/Desktop/plantilla-sfml_v2/build/CMakeFiles/libModulos.dir
+/home/alex/Desktop/plantilla-sfml_v2/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/alex/Desktop/plantilla-sfml_v2/build/ej_modulos/CMakeFiles/rebuild_cache.dir
