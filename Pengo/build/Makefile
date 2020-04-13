@@ -163,6 +163,60 @@ ej_modulos/Animation.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
 .PHONY : ej_modulos/Animation.cpp.s
 
+ej_modulos/IceBlock.o: ej_modulos/IceBlock.cpp.o
+
+.PHONY : ej_modulos/IceBlock.o
+
+# target to build an object file
+ej_modulos/IceBlock.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
+.PHONY : ej_modulos/IceBlock.cpp.o
+
+ej_modulos/IceBlock.i: ej_modulos/IceBlock.cpp.i
+
+.PHONY : ej_modulos/IceBlock.i
+
+# target to preprocess a source file
+ej_modulos/IceBlock.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.i
+.PHONY : ej_modulos/IceBlock.cpp.i
+
+ej_modulos/IceBlock.s: ej_modulos/IceBlock.cpp.s
+
+.PHONY : ej_modulos/IceBlock.s
+
+# target to generate assembly for a file
+ej_modulos/IceBlock.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.s
+.PHONY : ej_modulos/IceBlock.cpp.s
+
+ej_modulos/Labyrinth.o: ej_modulos/Labyrinth.cpp.o
+
+.PHONY : ej_modulos/Labyrinth.o
+
+# target to build an object file
+ej_modulos/Labyrinth.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
+.PHONY : ej_modulos/Labyrinth.cpp.o
+
+ej_modulos/Labyrinth.i: ej_modulos/Labyrinth.cpp.i
+
+.PHONY : ej_modulos/Labyrinth.i
+
+# target to preprocess a source file
+ej_modulos/Labyrinth.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i
+.PHONY : ej_modulos/Labyrinth.cpp.i
+
+ej_modulos/Labyrinth.s: ej_modulos/Labyrinth.cpp.s
+
+.PHONY : ej_modulos/Labyrinth.s
+
+# target to generate assembly for a file
+ej_modulos/Labyrinth.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
+.PHONY : ej_modulos/Labyrinth.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -203,6 +257,12 @@ help:
 	@echo "... ej_modulos/Animation.o"
 	@echo "... ej_modulos/Animation.i"
 	@echo "... ej_modulos/Animation.s"
+	@echo "... ej_modulos/IceBlock.o"
+	@echo "... ej_modulos/IceBlock.i"
+	@echo "... ej_modulos/IceBlock.s"
+	@echo "... ej_modulos/Labyrinth.o"
+	@echo "... ej_modulos/Labyrinth.i"
+	@echo "... ej_modulos/Labyrinth.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

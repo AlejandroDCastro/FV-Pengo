@@ -3,20 +3,26 @@
 
 #include "include/config.h"
 #include "ej_modulos/Animation.h"
+#include "ej_modulos/Labyrinth.h"
+#include "ej_modulos/IceBlock.h"
 
 #define kVel 5
 
 int main() {
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "MSX Pengo");
+  sf::RenderWindow window(sf::VideoMode(448, 576), "MSX Pengo");
 
   //Cargo la imagen donde reside la textura del sprite
-  sf::Texture tex;
-  if (!tex.loadFromFile("resources/Pengos-Sno-Bees.png")) {
+  sf::Texture tex, tex2;
+  if (!tex.loadFromFile("resources/SpriteSheet.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+
+  tex2.loadFromFile("resources/tileset.png");
+  Labyrinth laberinto(&tex2);
+  IceBlock bloque(&tex2, 12, 14);
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex), sprite2(tex);
@@ -93,6 +99,8 @@ int main() {
     window.clear();
     window.draw(sprite);
     window.draw(sprite2);
+    bloque.Draw(window);
+    laberinto.Draw(window);
     window.display();
   }
 

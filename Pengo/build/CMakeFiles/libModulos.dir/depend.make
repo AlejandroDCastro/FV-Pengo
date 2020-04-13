@@ -4,3 +4,9 @@
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o: ../ej_modulos/Animation.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o: ../ej_modulos/Animation.h
 
+CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/IceBlock.cpp
+CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/IceBlock.h
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.cpp
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.h
+

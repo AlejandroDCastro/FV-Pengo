@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )
