@@ -11,7 +11,8 @@
 int main() {
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(448, 576), "MSX Pengo");
+  sf::RenderWindow window(sf::VideoMode(500, 600), "MSX Pengo");
+  //sf::View vista(sf::Vector2f(224.f, 288.f), sf::Vector2f(448.f, 200.f));
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex, tex2;
@@ -23,6 +24,7 @@ int main() {
   tex2.loadFromFile("resources/tileset.png");
   Labyrinth laberinto(&tex2);
   IceBlock bloque(&tex2, 12, 14);
+  
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex), sprite2(tex);
@@ -77,6 +79,14 @@ int main() {
           sprite.move(0, kVel);
           break;
 
+        case sf::Keyboard::D:
+          bloque.setDirection(3);
+          break;
+
+        case sf::Keyboard::F:
+          bloque.breakDown();
+          break;
+
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
           window.close();
@@ -90,6 +100,8 @@ int main() {
       }
     }
 
+    bloque.Update(deltaTime);
+
     animation.Update(2, 2, deltaTime);
     sprite.setTextureRect(animation.getUVRect());
 
@@ -97,6 +109,7 @@ int main() {
     sprite2.setTextureRect(animation2.getUVRect());
 
     window.clear();
+  //  window.setView(vista);
     window.draw(sprite);
     window.draw(sprite2);
     bloque.Draw(window);
