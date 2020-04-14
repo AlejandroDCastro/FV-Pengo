@@ -4,7 +4,6 @@
 #include "include/config.h"
 #include "ej_modulos/Animation.h"
 #include "ej_modulos/Labyrinth.h"
-#include "ej_modulos/IceBlock.h"
 
 #define kVel 5
 
@@ -22,8 +21,7 @@ int main() {
   }
 
   tex2.loadFromFile("resources/tileset.png");
-  Labyrinth laberinto(&tex2);
-  IceBlock bloque(&tex2, 12, 14);
+  Labyrinth *laberinto = new Labyrinth(&tex2);
   
 
   //Y creo el spritesheet a partir de la imagen anterior
@@ -79,14 +77,6 @@ int main() {
           sprite.move(0, kVel);
           break;
 
-        case sf::Keyboard::D:
-          bloque.setDirection(3);
-          break;
-
-        case sf::Keyboard::F:
-          bloque.breakDown();
-          break;
-
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
           window.close();
@@ -100,8 +90,6 @@ int main() {
       }
     }
 
-    bloque.Update(deltaTime);
-
     animation.Update(2, 2, deltaTime);
     sprite.setTextureRect(animation.getUVRect());
 
@@ -112,10 +100,11 @@ int main() {
   //  window.setView(vista);
     window.draw(sprite);
     window.draw(sprite2);
-    bloque.Draw(window);
-    laberinto.Draw(window);
+    laberinto->Draw(window);
     window.display();
   }
+
+  delete laberinto;
 
   return 0;
 }

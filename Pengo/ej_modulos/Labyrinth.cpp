@@ -26,6 +26,44 @@ Labyrinth::Labyrinth(sf::Texture* texture) {
     topWall->setScale(1, -1);
     topWall->setOrigin(0, 16);
     bottomWall->setPosition(0, 544);
+
+
+    // Reserve momory for the matrix...
+    size.x = 13;  size.y = 15;
+    glacier = new IceBlock**[size.x];
+    for (unsigned int i=0; i<size.x; i++) {
+        glacier[i] = new IceBlock*[size.y];
+    }
+
+    int alex[size.y][size.x] = {
+        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+        {0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0},
+        {0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0},
+        {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+        {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
+        {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+        {0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0},
+        {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
+        {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
+        {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+        {1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
+        {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0},
+        {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0},
+        {0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}
+    };
+    
+    // Put all the ice blocks...
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (alex[j][i] == 1) {
+                glacier[i][j] = new IceBlock(texture, i, j);
+            } else {
+                glacier[i][j] = NULL;
+            }
+        }
+    }
+
 }
 
 
@@ -39,6 +77,15 @@ Labyrinth::~Labyrinth() {
     topWall = NULL;
     delete bottomWall;
     bottomWall = NULL;
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (glacier[i][j])
+                delete glacier[i][j];
+        }
+        delete[] glacier[i];
+    }
+    delete[] glacier;
+    glacier = NULL;
 }
 
 
@@ -57,4 +104,10 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
     window.draw(*rightWall);
     window.draw(*topWall);
     window.draw(*bottomWall);
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (glacier[i][j])
+                glacier[i][j]->Draw(window);
+        }
+    }
 }

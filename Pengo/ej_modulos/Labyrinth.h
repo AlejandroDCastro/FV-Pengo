@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "IceBlock.h"
 
 
 class Labyrinth {
@@ -10,6 +11,8 @@ class Labyrinth {
         sf::Sprite *topWall;
         sf::Sprite *bottomWall;
         bool isHit;
+        IceBlock ***glacier;        // All blocks
+        sf::Vector2u size;
 
 
     public:
