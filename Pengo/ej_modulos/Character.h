@@ -17,6 +17,5 @@ class Character {
         Character(sf::Texture* texture, int row, int column, float speed, float changeTime, sf::Vector2u coordPj);
         ~Character();
         virtual void Update(float deltaTime);
-        virtual void Draw(sf::RenderWindow &window);
-
+        void Draw(sf::RenderWindow &window);
 };
