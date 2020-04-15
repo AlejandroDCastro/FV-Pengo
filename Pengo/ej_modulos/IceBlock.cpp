@@ -2,26 +2,17 @@
 
 
 
-IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) {
+IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block(texture, x, y) {
 
     // Initial values
     isBreaking = false;
     isBroke    = false;
-    direction  = -1;
-    speed      = 30.0f;
-
-    // Building ice block
-    block = new sf::Sprite(*texture);
-    block->setTextureRect(sf::IntRect(32, 32, 32, 32));
-    block->setOrigin(16, 16);
-    block->setPosition(32+x*32, 80+y*32);
 }
 
 
 
 IceBlock::~IceBlock() {
-    delete block;
-    block = NULL;
+    
 }
 
 
@@ -59,12 +50,6 @@ void IceBlock::Update(float deltaTime) {
 
 
 
-void IceBlock::Draw(sf::RenderWindow &window) {
-    window.draw(*block);
-}
-
-
-
 void IceBlock::breakDown() {
     isBreaking = true;
 }
@@ -75,8 +60,3 @@ bool IceBlock::getBroke() {
     return isBroke;
 }
 
-
-
-void IceBlock::setDirection(int direction) {
-    this->direction = direction;
-}
