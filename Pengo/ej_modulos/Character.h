@@ -11,10 +11,12 @@ class Character {
         unsigned int column;
         Animation *animation;
         sf::Sprite *body;
+        bool isWalking;
+        sf::Vector2u position;
 
 
     public:
-        Character(sf::Texture* texture, int row, int column, float speed, float changeTime, sf::Vector2u coordPj);
+        Character(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj);
         ~Character();
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &window);
