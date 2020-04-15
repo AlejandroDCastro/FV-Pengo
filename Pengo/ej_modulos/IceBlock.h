@@ -3,7 +3,7 @@
 #include "Block.h"
 
 
-class IceBlock {
+class IceBlock : public Block {
 
     private:
         bool isBreaking;
@@ -14,7 +14,6 @@ class IceBlock {
         IceBlock(sf::Texture* texture, unsigned int x, unsigned int y);
         ~IceBlock();
         void Update(float deltaTime);
-        void Draw(sf::RenderWindow &);
         void breakDown();
         bool getBroke();
         void setDirection(int direction);
