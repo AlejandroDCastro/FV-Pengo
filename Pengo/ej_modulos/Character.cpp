@@ -1,12 +1,13 @@
 #include "Character.h"
 
 
-Character::Character(sf::Texture *texture, int row, int column, float speed, float changeTime, sf::Vector2u coordPj) {
+Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj) {
 
     // Initial values...
-    this->row = row;
-    this->column = column;
-    this->speed = speed;
+    this->row    = (coordPj.y > 1) ? 1 : 0;
+    this->column = 0;
+    this->speed  = speed;
+    isWalking    = false;
 
     body = new sf::Sprite(*texture);
     animation = new Animation(texture, coordPj, changeTime, 2);
