@@ -74,6 +74,6 @@ sf::Vector2f Animation::getOrigin() {
 
 
 
-void setChangeTime(float changeTime) {
+void Animation::setChangeTime(float changeTime) {
     this->changeTime = changeTime;
 }
