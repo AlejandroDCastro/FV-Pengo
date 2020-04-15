@@ -1,15 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Block.h"
 
 
 class IceBlock {
 
     private:
-        sf::Sprite *block;
         bool isBreaking;
         bool isBroke;
-        float speed;            // Speed of movement
-        int direction;          // Direction of displacement
         sf::Clock clock;
 
     public:
