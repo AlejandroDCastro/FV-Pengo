@@ -18,4 +18,5 @@ class Animation {
         void Update(unsigned int row, unsigned int column, float deltaTime);
         sf::IntRect getUVRect();
         sf::Vector2f getOrigin();
+        void setChangeTime(float changeTime);
 };
