@@ -2,6 +2,7 @@
 #include "Animation.h"
 
 
+
 Animation::Animation(sf::Texture* texture, sf::Vector2u coordPj, float changeTime, int numSprites) {
     this->changeTime = changeTime;
     this->coordPj    = coordPj;
@@ -19,9 +20,11 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u coordPj, float changeTim
 }
 
 
+
 Animation::~Animation() {
 
 }
+
 
 
 void Animation::Update(unsigned int row, unsigned int column, float deltaTime) {
@@ -58,11 +61,19 @@ void Animation::Update(unsigned int row, unsigned int column, float deltaTime) {
 }
 
 
+
 sf::IntRect Animation::getUVRect() {
     return uvRect;
 }
 
 
+
 sf::Vector2f Animation::getOrigin() {
     return sf::Vector2f(uvRect.width/2, uvRect.height/2);
+}
+
+
+
+void setChangeTime(float changeTime) {
+    this->changeTime = changeTime;
 }
