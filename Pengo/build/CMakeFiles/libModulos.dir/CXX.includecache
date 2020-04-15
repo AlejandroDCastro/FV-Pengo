@@ -7,14 +7,30 @@
 #IncludeRegexTransform: 
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp
-iostream
--
 Animation.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 SFML/Graphics.hpp
 -
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp
+Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+SFML/Graphics.hpp
+-
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp
+Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+SFML/Graphics.hpp
+-
+Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp
 IceBlock.h
@@ -23,6 +39,8 @@ IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp
 -
+Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
 Labyrinth.h
@@ -33,4 +51,14 @@ SFML/Graphics.hpp
 -
 IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
+Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+SFML/Graphics.hpp
+-
+Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 

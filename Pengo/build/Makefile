@@ -163,6 +163,60 @@ ej_modulos/Animation.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
 .PHONY : ej_modulos/Animation.cpp.s
 
+ej_modulos/Block.o: ej_modulos/Block.cpp.o
+
+.PHONY : ej_modulos/Block.o
+
+# target to build an object file
+ej_modulos/Block.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o
+.PHONY : ej_modulos/Block.cpp.o
+
+ej_modulos/Block.i: ej_modulos/Block.cpp.i
+
+.PHONY : ej_modulos/Block.i
+
+# target to preprocess a source file
+ej_modulos/Block.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.i
+.PHONY : ej_modulos/Block.cpp.i
+
+ej_modulos/Block.s: ej_modulos/Block.cpp.s
+
+.PHONY : ej_modulos/Block.s
+
+# target to generate assembly for a file
+ej_modulos/Block.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.s
+.PHONY : ej_modulos/Block.cpp.s
+
+ej_modulos/Character.o: ej_modulos/Character.cpp.o
+
+.PHONY : ej_modulos/Character.o
+
+# target to build an object file
+ej_modulos/Character.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
+.PHONY : ej_modulos/Character.cpp.o
+
+ej_modulos/Character.i: ej_modulos/Character.cpp.i
+
+.PHONY : ej_modulos/Character.i
+
+# target to preprocess a source file
+ej_modulos/Character.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.i
+.PHONY : ej_modulos/Character.cpp.i
+
+ej_modulos/Character.s: ej_modulos/Character.cpp.s
+
+.PHONY : ej_modulos/Character.s
+
+# target to generate assembly for a file
+ej_modulos/Character.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.s
+.PHONY : ej_modulos/Character.cpp.s
+
 ej_modulos/IceBlock.o: ej_modulos/IceBlock.cpp.o
 
 .PHONY : ej_modulos/IceBlock.o
@@ -217,6 +271,33 @@ ej_modulos/Labyrinth.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
 .PHONY : ej_modulos/Labyrinth.cpp.s
 
+ej_modulos/Pengo.o: ej_modulos/Pengo.cpp.o
+
+.PHONY : ej_modulos/Pengo.o
+
+# target to build an object file
+ej_modulos/Pengo.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
+.PHONY : ej_modulos/Pengo.cpp.o
+
+ej_modulos/Pengo.i: ej_modulos/Pengo.cpp.i
+
+.PHONY : ej_modulos/Pengo.i
+
+# target to preprocess a source file
+ej_modulos/Pengo.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.i
+.PHONY : ej_modulos/Pengo.cpp.i
+
+ej_modulos/Pengo.s: ej_modulos/Pengo.cpp.s
+
+.PHONY : ej_modulos/Pengo.s
+
+# target to generate assembly for a file
+ej_modulos/Pengo.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.s
+.PHONY : ej_modulos/Pengo.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -257,12 +338,21 @@ help:
 	@echo "... ej_modulos/Animation.o"
 	@echo "... ej_modulos/Animation.i"
 	@echo "... ej_modulos/Animation.s"
+	@echo "... ej_modulos/Block.o"
+	@echo "... ej_modulos/Block.i"
+	@echo "... ej_modulos/Block.s"
+	@echo "... ej_modulos/Character.o"
+	@echo "... ej_modulos/Character.i"
+	@echo "... ej_modulos/Character.s"
 	@echo "... ej_modulos/IceBlock.o"
 	@echo "... ej_modulos/IceBlock.i"
 	@echo "... ej_modulos/IceBlock.s"
 	@echo "... ej_modulos/Labyrinth.o"
 	@echo "... ej_modulos/Labyrinth.i"
 	@echo "... ej_modulos/Labyrinth.s"
+	@echo "... ej_modulos/Pengo.o"
+	@echo "... ej_modulos/Pengo.i"
+	@echo "... ej_modulos/Pengo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

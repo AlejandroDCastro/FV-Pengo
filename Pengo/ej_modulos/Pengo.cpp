@@ -4,21 +4,22 @@
 
 Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position) : Character(texture, speed, changeTime, coordPj, position) {
 
-    // All for superclass Character
-
 }
 
 
 
 Pengo::~Pengo() {
-    
+    delete body;
+    body = NULL;
+    delete animation;
+    animation = NULL;
 }
 
 
 
 void Pengo::Update(float deltaTime) {
     
-    if (!isWalking) {
+    if (!isWalking  &&  !isPushing) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             isWalking = true;
             column = 4;
@@ -35,30 +36,47 @@ void Pengo::Update(float deltaTime) {
             isWalking = true;
             column = 2;
             position.x--;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            isPushing = true;
+            animation->setChangeTime(0.13f);
+            row++;
+            pushClock.restart();
         }
     }
 
     if (isWalking) {
-        sf::Vector2f movement(0.0f, 0.0f);
-        float displacement;
+        float _displacement;
 
+        // Calculate the displacement...
         path += speed*deltaTime;
         if (path >= 32.0f) {
-            displacement = path - 32.0f;
-            isWalking    = false;
-            path         = 0.0f;
+            _displacement = path - 32.0f;
+            isWalking     = false;
+            path          = 0.0f;
         } else {
-            displacement = speed*deltaTime;
+            _displacement = speed*deltaTime;
         }
-        if (column == 4)
-            movement.y -= displacement;
-        else if (column == 6)
-            movement.x += displacement;
-        else if (column == 0)
-            movement.y += displacement;
-        else if (column == 2)
-            movement.x -= displacement;
 
+        // Move Pengo...
+        if (column == 4)
+            body->move(0, -_displacement);
+        else if (column == 6)
+            body->move(_displacement, 0);
+        else if (column == 0)
+            body->move(0, _displacement);
+        else if (column == 2)
+            body->move(-_displacement, 0);
+
+        animation->Update(row, column, deltaTime);
+        body->setTextureRect(animation->getUVRect());
+
+    } else if (isPushing) {
+
+        if (pushClock.getElapsedTime().asSeconds() >= 0.4f) {
+            isPushing = false;
+            row--;
+            animation->setChangeTime(0.2f);
+        }
         animation->Update(row, column, deltaTime);
         body->setTextureRect(animation->getUVRect());
     }

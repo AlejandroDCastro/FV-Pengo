@@ -3,6 +3,9 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Animation.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Labyrinth.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/IceBlock.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Block.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Character.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Pengo.cpp"
 )
 
 #Y donde se encuentran los .h

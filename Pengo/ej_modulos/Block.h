@@ -11,7 +11,7 @@ class Block {
 
     public:
         Block(sf::Texture* texture, unsigned int x, unsigned int y);
-        ~Block();
+        virtual ~Block();
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
         void getPushed(int direction);

@@ -12,7 +12,8 @@ IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block
 
 
 IceBlock::~IceBlock() {
-    
+    delete block;
+    block = NULL;
 }
 
 

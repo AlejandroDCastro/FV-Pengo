@@ -5,8 +5,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

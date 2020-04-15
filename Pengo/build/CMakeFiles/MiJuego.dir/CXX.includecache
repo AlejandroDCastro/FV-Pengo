@@ -10,15 +10,33 @@
 SFML/Graphics.hpp
 -
 
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+SFML/Graphics.hpp
+-
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+SFML/Graphics.hpp
+-
+Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp
 -
+Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
 -
 IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+SFML/Graphics.hpp
+-
+Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/include/config.h
 
@@ -29,8 +47,16 @@ iostream
 -
 include/config.h
 /home/alex/Desktop/FV-Pengo/Pengo/include/config.h
-ej_modulos/Animation.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+ej_modulos/Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+ej_modulos/Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+ej_modulos/IceBlock.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+ej_modulos/Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 ej_modulos/Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 

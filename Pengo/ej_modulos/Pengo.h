@@ -6,6 +6,7 @@
 class Pengo : public Character {
     
     private:
+        sf::Clock pushClock;
         
   
     public:

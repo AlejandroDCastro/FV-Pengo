@@ -18,8 +18,13 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
 
 Block::~Block() {
-    delete block;
-    block = NULL;
+    
+}
+
+
+
+void Block::Update(float deltaTime) {
+    
 }
 
 
