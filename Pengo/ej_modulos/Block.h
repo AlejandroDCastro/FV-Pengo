@@ -4,7 +4,7 @@
 
 class Block {
 
-    private:
+    protected:
         sf::Sprite *block;
         float speed;            // Movement speed
         int direction;          // Displacement direction
