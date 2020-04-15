@@ -12,9 +12,7 @@ class Block {
     public:
         Block(sf::Texture* texture, unsigned int x, unsigned int y);
         ~Block();
-        void Update(float deltaTime);
+        virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
-        //void breakDown();
-       // bool getBroke();
-        void setDirection(int direction);
+        void getPushed(int direction);
 };
