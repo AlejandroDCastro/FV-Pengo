@@ -9,6 +9,8 @@ class Pengo : public Character {
         
   
     public:
+        Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position);
+        ~Pengo();
         void Update(float deltaTime);
   
 };

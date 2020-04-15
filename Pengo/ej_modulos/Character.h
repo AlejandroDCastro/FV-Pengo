@@ -13,10 +13,11 @@ class Character {
         sf::Sprite *body;
         bool isWalking;
         sf::Vector2u position;
+        float path;
 
 
     public:
-        Character(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj);
+        Character(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position);
         ~Character();
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &window);
