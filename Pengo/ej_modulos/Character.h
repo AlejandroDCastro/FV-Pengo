@@ -5,7 +5,7 @@
 
 class Character {
 
-    private:
+    protected:
         float speed;
         unsigned int row;
         unsigned int column;
