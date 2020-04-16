@@ -54,8 +54,8 @@ void Pengo::Update(float deltaTime) {
 
         // Calculate the displacement...
         path += speed*deltaTime;
-        if (path >= 32.0f) {
-            _displacement = path - 32.0f;
+        if (path >= 16.0f) {
+            _displacement = path - 16.0f;
             isWalking     = false;
             path          = 0.0f;
         } else {

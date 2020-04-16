@@ -37,8 +37,8 @@ void IceBlock::Update(float deltaTime) {
     } else if (isBreaking) {
         if (clock.getElapsedTime().asSeconds() > 0.1f) {
             sf::IntRect _cutout = block->getTextureRect();
-            _cutout.left += 32;
-            if (_cutout.left <= 288) {
+            _cutout.left += 16;
+            if (_cutout.left <= 144) {
                 block->setTextureRect(_cutout);
             } else {
                 isBreaking = false;

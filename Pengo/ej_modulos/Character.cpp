@@ -17,7 +17,8 @@ Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Ve
     animation     = new Animation(texture, coordPj, changeTime, 2);
     body->setTextureRect(animation->getUVRect());
     body->setOrigin(animation->getOrigin());
-    body->setPosition(32+position.x*32, 80+position.y*32);
+    body->setScale(0.95, 0.95);
+    body->setPosition(16+position.x*16, 40+position.y*16);
 }
 
 

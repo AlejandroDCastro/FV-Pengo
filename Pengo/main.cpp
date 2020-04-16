@@ -14,7 +14,7 @@
 int main() {
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(500, 600), "MSX Pengo");
+  sf::RenderWindow window(sf::VideoMode(650, 360), "MSX Pengo");
   //sf::View vista(sf::Vector2f(224.f, 288.f), sf::Vector2f(448.f, 200.f));
 
   //Cargo la imagen donde reside la textura del sprite
@@ -23,10 +23,12 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-
   tex2.loadFromFile("resources/tileset.png");
+ // tex.setSmooth(true);
+  tex2.setSmooth(true);
+
   Labyrinth *laberinto = new Labyrinth(&tex2);
-  Pengo *pengo = new Pengo(&tex, 90.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2u(0,0));
+  Pengo *pengo = new Pengo(&tex, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2u(0,0));
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex), sprite2(tex);
