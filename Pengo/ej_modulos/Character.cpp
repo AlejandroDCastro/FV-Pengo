@@ -39,3 +39,9 @@ void Character::Update(float deltaTime) {
 void Character::Draw(sf::RenderWindow &window) {
     window.draw(*body);
 }
+
+
+
+sf::Vector2u Character::getPosition() {
+    return position;
+}

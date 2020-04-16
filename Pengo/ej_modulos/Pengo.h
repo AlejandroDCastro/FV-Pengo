@@ -6,12 +6,17 @@
 class Pengo : public Character {
     
     private:
-        sf::Clock pushClock;
-        
+        unsigned int lifes;
+        sf::Clock auxClock;
+        Animation *deadAnimation;
+        bool isStunned;
+
   
     public:
-        Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position);
+        Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2u);
         ~Pengo();
         void Update(float deltaTime);
+        bool loseLife();
+        bool getDead();
   
 };

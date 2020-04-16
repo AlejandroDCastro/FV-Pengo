@@ -4,22 +4,27 @@
 
 Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position) : Character(texture, speed, changeTime, coordPj, position) {
 
+    lifes = 3;
+    deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
+    isStunned = false;
 }
 
 
 
 Pengo::~Pengo() {
-    delete body;
-    body = NULL;
+    delete deadAnimation;
+    deadAnimation = NULL;
     delete animation;
     animation = NULL;
+    delete body;
+    body = NULL;
 }
 
 
 
 void Pengo::Update(float deltaTime) {
     
-    if (!isWalking  &&  !isPushing) {
+    if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             isWalking = true;
             column = 4;
@@ -40,7 +45,7 @@ void Pengo::Update(float deltaTime) {
             isPushing = true;
             animation->setChangeTime(0.13f);
             row++;
-            pushClock.restart();
+            auxClock.restart();
         }
     }
 
@@ -72,12 +77,46 @@ void Pengo::Update(float deltaTime) {
 
     } else if (isPushing) {
 
-        if (pushClock.getElapsedTime().asSeconds() >= 0.4f) {
+        if (auxClock.getElapsedTime().asSeconds() >= 0.4f) {
             isPushing = false;
             row--;
             animation->setChangeTime(0.2f);
         }
         animation->Update(row, column, deltaTime);
         body->setTextureRect(animation->getUVRect());
+
+    } else if (isStunned) {
+
+        if (auxClock.getElapsedTime().asSeconds() >= 2.5f) {
+            isStunned = false;
+            body->setTextureRect(animation->getUVRect());
+            lifes--;
+        } else {
+            deadAnimation->Update(2, 0, deltaTime);
+            body->setTextureRect(deadAnimation->getUVRect());
+        }
+
+    }
+}
+
+
+
+bool Pengo::loseLife() {
+    if (lifes > 0) {
+        auxClock.restart();
+        isStunned = true;
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+bool Pengo::getDead() {
+    if (lifes > 0) {
+        return false;
+    } else {
+        return true;
     }
 }

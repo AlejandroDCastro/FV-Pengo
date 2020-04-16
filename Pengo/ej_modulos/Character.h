@@ -18,8 +18,9 @@ class Character {
 
 
     public:
-        Character(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position);
+        Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2u);
         virtual ~Character();
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &window);
+        sf::Vector2u getPosition();
 };

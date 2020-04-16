@@ -50,6 +50,20 @@ int main() {
         window.close();
         break;
 
+      //Se pulsó una tecla, imprimo su codigo
+      case sf::Event::KeyPressed:
+
+        //Verifico si se pulsa alguna tecla de movimiento
+        switch (event.key.code) {
+          case sf::Keyboard::F:
+          pengo->loseLife();
+          break;
+
+          case sf::Keyboard::Escape:
+          window.close();
+          break;
+        }
+
       }
     }
 
@@ -64,6 +78,9 @@ int main() {
   }
 
   delete laberinto;
+  laberinto = NULL;
+  delete pengo;
+  pengo = NULL;
 
   return 0;
 }
