@@ -14,9 +14,13 @@
 int main() {
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(650, 360), "MSX Pengo");
-  //sf::View vista(sf::Vector2f(224.f, 288.f), sf::Vector2f(448.f, 200.f));
+ /* sf::RenderWindow window(sf::VideoMode(284, 208), "MSX Pengo");
+  sf::View vista(sf::Vector2f(112.f, 148.f), sf::Vector2f(284.f, 208.f));*/
 
+  sf::RenderWindow window(sf::VideoMode(640, 480), "MSX Pengo");
+  sf::View vista(sf::Vector2f(112.f, 148.f), sf::Vector2f(640.f, 480.f));
+
+ vista.zoom(0.4);
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex, tex2;
   if (!tex.loadFromFile("resources/SpriteSheet.png")) {
@@ -25,7 +29,7 @@ int main() {
   }
   tex2.loadFromFile("resources/tileset.png");
  // tex.setSmooth(true);
-  tex2.setSmooth(true);
+  //tex2.setSmooth(true);
 
   Labyrinth *laberinto = new Labyrinth(&tex2);
   Pengo *pengo = new Pengo(&tex, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2u(0,0));
@@ -72,10 +76,11 @@ int main() {
     pengo->Update(deltaTime);
 
     window.clear();
-  //  window.setView(vista);
+   
     
     laberinto->Draw(window);
     pengo->Draw(window);
+     window.setView(vista);
     window.display();
   }
 

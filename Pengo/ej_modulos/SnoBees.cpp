@@ -2,7 +2,7 @@
 
 
 
-SnoBees::SnoBees(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position, sf::Vector2u pengoPosition) : Character(texture, speed, changeTime, coordPj, position) {
+SnoBees::SnoBees(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position, sf::Vector2u *pengoPosition) : Character(texture, speed, changeTime, coordPj, position) {
 
     this->pengoPosition = pengoPosition;
 }
@@ -21,5 +21,5 @@ SnoBees::~SnoBees() {
 
 
 void SnoBees::Update(float deltaTime) {
-    
+
 }
