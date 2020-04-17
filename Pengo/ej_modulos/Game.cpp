@@ -3,15 +3,15 @@
 
 
 // Initialize pointer
-Game* Game::game = NULL;
+Game* Game::gameInstance = NULL;
 
 
 Game* Game::getInstance() {
 
-    if (game != NULL) {
-        game = new Game();
+    if (gameInstance == NULL) {
+        gameInstance = new Game();
     }
-    return game;
+    return gameInstance;
 }
 
 
@@ -19,15 +19,15 @@ Game* Game::getInstance() {
 Game::Game() {
 
     // Loading textures...
-    if (!spriteSheet->loadFromFile("resources/SpriteSheet.png")) {
+    if (!spriteSheet.loadFromFile("resources/SpriteSheet.png")) {
         std::cout << "Failed loading sprite sheet..." << std::endl;
         exit(0);
     }
-    if (!tileset->loadFromFile("resources/tileset.png")) {
+    if (!tileset.loadFromFile("resources/tileset.png")) {
         std::cout << "Failed loading tileset..." << std::endl;
         exit(0);
     }
-
+/*
     // Initialize variables...
     window    = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     camera    = new Camera();
@@ -35,7 +35,7 @@ Game::Game() {
     pengo     = new Pengo(spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2u(0,0));
 
     // Start game loop...
-    GameLoop();
+    GameLoop();*/
 }
 
 
@@ -47,14 +47,14 @@ Game::~Game() {
     delete tileset;
     delete camera;
     delete window;
-    delete game;
-    pengo       = NULL;
-    labyrinth   = NULL;
-    spriteSheet = NULL;
-    tileset     = NULL;
-    camera      = NULL;
-    window      = NULL;
-    game        = NULL;
+    delete gameInstance;
+    pengo        = NULL;
+    labyrinth    = NULL;
+    spriteSheet  = NULL;
+    tileset      = NULL;
+    camera       = NULL;
+    window       = NULL;
+    gameInstance = NULL;
 }
 
 
@@ -76,8 +76,8 @@ void Game::GameLoop() {
     }
 
     // Free all memory
-    delete game;
-    game = NULL;
+    delete gameInstance;
+    gameInstance = NULL;
 }
 
 

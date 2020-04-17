@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "Game.h"
+#include "ej_modulos/Game.h"
 
 int main() {
     Game* game = Game::getInstance();

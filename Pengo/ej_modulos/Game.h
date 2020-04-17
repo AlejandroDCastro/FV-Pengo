@@ -31,7 +31,7 @@ class Game {
 
     private:
 
-        static Game* game;
+        static Game* gameInstance;
         sf::RenderWindow* window;
         Camera* camera;
         Labyrinth* labyrinth;
@@ -39,7 +39,7 @@ class Game {
         sf::Clock clock;
         float deltaTime;
         sf::Event event;
-        sf::Texture* spriteSheet;
-        sf::Texture* tileset;
+        sf::Texture spriteSheet;
+        sf::Texture tileset;
 
 };
