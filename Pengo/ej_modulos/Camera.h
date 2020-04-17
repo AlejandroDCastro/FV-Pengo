@@ -2,16 +2,18 @@
 #include <SFML/Graphics.hpp>
 
 
+
 class Camera {
 
     private:
-        sf::View view;
-
+        sf::View *view;
+        sf::Vector2f viewRange;     // Center of the view
+        float pengoRange;           // Range of non-scrolling
 
     public:
-        Camera(sf::Vector2f, sf::Vector2f );
+        Camera();
         ~Camera();
-        void Update(); // falta ver el factor de multiplicacion al hacer zoom
+        void Update(float );
         sf::View getView();
 
 };

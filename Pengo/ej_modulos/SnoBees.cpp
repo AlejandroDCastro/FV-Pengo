@@ -11,6 +11,7 @@ SnoBees::SnoBees(sf::Texture* texture, float speed, float changeTime, sf::Vector
 
 
 SnoBees::~SnoBees() {
+    pengoPosition = NULL;
     delete animation;
     animation = NULL;
     delete body;

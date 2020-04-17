@@ -14,6 +14,10 @@ SFML/Graphics.hpp
 SFML/Graphics.hpp
 -
 
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
+SFML/Graphics.hpp
+-
+
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 SFML/Graphics.hpp
 -
@@ -59,4 +63,6 @@ ej_modulos/Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 ej_modulos/Animation.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+ej_modulos/Camera.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 

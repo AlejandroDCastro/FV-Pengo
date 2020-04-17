@@ -190,6 +190,33 @@ ej_modulos/Block.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.s
 .PHONY : ej_modulos/Block.cpp.s
 
+ej_modulos/Camera.o: ej_modulos/Camera.cpp.o
+
+.PHONY : ej_modulos/Camera.o
+
+# target to build an object file
+ej_modulos/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o
+.PHONY : ej_modulos/Camera.cpp.o
+
+ej_modulos/Camera.i: ej_modulos/Camera.cpp.i
+
+.PHONY : ej_modulos/Camera.i
+
+# target to preprocess a source file
+ej_modulos/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.i
+.PHONY : ej_modulos/Camera.cpp.i
+
+ej_modulos/Camera.s: ej_modulos/Camera.cpp.s
+
+.PHONY : ej_modulos/Camera.s
+
+# target to generate assembly for a file
+ej_modulos/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.s
+.PHONY : ej_modulos/Camera.cpp.s
+
 ej_modulos/Character.o: ej_modulos/Character.cpp.o
 
 .PHONY : ej_modulos/Character.o
@@ -341,6 +368,9 @@ help:
 	@echo "... ej_modulos/Block.o"
 	@echo "... ej_modulos/Block.i"
 	@echo "... ej_modulos/Block.s"
+	@echo "... ej_modulos/Camera.o"
+	@echo "... ej_modulos/Camera.i"
+	@echo "... ej_modulos/Camera.s"
 	@echo "... ej_modulos/Character.o"
 	@echo "... ej_modulos/Character.i"
 	@echo "... ej_modulos/Character.s"

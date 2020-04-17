@@ -3,6 +3,7 @@
 
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Camera.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Labyrinth.h

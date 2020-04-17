@@ -7,6 +7,9 @@ CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o: ../ej_modulos/Block.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o: ../ej_modulos/Block.h
 
+CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o: ../ej_modulos/Camera.cpp
+CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o: ../ej_modulos/Camera.h
+
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.h

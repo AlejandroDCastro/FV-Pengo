@@ -8,6 +8,7 @@
 #include "ej_modulos/Block.h"
 #include "ej_modulos/Labyrinth.h"
 #include "ej_modulos/Animation.h"
+#include "ej_modulos/Camera.h"
 
 #define kVel 5
 
@@ -17,10 +18,11 @@ int main() {
  /* sf::RenderWindow window(sf::VideoMode(284, 208), "MSX Pengo");
   sf::View vista(sf::Vector2f(112.f, 148.f), sf::Vector2f(284.f, 208.f));*/
 
-  sf::RenderWindow window(sf::VideoMode(640, 480), "MSX Pengo");
-  sf::View vista(sf::Vector2f(112.f, 148.f), sf::Vector2f(640.f, 480.f));
+  sf::RenderWindow window(sf::VideoMode(610.f, 506.f), "MSX Pengo");
+  Camera *camera = new Camera();
+  
 
- vista.zoom(0.4);
+ 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex, tex2;
   if (!tex.loadFromFile("resources/SpriteSheet.png")) {
@@ -74,13 +76,12 @@ int main() {
     }
 
     pengo->Update(deltaTime);
+    camera->Update(pengo->getSprite()->getPosition().y);
 
     window.clear();
-   
-    
     laberinto->Draw(window);
     pengo->Draw(window);
-     window.setView(vista);
+    window.setView(camera->getView());
     window.display();
   }
 
@@ -88,6 +89,9 @@ int main() {
   laberinto = NULL;
   delete pengo;
   pengo = NULL;
+  delete camera;
+  camera = NULL;
+
 
   return 0;
 }

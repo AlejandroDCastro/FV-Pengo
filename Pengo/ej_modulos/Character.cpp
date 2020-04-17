@@ -45,3 +45,9 @@ void Character::Draw(sf::RenderWindow &window) {
 sf::Vector2u Character::getPosition() {
     return position;
 }
+
+
+
+sf::Sprite* Character::getSprite() {
+    return body;
+}
