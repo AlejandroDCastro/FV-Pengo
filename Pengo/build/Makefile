@@ -244,6 +244,33 @@ ej_modulos/Character.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.s
 .PHONY : ej_modulos/Character.cpp.s
 
+ej_modulos/Game.o: ej_modulos/Game.cpp.o
+
+.PHONY : ej_modulos/Game.o
+
+# target to build an object file
+ej_modulos/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
+.PHONY : ej_modulos/Game.cpp.o
+
+ej_modulos/Game.i: ej_modulos/Game.cpp.i
+
+.PHONY : ej_modulos/Game.i
+
+# target to preprocess a source file
+ej_modulos/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.i
+.PHONY : ej_modulos/Game.cpp.i
+
+ej_modulos/Game.s: ej_modulos/Game.cpp.s
+
+.PHONY : ej_modulos/Game.s
+
+# target to generate assembly for a file
+ej_modulos/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.s
+.PHONY : ej_modulos/Game.cpp.s
+
 ej_modulos/IceBlock.o: ej_modulos/IceBlock.cpp.o
 
 .PHONY : ej_modulos/IceBlock.o
@@ -374,6 +401,9 @@ help:
 	@echo "... ej_modulos/Character.o"
 	@echo "... ej_modulos/Character.i"
 	@echo "... ej_modulos/Character.s"
+	@echo "... ej_modulos/Game.o"
+	@echo "... ej_modulos/Game.i"
+	@echo "... ej_modulos/Game.s"
 	@echo "... ej_modulos/IceBlock.o"
 	@echo "... ej_modulos/IceBlock.i"
 	@echo "... ej_modulos/IceBlock.s"

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )

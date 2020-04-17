@@ -5,9 +5,10 @@ CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Camera.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Game.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/Pengo.h
-CMakeFiles/MiJuego.dir/main.cpp.o: ../include/config.h
+CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/SnoBees.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../main.cpp
 

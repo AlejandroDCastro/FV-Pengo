@@ -1,5 +1,12 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Block.h"
+#include "Character.h"
+#include "SnoBees.h"
+#include "Animation.h"
+#include "IceBlock.h"
 #include "Pengo.h"
 #include "Labyrinth.h"
 #include "Camera.h"
@@ -23,7 +30,16 @@ class Game {
 
 
     private:
+
         static Game* game;
-        
+        sf::RenderWindow* window;
+        Camera* camera;
+        Labyrinth* labyrinth;
+        Pengo* pengo;
+        sf::Clock clock;
+        float deltaTime;
+        sf::Event event;
+        sf::Texture* spriteSheet;
+        sf::Texture* tileset;
 
 };
