@@ -1,12 +1,12 @@
 #include "Pengo.h"
+#include <iostream>
 
 
+Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
 
-Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position) : Character(texture, speed, changeTime, coordPj, position) {
-
-    lifes = 3;
+    lifes         = 3;
     deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
-    isStunned = false;
+    isBlocked     = false;
 }
 
 
@@ -22,7 +22,8 @@ Pengo::~Pengo() {
 
 
 
-void Pengo::Update(float deltaTime) {
+void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
+    sf::Vector2i _auxPosition = position;
     
     if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
@@ -47,6 +48,14 @@ void Pengo::Update(float deltaTime) {
             row++;
             auxClock.restart();
         }
+        
+        // Invalid positon...
+        if (labyrinth->checkPosition(position)) {
+            isBlocked = false;
+        } else {
+            isBlocked = true;
+            position  = _auxPosition;
+        }
     }
 
     if (isWalking) {
@@ -63,14 +72,16 @@ void Pengo::Update(float deltaTime) {
         }
 
         // Move Pengo...
-        if (column == 4)
-            body->move(0, -_displacement);
-        else if (column == 6)
-            body->move(_displacement, 0);
-        else if (column == 0)
-            body->move(0, _displacement);
-        else if (column == 2)
-            body->move(-_displacement, 0);
+        if (!isBlocked) {
+            if (column == 4)
+                body->move(0, -_displacement);
+            else if (column == 6)
+                body->move(_displacement, 0);
+            else if (column == 0)
+                body->move(0, _displacement);
+            else if (column == 2)
+                body->move(-_displacement, 0);
+        }
 
         animation->Update(row, column, deltaTime);
         body->setTextureRect(animation->getUVRect());
@@ -82,6 +93,17 @@ void Pengo::Update(float deltaTime) {
             row--;
             animation->setChangeTime(0.2f);
         }
+
+        // Push a block...
+        if (column == 4)
+            labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 0);
+        else if (column == 6)
+            labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 1);
+        else if (column == 0)
+            labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 2);
+        else if (column == 2)
+            labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 3);
+
         animation->Update(row, column, deltaTime);
         body->setTextureRect(animation->getUVRect());
 

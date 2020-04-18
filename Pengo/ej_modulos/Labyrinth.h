@@ -11,14 +11,16 @@ class Labyrinth {
         sf::Sprite *topWall;
         sf::Sprite *bottomWall;
         bool isHit;
-        IceBlock ***glacier;        // All blocks
+        Block ***glacier;             // All blocks
         sf::Vector2u size;
+        std::vector<IceBlock*> icicles;  // Remains of ice blocks
 
 
     public:
         Labyrinth(sf::Texture* texture);
         ~Labyrinth();
-     //   void getHit();
+        void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
-
+        bool checkPosition(sf::Vector2i );
+        void pengoPush(sf::Vector2i ,int );
 };

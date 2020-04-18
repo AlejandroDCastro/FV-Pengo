@@ -6,7 +6,7 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Initial values
     direction  = -1;
-    speed      = 30.0f;
+    speed      = 200.0f;
 
     // Building ice block
     block = new sf::Sprite(*texture);

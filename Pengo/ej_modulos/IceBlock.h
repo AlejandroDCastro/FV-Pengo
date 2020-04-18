@@ -16,4 +16,5 @@ class IceBlock : public Block {
         void Update(float deltaTime);
         void breakDown();
         bool getBroke();
+        bool getBreaking();
 };

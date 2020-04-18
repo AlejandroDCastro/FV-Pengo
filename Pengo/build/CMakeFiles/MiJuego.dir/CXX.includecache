@@ -6,73 +6,67 @@
 
 #IncludeRegexTransform: 
 
-../ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 SFML/Graphics.hpp
 -
 
-../ej_modulos/Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 SFML/Graphics.hpp
 -
 
-../ej_modulos/Camera.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 SFML/Graphics.hpp
 -
 
-../ej_modulos/Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 SFML/Graphics.hpp
 -
 Animation.h
-../ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+Labyrinth.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
-../ej_modulos/Game.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Block.h
-../ej_modulos/Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 Character.h
-../ej_modulos/Character.h
-SnoBees.h
-../ej_modulos/SnoBees.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 Animation.h
-../ej_modulos/Animation.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 IceBlock.h
-../ej_modulos/IceBlock.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 Pengo.h
-../ej_modulos/Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 Labyrinth.h
-../ej_modulos/Labyrinth.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 Camera.h
-../ej_modulos/Camera.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 
-../ej_modulos/IceBlock.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp
 -
 Block.h
-../ej_modulos/Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
-../ej_modulos/Labyrinth.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
 -
 IceBlock.h
-../ej_modulos/IceBlock.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 
-../ej_modulos/Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 SFML/Graphics.hpp
 -
 Character.h
-../ej_modulos/Character.h
-
-../ej_modulos/SnoBees.h
-SFML/Graphics.hpp
--
-Character.h
-../ej_modulos/Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/main.cpp
 SFML/Graphics.hpp
 -
-Game.h
-/home/alex/Desktop/FV-Pengo/Pengo/Game.h
+ej_modulos/Game.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
 

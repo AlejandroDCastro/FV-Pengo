@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Block.h"
 #include "Character.h"
-#include "SnoBees.h"
+//#include "SnoBees.h"
 #include "Animation.h"
 #include "IceBlock.h"
 #include "Pengo.h"
@@ -16,12 +16,10 @@
 class Game {
 
     public:
-
         static Game* getInstance();
 
 
     protected:
-
         Game();
         ~Game();
         void GameLoop();
@@ -30,7 +28,6 @@ class Game {
 
 
     private:
-
         static Game* gameInstance;
         sf::RenderWindow* window;
         Camera* camera;

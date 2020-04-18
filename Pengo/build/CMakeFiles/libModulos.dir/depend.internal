@@ -12,8 +12,11 @@ CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
@@ -24,7 +27,6 @@ CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
- /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBees.h
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp
@@ -36,6 +38,9 @@ CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+ /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
  /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h

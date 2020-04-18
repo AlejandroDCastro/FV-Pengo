@@ -9,13 +9,13 @@ class Pengo : public Character {
         unsigned int lifes;
         sf::Clock auxClock;
         Animation *deadAnimation;
-        bool isStunned;
+        bool isBlocked;
 
   
     public:
-        Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2u);
+        Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
-        void Update(float deltaTime);
+        void Update(float ,Labyrinth* );
         bool loseLife();
         bool getDead();
   

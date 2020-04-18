@@ -39,6 +39,8 @@ SFML/Graphics.hpp
 -
 Animation.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+Labyrinth.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp
 Game.h
@@ -53,8 +55,6 @@ Block.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 Character.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
-SnoBees.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBees.h
 Animation.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 IceBlock.h
@@ -89,14 +89,10 @@ IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
 Pengo.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+iostream
+-
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
-SFML/Graphics.hpp
--
-Character.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
-
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBees.h
 SFML/Graphics.hpp
 -
 Character.h

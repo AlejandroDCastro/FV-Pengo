@@ -27,15 +27,15 @@ Game::Game() {
         std::cout << "Failed loading tileset..." << std::endl;
         exit(0);
     }
-/*
+
     // Initialize variables...
     window    = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     camera    = new Camera();
-    labyrinth = new Labyrinth(tileset);
-    pengo     = new Pengo(spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2u(0,0));
+    labyrinth = new Labyrinth(&tileset);
+    pengo     = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(0,0));
 
     // Start game loop...
-    GameLoop();*/
+    GameLoop();
 }
 
 
@@ -43,15 +43,11 @@ Game::Game() {
 Game::~Game() {
     delete pengo;
     delete labyrinth;
-    delete spriteSheet;
-    delete tileset;
     delete camera;
     delete window;
     delete gameInstance;
     pengo        = NULL;
     labyrinth    = NULL;
-    spriteSheet  = NULL;
-    tileset      = NULL;
     camera       = NULL;
     window       = NULL;
     gameInstance = NULL;
@@ -68,8 +64,9 @@ void Game::GameLoop() {
         EventsLoop();
 
         // Update objects...
-        pengo->Update(deltaTime);
+        pengo->Update(deltaTime, labyrinth);
         camera->Update(pengo->getSprite()->getPosition().y);
+        labyrinth->Update(deltaTime);
 
         // Draw all the objects...
         Draw();

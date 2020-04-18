@@ -1,7 +1,7 @@
 #include "Character.h"
 
 
-Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2u position) {
+Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) {
 
     // Initial values...
     this->row      = (coordPj.y > 1) ? 1 : 0;
@@ -9,6 +9,7 @@ Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Ve
     this->speed    = speed;
     isWalking      = false;
     isPushing      = false;
+    isStunned      = false;
     path           = 0.0f;
     this->position = position;
 
@@ -30,7 +31,7 @@ Character::~Character() {
 
 
 
-void Character::Update(float deltaTime) {
+void Character::Update(float deltaTime, Labyrinth* labyrinth) {
     
 }
 
@@ -42,7 +43,7 @@ void Character::Draw(sf::RenderWindow &window) {
 
 
 
-sf::Vector2u Character::getPosition() {
+sf::Vector2i Character::getPosition() {
     return position;
 }
 

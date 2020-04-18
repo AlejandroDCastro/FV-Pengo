@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
+#include "Labyrinth.h"
 
 
 class Character {
@@ -13,15 +14,16 @@ class Character {
         sf::Sprite *body;
         bool isWalking;
         bool isPushing;
-        sf::Vector2u position;
+        bool isStunned;
+        sf::Vector2i position;
         float path;
 
 
     public:
-        Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2u);
+        Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         virtual ~Character();
-        virtual void Update(float deltaTime);
-        void Draw(sf::RenderWindow &window);
-        sf::Vector2u getPosition();
+        virtual void Update(float ,Labyrinth* );
+        void Draw(sf::RenderWindow &);
+        sf::Vector2i getPosition();
         sf::Sprite* getSprite();
 };
