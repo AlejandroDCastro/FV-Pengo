@@ -86,6 +86,12 @@ Labyrinth::~Labyrinth() {
     }
     delete[] glacier;
     glacier = NULL;
+    for (Block* block : icicles) {
+        if (block != NULL) {
+            delete block;
+            block = NULL;
+        }
+    }
 }
 
 
@@ -98,7 +104,7 @@ void Labyrinth::Update(float deltaTime) {
             if (glacier[i][j]) {
                 if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[i][j])) {
                     if (ice->getBreaking()) {
-                        icicles.push_back(ice);
+                        icicles.push_back(glacier[i][j]);
                         glacier[i][j] = NULL;
                     } else {
                         glacier[i][j]->Update(deltaTime);
@@ -107,19 +113,20 @@ void Labyrinth::Update(float deltaTime) {
                     glacier[i][j]->Update(deltaTime);
                 }
             }
-/*
+
     // Delete the ice block falling...
-    std::vector<IceBlock*>::iterator it = icicles.begin();
-    while (it != icicles.end()) {
-        if ((*it)->getBroke()) {
-            delete (*it);
-            (*it) = NULL;
-            it = icicles.erase(it);
-        } else {
-            ++it;
-            (*it)->Update(deltaTime);
+    for (Block* block : icicles) {
+        if (block != NULL) {
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
+                if (ice->getBroke()) {
+                //    delete block;
+                    block = NULL;
+                } else {
+                    block->Update(deltaTime);
+                }
+            }
         }
-    }*/
+    }
 }
 
 
@@ -131,13 +138,15 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
     window.draw(*bottomWall);
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
-            if (glacier[i][j])
+            if (glacier[i][j] != NULL)
                 glacier[i][j]->Draw(window);
         }
     }
 
-    for (unsigned int i=0; i<icicles.size(); i++) {
-        icicles[i]->Draw(window);
+    for (Block* block : icicles) {
+        if (block != NULL) {
+            block->Draw(window);
+        }
     }
 }
 

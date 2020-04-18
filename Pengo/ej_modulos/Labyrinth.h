@@ -13,7 +13,7 @@ class Labyrinth {
         bool isHit;
         Block ***glacier;             // All blocks
         sf::Vector2u size;
-        std::vector<IceBlock*> icicles;  // Remains of ice blocks
+        std::vector<Block*> icicles;  // Remains of ice blocks
 
 
     public:
