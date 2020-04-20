@@ -22,5 +22,5 @@ class Labyrinth {
         void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
         bool checkPosition(sf::Vector2i );
-        void pengoPush(sf::Vector2i ,int );
+        void pengoPush(sf::Vector2i ,int ,bool );
 };

@@ -99,13 +99,13 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
         // Push a block...
         if (push) {
             if (column == 4)
-                labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 0);
+                labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 0, true);
             else if (column == 6)
-                labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 1);
+                labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 1, true);
             else if (column == 0)
-                labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 2);
+                labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 2, true);
             else if (column == 2)
-                labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 3);
+                labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 3, true);
             push = false;
         }
 

@@ -64,6 +64,12 @@ Labyrinth::Labyrinth(sf::Texture* texture) {
         }
     }
 
+    // Important position...
+    for (int i=0; i<int(size.x); i++)
+        for (int j=0; j<int(size.y); j++)
+            if (glacier[i][j])
+                glacier[i][j]->setPosition(sf::Vector2i(i, j));
+
 }
 
 
@@ -98,31 +104,18 @@ Labyrinth::~Labyrinth() {
 
 void Labyrinth::Update(float deltaTime) {
 
-
+    // Update the position for each block...
     for (int i=0; i<int(size.x); i++)
         for (int j=0; j<int(size.y); j++)
-            if (glacier[i][j] != NULL) {
-                if (glacier[i][j]->getCanCollide()) {
-                    sf::Vector2i _pos = glacier[i][j]->getDirection();
-                    int _x, _y;
-std::cout << "holaaasssssssssssssssss" << std::endl;
-std::cout << i << " " << j << std::endl;
-std::cout << _pos.x+i << " " << _pos.y+j << std::endl;
-std::cout << _pos.x*2+i << " " << _pos.y*2+j << std::endl;
-                    glacier[i][j]->dontCollide();
-                    glacier[_pos.x+i][_pos.y+j] = glacier[i][j];
-                    glacier[i][j] = NULL;
-                    
-                    _pos *= 2;
-                    _x = _pos.x;
-                    _y = _pos.y;
-                    //if (_x < 0  ||  _x >= int(size.x-1)  ||  _y < 0  ||  _y >= int(size.y-1)) {
-                    if (!this->checkPosition(_pos)) {
-                        glacier[_x/2+i][_y/2+j]->setDirection(-1);
-                        std::cout << "holaaa" << std::endl;
-                    }
-                    std::cout << "curiosos:" << int(size.x) << " "  << int(size.y) << std::endl;
+            if (glacier[i][j]  &&  glacier[i][j]->getCanCollide()) {
+                sf::Vector2i _pos = glacier[i][j]->getPosition();
+                int _x = _pos.x, _y = _pos.y;
+
+                if (i != _x  ||  j != _y) {
+                    glacier[_x][_y] = glacier[i][j];
+                    glacier[i][j]   = NULL;
                 }
+                
             }
 
 
@@ -131,6 +124,13 @@ std::cout << _pos.x*2+i << " " << _pos.y*2+j << std::endl;
         for (unsigned int j=0; j<size.y; j++)
             if (glacier[i][j]) {
 
+                if (glacier[i][j]->getCanCollide()) {
+                    sf::Vector2i _pos = glacier[i][j]->getPosition();
+
+                    this->pengoPush(_pos, glacier[i][j]->getDirection(), false);
+                    glacier[i][j]->dontCollide();
+                }
+/*
                 if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[i][j])) {
                     if (ice->getBreaking()) {
                         icicles.push_back(glacier[i][j]);
@@ -140,24 +140,14 @@ std::cout << _pos.x*2+i << " " << _pos.y*2+j << std::endl;
                     }
                 } else {
                     glacier[i][j]->Update(deltaTime);
-                }
+                }*/
+                glacier[i][j]->Update(deltaTime);
             }
-/*
-    for (unsigned int i=0; i<size.x; i++)
-        for (unsigned int j=0; j<size.y; j++)
-            if (glacier[i][j]) {
-                sf::Vector2i _pos = glacier[i][j]->getPosition();
 
-                // Set his position on labyrinth...
-                if (_pos.x != int(i)  ||  _pos.y != int(j)) {
-                    glacier[_pos.x][_pos.y] = glacier[i][j];
-                //    glacier[i][j]           = NULL;
-                }
-            }*/
 
     // Delete the ice block falling...
     for (Block* block : icicles) {
-        if (block != NULL) {
+        if (block) {
             if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
                 if (ice->getBroke()) {
                 //    delete block;
@@ -179,13 +169,13 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
     window.draw(*bottomWall);
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
-            if (glacier[i][j] != NULL)
+            if (glacier[i][j])
                 glacier[i][j]->Draw(window);
         }
     }
 
     for (Block* block : icicles) {
-        if (block != NULL) {
+        if (block) {
             block->Draw(window);
         }
     }
@@ -209,7 +199,7 @@ bool Labyrinth::checkPosition(sf::Vector2i position) {
 
 
 
-void Labyrinth::pengoPush(sf::Vector2i position, int direction) {
+void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
     int _x = position.x, _y = position.y;
 
     // Check a block position...
@@ -230,7 +220,13 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction) {
         if (this->checkPosition(_nextPosition)) {
             glacier[_x][_y]->setDirection(direction);
         } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
-            ice->breakDown();
+            if (breakIt) {
+                ice->breakDown();
+                icicles.push_back(glacier[_x][_y]);
+                glacier[_x][_y] = NULL;
+            } else {
+                glacier[_x][_y]->setDirection(-1);
+            }
         }
     }
 }

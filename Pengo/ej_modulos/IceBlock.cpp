@@ -15,6 +15,8 @@ IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block
 IceBlock::~IceBlock() {
     delete block;
     block = NULL;
+    delete position;
+    position = NULL;
 }
 
 
@@ -30,6 +32,17 @@ void IceBlock::Update(float deltaTime) {
                 _displacement  = 16.0f - path;
                 path           = 0.0f;
                 canCollide     = true;
+
+                if (direction == 0) {
+                    position->x--;
+                } else if (direction == 1) {
+                    position->y++;
+                } else if (direction == 2) {
+                    position->x++;
+                } else if (direction == 3) {
+                    position->y--;
+                }
+
             } else {
                 path += _displacement;
                 canCollide = false;

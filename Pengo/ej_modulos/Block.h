@@ -11,6 +11,7 @@ class Block {
         int direction;          // Displacement direction
         float path;
         bool canCollide;
+        sf::Vector2i* position;
 
 
     public:
@@ -19,7 +20,9 @@ class Block {
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
         void setDirection(int direction);
-        sf::Vector2i getDirection();
+        int getDirection();
         bool getCanCollide();
         void dontCollide();
+        void setPosition(sf::Vector2i );
+        sf::Vector2i getPosition();
 };
