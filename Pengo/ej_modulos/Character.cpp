@@ -52,3 +52,9 @@ sf::Vector2i Character::getPosition() {
 sf::Sprite* Character::getSprite() {
     return body;
 }
+
+
+
+sf::Vector2i* Character::getDirPosition() {
+    return &position;
+}

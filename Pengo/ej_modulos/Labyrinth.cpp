@@ -2,14 +2,14 @@
 #include <iostream>
 
 
-Labyrinth::Labyrinth(sf::Texture* texture) {
+Labyrinth::Labyrinth(sf::Texture* tileset) {
     isHit = false;
 
     // Build the walls and put them on screen...
-    leftWall   = new sf::Sprite(*texture);
-    rightWall  = new sf::Sprite(*texture);
-    topWall    = new sf::Sprite(*texture);
-    bottomWall = new sf::Sprite(*texture);
+    leftWall   = new sf::Sprite(*tileset);
+    rightWall  = new sf::Sprite(*tileset);
+    topWall    = new sf::Sprite(*tileset);
+    bottomWall = new sf::Sprite(*tileset);
 
     leftWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
     rightWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
@@ -42,7 +42,7 @@ Labyrinth::Labyrinth(sf::Texture* texture) {
         {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
         {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
         {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0},
+        {0, 1, 1, 0, 1, 1, 1, 2, 1, 0, 0, 1, 0},
         {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
         {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
         {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
@@ -57,7 +57,7 @@ Labyrinth::Labyrinth(sf::Texture* texture) {
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
             if (alex[i][j] == 1) {
-                glacier[i][j] = new IceBlock(texture, j, i);
+                glacier[i][j] = new IceBlock(tileset, j, i);
             } else {
                 glacier[i][j] = NULL;
             }

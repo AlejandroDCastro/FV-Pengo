@@ -81,33 +81,9 @@ CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.provides: CMakeFiles/libMod
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
 
 
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
-
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp > CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i
-
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp -o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
-
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
-
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides
-
-CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
-
-
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/IceBlock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.i: cmake_force
@@ -131,7 +107,7 @@ CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o.provides.build: CMakeFiles/l
 
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o: ../ej_modulos/Block.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o.provides.build: CMakeFiles/libM
 
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Pengo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.i: cmake_force
@@ -203,7 +179,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o.provides.build: CMakeFiles/libM
 
 CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o: ../ej_modulos/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.i: cmake_force
@@ -227,7 +203,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o.provides.build: CMakeFiles/lib
 
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.i: cmake_force
@@ -251,7 +227,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o.provides.build: CMakeFiles/libMo
 
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/SnoBee.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.i: cmake_force
@@ -273,23 +249,46 @@ CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o.provides: CMakeFiles/libModulo
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
 
 
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o -c /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp > CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp -o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides
+
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
+
+
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
+"CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o" \
+"CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
 
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
@@ -297,6 +296,7 @@ liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library liblibModulos.a"
@@ -309,7 +309,6 @@ CMakeFiles/libModulos.dir/build: liblibModulos.a
 .PHONY : CMakeFiles/libModulos.dir/build
 
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o.requires
@@ -317,6 +316,7 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Pengo.c
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

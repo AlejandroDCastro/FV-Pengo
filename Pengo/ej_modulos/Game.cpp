@@ -33,6 +33,7 @@ Game::Game() {
     camera    = new Camera();
     labyrinth = new Labyrinth(&tileset);
     pengo     = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(0,0));
+    abeja = new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(4,3), sf::Vector2i(2,0), pengo->getDirPosition());
 
     // Start game loop...
     GameLoop();
@@ -65,13 +66,16 @@ void Game::GameLoop() {
 
         // Update objects...
         pengo->Update(deltaTime, labyrinth);
+        abeja->Update(deltaTime, labyrinth);
         camera->Update(pengo->getSprite()->getPosition().y);
         labyrinth->Update(deltaTime);
+
 
         // Draw all the objects...
         Draw();
     }
-
+delete abeja;
+abeja = NULL;
     // Free all memory
     delete gameInstance;
     gameInstance = NULL;
@@ -114,6 +118,7 @@ void Game::Draw() {
     // Print objects...
     labyrinth->Draw(*window);
     pengo->Draw(*window);
+    abeja->Draw(*window);
     window->setView(camera->getView());
 
     // Display them on it...

@@ -18,7 +18,7 @@ class Labyrinth {
 
 
     public:
-        Labyrinth(sf::Texture* texture);
+        Labyrinth(sf::Texture* );
         ~Labyrinth();
         void Update(float deltaTime);
         void Draw(sf::RenderWindow &);

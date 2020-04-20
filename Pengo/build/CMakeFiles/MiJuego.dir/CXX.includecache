@@ -45,6 +45,8 @@ Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 Camera.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
+SnoBee.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp
@@ -59,6 +61,12 @@ IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+SFML/Graphics.hpp
+-
+Character.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 SFML/Graphics.hpp
 -
 Character.h
