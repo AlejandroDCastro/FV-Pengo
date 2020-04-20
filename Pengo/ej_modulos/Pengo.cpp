@@ -7,6 +7,7 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     lifes         = 3;
     deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
     isBlocked     = false;
+    push          = false;
 }
 
 
@@ -29,21 +30,22 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             isWalking = true;
             column = 4;
-            position.y--;
+            position.x--;
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             isWalking = true;
             column = 6;
-            position.x++;
+            position.y++;
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             isWalking = true;
             column = 0;
-            position.y++;
+            position.x++;
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             isWalking = true;
             column = 2;
-            position.x--;
+            position.y--;
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             isPushing = true;
+            push      = true;
             animation->setChangeTime(0.13f);
             row++;
             auxClock.restart();
@@ -95,14 +97,17 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
         }
 
         // Push a block...
-        if (column == 4)
-            labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 0);
-        else if (column == 6)
-            labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 1);
-        else if (column == 0)
-            labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 2);
-        else if (column == 2)
-            labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 3);
+        if (push) {
+            if (column == 4)
+                labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 0);
+            else if (column == 6)
+                labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 1);
+            else if (column == 0)
+                labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 2);
+            else if (column == 2)
+                labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 3);
+            push = false;
+        }
 
         animation->Update(row, column, deltaTime);
         body->setTextureRect(animation->getUVRect());

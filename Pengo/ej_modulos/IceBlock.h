@@ -11,7 +11,7 @@ class IceBlock : public Block {
         sf::Clock clock;
 
     public:
-        IceBlock(sf::Texture* texture, unsigned int x, unsigned int y);
+        IceBlock(sf::Texture* ,unsigned int ,unsigned int );
         ~IceBlock();
         void Update(float deltaTime);
         void breakDown();

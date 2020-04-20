@@ -7,6 +7,7 @@ IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block
     // Initial values
     isBreaking = false;
     isBroke    = false;
+    path       = 0.0f;
 }
 
 
@@ -20,19 +21,34 @@ IceBlock::~IceBlock() {
 
 void IceBlock::Update(float deltaTime) {
     if (!isBroke  &&  !isBreaking) {
-        switch (direction) {
-            case 0:
-                block->move(0, -speed*deltaTime);
-                break;
-            case 1:
-                block->move(speed*deltaTime, 0);
-                break;
-            case 2:
-                block->move(0, speed*deltaTime);
-                break;
-            case 3:
-                block->move(-speed*deltaTime, 0);
-                break;
+
+        if (direction > -1) {
+            float _displacement = speed*deltaTime;
+
+            // Calculate the block position
+            if (_displacement+path >= 16.0f) {
+                _displacement  = 16.0f - path;
+                path           = 0.0f;
+                canCollide     = true;
+            } else {
+                path += _displacement;
+                canCollide = false;
+            }
+
+            switch (direction) {
+                case 0:
+                    block->move(0, -_displacement);
+                    break;
+                case 1:
+                    block->move(_displacement, 0);
+                    break;
+                case 2:
+                    block->move(0, _displacement);
+                    break;
+                case 3:
+                    block->move(-_displacement, 0);
+                    break;
+            }
         }
     } else if (isBreaking) {
         if (clock.getElapsedTime().asSeconds() > 0.05f) {

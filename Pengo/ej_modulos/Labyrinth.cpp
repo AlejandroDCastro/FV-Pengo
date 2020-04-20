@@ -1,5 +1,5 @@
 #include "Labyrinth.h"
-
+#include <iostream>
 
 
 Labyrinth::Labyrinth(sf::Texture* texture) {
@@ -98,10 +98,39 @@ Labyrinth::~Labyrinth() {
 
 void Labyrinth::Update(float deltaTime) {
 
+
+    for (int i=0; i<int(size.x); i++)
+        for (int j=0; j<int(size.y); j++)
+            if (glacier[i][j] != NULL) {
+                if (glacier[i][j]->getCanCollide()) {
+                    sf::Vector2i _pos = glacier[i][j]->getDirection();
+                    int _x, _y;
+std::cout << "holaaasssssssssssssssss" << std::endl;
+std::cout << i << " " << j << std::endl;
+std::cout << _pos.x+i << " " << _pos.y+j << std::endl;
+std::cout << _pos.x*2+i << " " << _pos.y*2+j << std::endl;
+                    glacier[i][j]->dontCollide();
+                    glacier[_pos.x+i][_pos.y+j] = glacier[i][j];
+                    glacier[i][j] = NULL;
+                    
+                    _pos *= 2;
+                    _x = _pos.x;
+                    _y = _pos.y;
+                    //if (_x < 0  ||  _x >= int(size.x-1)  ||  _y < 0  ||  _y >= int(size.y-1)) {
+                    if (!this->checkPosition(_pos)) {
+                        glacier[_x/2+i][_y/2+j]->setDirection(-1);
+                        std::cout << "holaaa" << std::endl;
+                    }
+                    std::cout << "curiosos:" << int(size.x) << " "  << int(size.y) << std::endl;
+                }
+            }
+
+
     // Update each block...
     for (unsigned int i=0; i<size.x; i++)
         for (unsigned int j=0; j<size.y; j++)
             if (glacier[i][j]) {
+
                 if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[i][j])) {
                     if (ice->getBreaking()) {
                         icicles.push_back(glacier[i][j]);
@@ -113,6 +142,18 @@ void Labyrinth::Update(float deltaTime) {
                     glacier[i][j]->Update(deltaTime);
                 }
             }
+/*
+    for (unsigned int i=0; i<size.x; i++)
+        for (unsigned int j=0; j<size.y; j++)
+            if (glacier[i][j]) {
+                sf::Vector2i _pos = glacier[i][j]->getPosition();
+
+                // Set his position on labyrinth...
+                if (_pos.x != int(i)  ||  _pos.y != int(j)) {
+                    glacier[_pos.x][_pos.y] = glacier[i][j];
+                //    glacier[i][j]           = NULL;
+                }
+            }*/
 
     // Delete the ice block falling...
     for (Block* block : icicles) {
@@ -154,7 +195,7 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
 
 bool Labyrinth::checkPosition(sf::Vector2i position) {
     bool _avaliable = false;
-    int _x = position.y, _y = position.x;
+    int _x = position.x, _y = position.y;
 
     // Check the walls...
     if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
@@ -169,25 +210,25 @@ bool Labyrinth::checkPosition(sf::Vector2i position) {
 
 
 void Labyrinth::pengoPush(sf::Vector2i position, int direction) {
+    int _x = position.x, _y = position.y;
 
     // Check a block position...
-    if (!this->checkPosition(position)) {
+    if (!this->checkPosition(position)  &&  _x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
         sf::Vector2i _nextPosition = position;
-        int _x = position.y, _y = position.x;
 
         // Calculate the following position from block...
         if (direction == 0)
-            _nextPosition.y--;
-        else if (direction == 1)
-            _nextPosition.x++;
-        else if (direction == 2)
-            _nextPosition.y++;
-        else if (direction == 3)
             _nextPosition.x--;
+        else if (direction == 1)
+            _nextPosition.y++;
+        else if (direction == 2)
+            _nextPosition.x++;
+        else if (direction == 3)
+            _nextPosition.y--;
 
         // Move the block or break it if cotains ice...
         if (this->checkPosition(_nextPosition)) {
-            glacier[_x][_y]->getPushed(direction);
+            glacier[_x][_y]->setDirection(direction);
         } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
             ice->breakDown();
         }

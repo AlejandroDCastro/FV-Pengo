@@ -10,6 +10,7 @@ class Pengo : public Character {
         sf::Clock auxClock;
         Animation *deadAnimation;
         bool isBlocked;
+        bool push;
 
   
     public:

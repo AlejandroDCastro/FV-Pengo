@@ -5,8 +5,10 @@
 Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Initial values
-    direction  = -1;
-    speed      = 200.0f;
+    direction       = -1;
+    speed           = 200.0f;
+    canCollide      = false;
+    
 
     // Building ice block
     block = new sf::Sprite(*texture);
@@ -35,6 +37,36 @@ void Block::Draw(sf::RenderWindow &window) {
 
 
 
-void Block::getPushed(int direction) {
+void Block::setDirection(int direction) {
     this->direction = direction;
+}
+
+
+
+sf::Vector2i Block::getDirection() {
+    sf::Vector2i position(0, 0);
+
+    if (direction == 0) {
+        position.x--;
+    } else if (direction == 1) {
+        position.y++;
+    } else if (direction == 2) {
+        position.x++;
+    } else if (direction == 3) {
+        position.y--;
+    }
+
+    return position;
+}
+
+
+
+bool Block::getCanCollide() {
+    return canCollide;
+}
+
+
+
+void Block::dontCollide() {
+    canCollide = false;
 }

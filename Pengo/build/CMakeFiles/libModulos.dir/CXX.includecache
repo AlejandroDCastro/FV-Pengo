@@ -79,6 +79,8 @@ Block.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
 Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+iostream
+-
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
