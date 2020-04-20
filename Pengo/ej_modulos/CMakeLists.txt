@@ -8,6 +8,7 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Pengo.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Camera.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Game.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/SnoBee.cpp"
 )
 
 #Y donde se encuentran los .h

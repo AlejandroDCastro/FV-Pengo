@@ -98,6 +98,7 @@ Labyrinth::~Labyrinth() {
             block = NULL;
         }
     }
+    icicles.clear();
 }
 
 
@@ -176,7 +177,9 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
 
     for (Block* block : icicles) {
         if (block) {
-            block->Draw(window);
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(block))
+                if (!ice->getBroke())
+                    block->Draw(window);
         }
     }
 }
