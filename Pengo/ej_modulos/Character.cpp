@@ -1,4 +1,5 @@
 #include "Character.h"
+#include <iostream>
 
 
 Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) {
@@ -12,13 +13,15 @@ Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Ve
     isStunned      = false;
     path           = 0.0f;
     this->position = position;
+    std::cout<< position.x <<std::endl;
+    std::cout<< position.y <<std::endl;
 
     // Create the character...
     body          = new sf::Sprite(*texture);
     animation     = new Animation(texture, coordPj, changeTime, 2);
     body->setTextureRect(animation->getUVRect());
     body->setOrigin(animation->getOrigin());
-    body->setPosition(16+position.x*16, 40+position.y*16);
+    body->setPosition(16+position.y*16, 40+position.x*16);
 }
 
 
@@ -51,10 +54,4 @@ sf::Vector2i Character::getPosition() {
 
 sf::Sprite* Character::getSprite() {
     return body;
-}
-
-
-
-sf::Vector2i* Character::getDirPosition() {
-    return &position;
 }

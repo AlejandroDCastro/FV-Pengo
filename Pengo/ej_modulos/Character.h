@@ -26,5 +26,4 @@ class Character {
         void Draw(sf::RenderWindow &);
         sf::Vector2i getPosition();
         sf::Sprite* getSprite();
-        sf::Vector2i* getDirPosition();
 };

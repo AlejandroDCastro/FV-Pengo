@@ -1,19 +1,18 @@
 #include "SnoBee.h"
+#include <iostream>
 
 
+SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
 
-SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position, sf::Vector2i *pengoPosition) : Character(texture, speed, changeTime, coordPj, position) {
-
-    this->pengoPosition = pengoPosition;
-    direction           = 2;
-    isStatic            = false;
+  //  this->pengo = pengo;
+    direction   = 2;
+    isStatic    = false;
 }
 
 
 
 
 SnoBee::~SnoBee() {
-    pengoPosition = NULL;
     delete animation;
     animation = NULL;
     delete body;
@@ -27,106 +26,52 @@ SnoBee::~SnoBee() {
 void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     std::vector<sf::Vector2i> _movement;
     std::vector<int> _orientation;
-    int _x = position.x, _y = position.y, _idx = 0, _total;
-    int _odds[4];
-    unsigned int _index;
+    int _index = -1, _random;
 
     if (!isWalking  &&  !isStatic) {
 
-        // Check the possible positions...
-        if (labyrinth->checkPosition(sf::Vector2i(_x-1, _y))) {
-            _movement.push_back(sf::Vector2i(_x-1, _y));
+        // Check avaliable positions
+        if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
+            _movement.push_back(sf::Vector2i(position.x-1, position.y));
             _orientation.push_back(0);
-            _odds[0] = 1;
-        } else {
-            _odds[0] = 0;
+            std::cout << "uno" << std::endl;
         }
-        if (labyrinth->checkPosition(sf::Vector2i(_x, _y+1))) {
-            _movement.push_back(sf::Vector2i(_x, _y+1));
+        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y+1))) {
+            _movement.push_back(sf::Vector2i(position.x, position.y+1));
             _orientation.push_back(1);
-            _odds[1] = 1;
-        } else {
-            _odds[1] = 0;
+            std::cout << "dos" << std::endl;
         }
-        if (labyrinth->checkPosition(sf::Vector2i(_x+1, _y))) {
-            _movement.push_back(sf::Vector2i(_x+1, _y));
+        if (labyrinth->checkPosition(sf::Vector2i(position.x+1, position.y))) {
+            _movement.push_back(sf::Vector2i(position.x+1, position.y));
             _orientation.push_back(2);
-            _odds[2] = 1;
-        } else {
-            _odds[2] = 0;
+            std::cout << "tres" << std::endl;
         }
-        if (labyrinth->checkPosition(sf::Vector2i(_x, _y-1))) {
-            _movement.push_back(sf::Vector2i(_x, _y-1));
+        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y-1))) {
+            _movement.push_back(sf::Vector2i(position.x, position.y-1));
             _orientation.push_back(3);
-            _odds[3] = 1;
-        } else {
-            _odds[3] = 0;
+            std::cout << "cuatro" << std::endl;
         }
 
         if (_movement.size() > 0) {
-
-            // Add points depending of the distance with Pengo...
-            sf::Vector2i _distance = (*pengoPosition) - position;
-            if (_distance.x < 0  &&  _odds[0] > 0) {
-                _odds[0]++;
-            }
-            if (_distance.x > 0  &&  _odds[2] > 0) {
-                _odds[2]++;
-            }
-            if (_distance.y > 0  &&  _odds[1] > 0) {
-                _odds[1]++;
-            }
-            if (_distance.y < 0  &&  _odds[3] > 0) {
-                _odds[3]++;
-            }
-
-            // Add points depending of the orientation...
-            for (unsigned int i=0; i<4; i++) {
-                if (_odds[i] > 0  &&  _orientation[_idx++] == direction) {
-                    _odds[i] += 2;
-                    break;
-                }
-            }
-            _idx = 0;
-
-
-            // Calculate the odds...
-            float _percentage[_movement.size()];
-            _total = _odds[0] + _odds[1] + _odds[2] + _odds[3];
-            for (unsigned int i=0; i<3; i++) {
-                if (_odds[i] > 0) {
-                    _percentage[_idx] = float(_odds[i]/_total);
-                    if (_idx > 0)
-                        _percentage[_idx] += _percentage[_idx-1];
-                    _idx++;
-                }
-            }
-            _percentage[_movement.size()-1] = 1.0f;
-            _idx = 0;
-
-
-            // Choose the next Sno-Bee position...
-            float _random = ( rand() % 100 ) / 100;
-            for (unsigned int i=0; i<_movement.size(); i++) {
-                if (i == 0) {
-                    if (_random >= 0.0f  &&  _random < _percentage[i]) {
-                        _index = i;
-                        break;
-                    }
-                } else {
-                    if (_random >= _percentage[i-1]  &&  _random <= _percentage[i]) {
-                        _index = i;
-                        break;
-                    }
+            
+            // Follow your way...
+            for (unsigned int i=0; i<_orientation.size(); i++) {
+                if (direction == _orientation[i]) {
+                    _index = int(i);
+                    position = _movement[i];
                 }
             }
 
-            // Set Sno-Bee position...
-            if (_orientation[_index] == direction) {
-                position  = _movement[_index];
-                isWalking = true;
+            // Turn to one direction...
+            if (_index > -1) {
                 isStatic  = false;
+                isWalking = true;
             } else {
+                _random = rand()%_movement.size();
+                _index = _random;
+                std::cout << "NUmero:" << _index << std::endl;
+
+                direction = _orientation[_index];
                 switch (_orientation[_index]) {
                     case 0:
                         column = 4;
@@ -141,14 +86,14 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
                         column = 2;
                         break;
                 }
-                isWalking = false;
+
                 isStatic  = true;
+                isWalking = false;
             }
 
+            _orientation.clear();
+            _movement.clear();
         }
-
-        _movement.clear();
-        _orientation.clear();
 
     }
 
@@ -168,7 +113,7 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
             path += _displacement;
         }
 
-        if (isWalking) {
+        if (isWalking  &&  !isStatic) {
             if (column == 4)
                 body->move(0, -_displacement);
             else if (column == 6)

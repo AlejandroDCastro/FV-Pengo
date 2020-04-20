@@ -71,6 +71,8 @@ SFML/Graphics.hpp
 -
 Character.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/main.cpp
 SFML/Graphics.hpp

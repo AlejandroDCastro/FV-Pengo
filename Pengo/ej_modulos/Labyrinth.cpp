@@ -131,17 +131,6 @@ void Labyrinth::Update(float deltaTime) {
                     this->pengoPush(_pos, glacier[i][j]->getDirection(), false);
                     glacier[i][j]->dontCollide();
                 }
-/*
-                if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[i][j])) {
-                    if (ice->getBreaking()) {
-                        icicles.push_back(glacier[i][j]);
-                        glacier[i][j] = NULL;
-                    } else {
-                        glacier[i][j]->Update(deltaTime);
-                    }
-                } else {
-                    glacier[i][j]->Update(deltaTime);
-                }*/
                 glacier[i][j]->Update(deltaTime);
             }
 

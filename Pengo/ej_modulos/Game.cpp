@@ -30,10 +30,11 @@ Game::Game() {
 
     // Initialize variables...
     window    = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
+    window->setFramerateLimit(60);
     camera    = new Camera();
     labyrinth = new Labyrinth(&tileset);
     pengo     = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(0,0));
-    abeja = new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(4,3), sf::Vector2i(2,0), pengo->getDirPosition());
+    abeja = new SnoBee(&spriteSheet, 25.0f, 0.2f, sf::Vector2u(0,2), sf::Vector2i(5,3));
 
     // Start game loop...
     GameLoop();
@@ -66,9 +67,9 @@ void Game::GameLoop() {
 
         // Update objects...
         pengo->Update(deltaTime, labyrinth);
-        abeja->Update(deltaTime, labyrinth);
         camera->Update(pengo->getSprite()->getPosition().y);
         labyrinth->Update(deltaTime);
+        abeja->Update(deltaTime, labyrinth);
 
 
         // Draw all the objects...
