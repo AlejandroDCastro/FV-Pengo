@@ -8,6 +8,7 @@ class SnoBee : public Character {
     private:
         sf::Vector2i* pengoPosition;
         int direction; // 0:Up - 1:Right - 2:Down - 3:Left
+        bool isStatic;
 
 
     public:

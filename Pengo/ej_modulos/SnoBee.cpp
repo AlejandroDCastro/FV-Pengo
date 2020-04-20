@@ -6,6 +6,7 @@ SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u
 
     this->pengoPosition = pengoPosition;
     direction           = 2;
+    isStatic            = false;
 }
 
 
@@ -30,114 +31,156 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     int _odds[4];
     unsigned int _index;
 
-    // Check the possible positions...
-    if (labyrinth->checkPosition(sf::Vector2i(_x-1, _y))) {
-        _movement.push_back(sf::Vector2i(_x-1, _y));
-        _orientation.push_back(0);
-        _odds[0] = 1;
-    } else {
-        _odds[0] = 0;
-    }
-    if (labyrinth->checkPosition(sf::Vector2i(_x, _y+1))) {
-        _movement.push_back(sf::Vector2i(_x, _y+1));
-        _orientation.push_back(1);
-        _odds[1] = 1;
-    } else {
-        _odds[1] = 0;
-    }
-    if (labyrinth->checkPosition(sf::Vector2i(_x+1, _y))) {
-        _movement.push_back(sf::Vector2i(_x+1, _y));
-        _orientation.push_back(2);
-        _odds[2] = 1;
-    } else {
-        _odds[2] = 0;
-    }
-    if (labyrinth->checkPosition(sf::Vector2i(_x, _y-1))) {
-        _movement.push_back(sf::Vector2i(_x, _y-1));
-        _orientation.push_back(3);
-        _odds[3] = 1;
-    } else {
-        _odds[3] = 0;
-    }
+    if (!isWalking  &&  !isStatic) {
 
-    if (_movement.size() > 0) {
-
-        // Add points depending of the distance with Pengo...
-        sf::Vector2i _distance = (*pengoPosition) - position;
-        if (_distance.x < 0  &&  _odds[0] > 0) {
-            _odds[0]++;
+        // Check the possible positions...
+        if (labyrinth->checkPosition(sf::Vector2i(_x-1, _y))) {
+            _movement.push_back(sf::Vector2i(_x-1, _y));
+            _orientation.push_back(0);
+            _odds[0] = 1;
+        } else {
+            _odds[0] = 0;
         }
-        if (_distance.x > 0  &&  _odds[2] > 0) {
-            _odds[2]++;
+        if (labyrinth->checkPosition(sf::Vector2i(_x, _y+1))) {
+            _movement.push_back(sf::Vector2i(_x, _y+1));
+            _orientation.push_back(1);
+            _odds[1] = 1;
+        } else {
+            _odds[1] = 0;
         }
-        if (_distance.y > 0  &&  _odds[1] > 0) {
-            _odds[1]++;
+        if (labyrinth->checkPosition(sf::Vector2i(_x+1, _y))) {
+            _movement.push_back(sf::Vector2i(_x+1, _y));
+            _orientation.push_back(2);
+            _odds[2] = 1;
+        } else {
+            _odds[2] = 0;
         }
-        if (_distance.y < 0  &&  _odds[3] > 0) {
-            _odds[3]++;
+        if (labyrinth->checkPosition(sf::Vector2i(_x, _y-1))) {
+            _movement.push_back(sf::Vector2i(_x, _y-1));
+            _orientation.push_back(3);
+            _odds[3] = 1;
+        } else {
+            _odds[3] = 0;
         }
 
-        // Add points depending of the orientation...
-        for (unsigned int i=0; i<4; i++) {
-            if (_odds[i] > 0  &&  _orientation[_idx++] == direction) {
-                _odds[i] += 2;
-                break;
+        if (_movement.size() > 0) {
+
+            // Add points depending of the distance with Pengo...
+            sf::Vector2i _distance = (*pengoPosition) - position;
+            if (_distance.x < 0  &&  _odds[0] > 0) {
+                _odds[0]++;
             }
-        }
-        _idx = 0;
-
-
-        // Calculate the odds...
-        float _percentage[_movement.size()];
-        _total = _odds[0] + _odds[1] + _odds[2] + _odds[3];
-        for (unsigned int i=0; i<3; i++) {
-            if (_odds[i] > 0) {
-                _percentage[_idx] = float(_odds[i]/_total);
-                if (_idx > 0)
-                    _percentage[_idx] += _percentage[_idx-1];
-                _idx++;
+            if (_distance.x > 0  &&  _odds[2] > 0) {
+                _odds[2]++;
             }
-        }
-        _percentage[_movement.size()-1] = 1.0f;
-        _idx = 0;
+            if (_distance.y > 0  &&  _odds[1] > 0) {
+                _odds[1]++;
+            }
+            if (_distance.y < 0  &&  _odds[3] > 0) {
+                _odds[3]++;
+            }
 
-
-        // Choose the next SnoBee position
-        float _random = ( rand() % 100 ) / 100;
-        for (unsigned int i=0; i<_movement.size(); i++) {
-            if (i == 0) {
-                if (_random >= 0.0f  &&  _random < _percentage[i]) {
-                    _index = i;
+            // Add points depending of the orientation...
+            for (unsigned int i=0; i<4; i++) {
+                if (_odds[i] > 0  &&  _orientation[_idx++] == direction) {
+                    _odds[i] += 2;
                     break;
                 }
+            }
+            _idx = 0;
+
+
+            // Calculate the odds...
+            float _percentage[_movement.size()];
+            _total = _odds[0] + _odds[1] + _odds[2] + _odds[3];
+            for (unsigned int i=0; i<3; i++) {
+                if (_odds[i] > 0) {
+                    _percentage[_idx] = float(_odds[i]/_total);
+                    if (_idx > 0)
+                        _percentage[_idx] += _percentage[_idx-1];
+                    _idx++;
+                }
+            }
+            _percentage[_movement.size()-1] = 1.0f;
+            _idx = 0;
+
+
+            // Choose the next Sno-Bee position...
+            float _random = ( rand() % 100 ) / 100;
+            for (unsigned int i=0; i<_movement.size(); i++) {
+                if (i == 0) {
+                    if (_random >= 0.0f  &&  _random < _percentage[i]) {
+                        _index = i;
+                        break;
+                    }
+                } else {
+                    if (_random >= _percentage[i-1]  &&  _random <= _percentage[i]) {
+                        _index = i;
+                        break;
+                    }
+                }
+            }
+
+            // Set Sno-Bee position...
+            if (_orientation[_index] == direction) {
+                position  = _movement[_index];
+                isWalking = true;
+                isStatic  = false;
             } else {
-                if (_random >= _percentage[i-1]  &&  _random <= _percentage[i]) {
-                    _index = i;
-                    break;
+                switch (_orientation[_index]) {
+                    case 0:
+                        column = 4;
+                        break;
+                    case 1:
+                        column = 6;
+                        break;
+                    case 2:
+                        column = 0;
+                        break;
+                    case 3:
+                        column = 2;
+                        break;
                 }
+                isWalking = false;
+                isStatic  = true;
             }
+
         }
 
-        // Set SnoBee position...
-        position = _movement[_index];
-        switch (_orientation[_index]) {
-            case 0:
-                column = 4;
-                break;
-            case 1:
-                column = 6;
-                break;
-            case 2:
-                column = 0;
-                break;
-            case 3:
-                column = 2;
-                break;
-        }
+        _movement.clear();
+        _orientation.clear();
 
     }
 
-    _movement.clear();
-    _orientation.clear();
+
+    if (isStatic  ||  isWalking) {
+
+        // Move Sno-Bee...
+        float _displacement = speed*deltaTime;
+
+        // Calculate the displacement...
+        if (path+_displacement >= 16.0f) {
+            _displacement = 16.0f - path;
+            isWalking     = false;
+            isStatic      = false;
+            path          = 0.0f;
+        } else {
+            path += _displacement;
+        }
+
+        if (isWalking) {
+            if (column == 4)
+                body->move(0, -_displacement);
+            else if (column == 6)
+                body->move(_displacement, 0);
+            else if (column == 0)
+                body->move(0, _displacement);
+            else if (column == 2)
+                body->move(-_displacement, 0);
+        }
+    }
+
+    animation->Update(row, column, deltaTime);
+    body->setTextureRect(animation->getUVRect());
 
 }

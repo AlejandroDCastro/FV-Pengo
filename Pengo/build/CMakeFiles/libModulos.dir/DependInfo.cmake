@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

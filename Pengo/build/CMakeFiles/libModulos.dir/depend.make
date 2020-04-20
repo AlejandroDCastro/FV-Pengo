@@ -44,3 +44,11 @@ CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Pengo.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Pengo.h
 
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Animation.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/IceBlock.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Labyrinth.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/SnoBee.cpp
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/SnoBee.h
+

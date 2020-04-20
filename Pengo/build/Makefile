@@ -352,6 +352,33 @@ ej_modulos/Pengo.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.s
 .PHONY : ej_modulos/Pengo.cpp.s
 
+ej_modulos/SnoBee.o: ej_modulos/SnoBee.cpp.o
+
+.PHONY : ej_modulos/SnoBee.o
+
+# target to build an object file
+ej_modulos/SnoBee.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
+.PHONY : ej_modulos/SnoBee.cpp.o
+
+ej_modulos/SnoBee.i: ej_modulos/SnoBee.cpp.i
+
+.PHONY : ej_modulos/SnoBee.i
+
+# target to preprocess a source file
+ej_modulos/SnoBee.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.i
+.PHONY : ej_modulos/SnoBee.cpp.i
+
+ej_modulos/SnoBee.s: ej_modulos/SnoBee.cpp.s
+
+.PHONY : ej_modulos/SnoBee.s
+
+# target to generate assembly for a file
+ej_modulos/SnoBee.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.s
+.PHONY : ej_modulos/SnoBee.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -413,6 +440,9 @@ help:
 	@echo "... ej_modulos/Pengo.o"
 	@echo "... ej_modulos/Pengo.i"
 	@echo "... ej_modulos/Pengo.s"
+	@echo "... ej_modulos/SnoBee.o"
+	@echo "... ej_modulos/SnoBee.i"
+	@echo "... ej_modulos/SnoBee.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
