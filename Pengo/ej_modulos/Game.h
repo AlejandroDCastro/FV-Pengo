@@ -27,6 +27,7 @@ class Game {
         void EventsLoop();
         void Draw();
         void addSwarm(int[15][13]);
+        void addSnoBee();
 
 
     private:
@@ -38,12 +39,13 @@ class Game {
         Labyrinth* labyrinth;
         Pengo* pengo;
         sf::Clock clock;
+     //   sf::Clock* levelClock;
         float deltaTime;
         sf::Event event;
         sf::Texture spriteSheet, tileset;
-       // SnoBee *abeja;
         sf::Vector2u size;
         std::vector<SnoBee*> swarm;
+        unsigned int snoBeesPerLevel;
         Collision* collision;
 
 };

@@ -69,13 +69,14 @@ Game::Game() {
     // Initialize variables...
     window     = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     window->setFramerateLimit(60);
-    camera     = new Camera();
-    labyrinth1 = new Labyrinth(&tileset, level1);
-    labyrinth2 = new Labyrinth(&tileset, level2);
-    labyrinth  = labyrinth1;
-    pengo      = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
+    camera          = new Camera();
+    labyrinth1      = new Labyrinth(&tileset, level1);
+    labyrinth2      = new Labyrinth(&tileset, level2);
+    labyrinth       = labyrinth1;
+    pengo           = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     this->addSwarm(level1);
-    collision  = new Collision();
+    collision       = new Collision();
+    snoBeesPerLevel = 8;
 
     // Start game loop...
     GameLoop();
@@ -95,6 +96,8 @@ Game::~Game() {
     delete camera;
     delete window;
     delete gameInstance;
+ //   delete clock;
+//    delete levelClock;
     pengo        = NULL;
     labyrinth    = NULL;
     labyrinth1   = NULL;
@@ -103,6 +106,8 @@ Game::~Game() {
     window       = NULL;
     gameInstance = NULL;
     collision    = NULL;
+  //  clock        = NULL;
+  //  levelClock   = NULL;
 }
 
 
@@ -120,7 +125,7 @@ void Game::GameLoop() {
         camera->Update(pengo->getSprite()->getPosition().y);
         labyrinth->Update(deltaTime);
         for (SnoBee* snobee : swarm) {
-            if (!snobee->getDead()) {
+            if (snobee  &&  !snobee->getDead()) {
                 snobee->Update(deltaTime, labyrinth);
 
                 // Check collision snobee-pengo
@@ -132,8 +137,12 @@ void Game::GameLoop() {
                     Block* _block;
                     for (unsigned int j=0; j<size.y; j++) {
                         _block = labyrinth->getBlock(i, j);
-                        if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f))
+
+                        // If we smashes Sno-Bee add other one
+                        if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f)) {
                             snobee->getSmashed(_block);
+                            this->addSnoBee();
+                        }
                         _block = NULL;
                     }
                 }
@@ -215,8 +224,20 @@ void Game::addSwarm(int level[15][13]) {
     for (int i=0; i<15; i++) {
         for (int j=0; j<13; j++) {
             if (level[i][j] == 2) {
-                swarm.push_back(new SnoBee(&spriteSheet, 30.0f, 0.3f, sf::Vector2u(0, 2), sf::Vector2i(i, j)));
+                swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.3f, sf::Vector2u(0, 2), sf::Vector2i(i, j)));
             }
         }
+    }
+}
+
+
+
+// Add new Sno-Bees for replacing the old smashed
+void Game::addSnoBee() {
+
+    if (swarm.size() < snoBeesPerLevel) {
+        sf::Vector2i _newPosition = labyrinth->getFreePosition();
+
+        swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.3f, sf::Vector2u(0, 2), _newPosition));
     }
 }

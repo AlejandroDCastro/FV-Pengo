@@ -150,3 +150,13 @@ bool Pengo::getDead() {
         return true;
     }
 }
+
+
+
+void Pengo::restartPosition() {
+    position.x = 6;
+    position.y = 6;
+    row        = 0;
+    column     = 0;
+    body->setPosition(16+6*16, 40+6*16);
+}

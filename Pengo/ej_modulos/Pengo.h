@@ -19,5 +19,6 @@ class Pengo : public Character {
         void Update(float ,Labyrinth* );
         bool loseLife();
         bool getDead();
+        void restartPosition();
   
 };

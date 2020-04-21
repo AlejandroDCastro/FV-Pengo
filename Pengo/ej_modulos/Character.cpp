@@ -52,3 +52,9 @@ sf::Vector2i Character::getPosition() {
 sf::Sprite* Character::getSprite() {
     return body;
 }
+
+
+
+bool Character::getStunned() {
+    return isStunned;
+}

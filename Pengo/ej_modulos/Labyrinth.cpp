@@ -210,3 +210,16 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
     return glacier[x][y];
 }
+
+
+
+sf::Vector2i Labyrinth::getFreePosition() {
+    sf::Vector2i _freePosition(0, 0);
+
+    do {
+        _freePosition.x = rand()%15,
+        _freePosition.y = rand()%13;
+    } while (!this->checkPosition(_freePosition));
+
+    return _freePosition;
+}
