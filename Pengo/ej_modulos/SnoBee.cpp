@@ -3,10 +3,12 @@
 
 
 SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
+    unsigned int _random = rand()%7;
 
   //  this->pengo = pengo;
-    direction   = 2;
-    isStatic    = false;
+    direction = 2;
+    isStatic  = false;
+    column    = (_random == 0  ||  _random%2 == 0) ? _random : _random-1;
 }
 
 
@@ -34,22 +36,18 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
         if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
             _movement.push_back(sf::Vector2i(position.x-1, position.y));
             _orientation.push_back(0);
-            std::cout << "uno" << std::endl;
         }
         if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y+1))) {
             _movement.push_back(sf::Vector2i(position.x, position.y+1));
             _orientation.push_back(1);
-            std::cout << "dos" << std::endl;
         }
         if (labyrinth->checkPosition(sf::Vector2i(position.x+1, position.y))) {
             _movement.push_back(sf::Vector2i(position.x+1, position.y));
             _orientation.push_back(2);
-            std::cout << "tres" << std::endl;
         }
         if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y-1))) {
             _movement.push_back(sf::Vector2i(position.x, position.y-1));
             _orientation.push_back(3);
-            std::cout << "cuatro" << std::endl;
         }
 
         if (_movement.size() > 0) {
@@ -69,7 +67,6 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
             } else {
                 _random = rand()%_movement.size();
                 _index = _random;
-                std::cout << "NUmero:" << _index << std::endl;
 
                 direction = _orientation[_index];
                 switch (_orientation[_index]) {
@@ -109,6 +106,7 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
             isWalking     = false;
             isStatic      = false;
             path          = 0.0f;
+            body->setPosition(16+position.y*16, 40+position.x*16);
         } else {
             path += _displacement;
         }

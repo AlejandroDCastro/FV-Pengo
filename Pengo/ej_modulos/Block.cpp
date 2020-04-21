@@ -5,10 +5,10 @@
 Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Initial values
-    direction       = -1;
-    speed           = 250.0f;
-    canCollide      = false;
-    position        = new sf::Vector2i(0, 0);
+    direction  = -1;
+    speed      = 250.0f;
+    canCollide = false;
+    position   = new sf::Vector2i(0, 0);
     
 
     // Building ice block

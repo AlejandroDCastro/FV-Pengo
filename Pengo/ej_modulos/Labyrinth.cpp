@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Labyrinth::Labyrinth(sf::Texture* tileset) {
+Labyrinth::Labyrinth(sf::Texture* tileset, int level[15][13]) {
     isHit = false;
 
     // Build the walls and put them on screen...
@@ -34,29 +34,11 @@ Labyrinth::Labyrinth(sf::Texture* tileset) {
     for (unsigned int i=0; i<size.x; i++) {
         glacier[i] = new Block*[size.y];
     }
-
-    int alex[15][13] = {
-        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0},
-        {0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0},
-        {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
-        {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 0, 1, 1, 1, 2, 1, 0, 0, 1, 0},
-        {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
-        {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
-        {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-        {1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0},
-        {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0},
-        {0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}
-    };
     
     // Put all the ice blocks...
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
-            if (alex[i][j] == 1) {
+            if (level[i][j] == 1) {
                 glacier[i][j] = new IceBlock(tileset, j, i);
             } else {
                 glacier[i][j] = NULL;

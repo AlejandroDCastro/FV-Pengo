@@ -8,6 +8,7 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
     isBlocked     = false;
     push          = false;
+    column        = 0;
 }
 
 

@@ -25,19 +25,23 @@ class Game {
         void GameLoop();
         void EventsLoop();
         void Draw();
+        void addSwarm(int[15][13]);
 
 
     private:
         static Game* gameInstance;
         sf::RenderWindow* window;
         Camera* camera;
+        Labyrinth* labyrinth1;
+        Labyrinth* labyrinth2;
         Labyrinth* labyrinth;
         Pengo* pengo;
         sf::Clock clock;
         float deltaTime;
         sf::Event event;
-        sf::Texture spriteSheet;
-        sf::Texture tileset;
-        SnoBee *abeja;
+        sf::Texture spriteSheet, tileset;
+       // SnoBee *abeja;
+       sf::Vector2u size;
+        std::vector<SnoBee*> swarm;
 
 };
