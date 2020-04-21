@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )

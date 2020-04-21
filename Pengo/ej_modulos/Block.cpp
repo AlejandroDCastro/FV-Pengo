@@ -72,3 +72,9 @@ void Block::setPosition(sf::Vector2i position) {
 sf::Vector2i Block::getPosition() {
     return *position;
 }
+
+
+
+sf::Sprite* Block::getSprite() {
+    return block;
+}

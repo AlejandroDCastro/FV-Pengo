@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
   "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"

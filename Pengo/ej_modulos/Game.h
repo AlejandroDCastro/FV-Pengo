@@ -10,6 +10,7 @@
 #include "Labyrinth.h"
 #include "Camera.h"
 #include "SnoBee.h"
+#include "Collision.h"
 
 
 
@@ -41,7 +42,8 @@ class Game {
         sf::Event event;
         sf::Texture spriteSheet, tileset;
        // SnoBee *abeja;
-       sf::Vector2u size;
+        sf::Vector2u size;
         std::vector<SnoBee*> swarm;
+        Collision* collision;
 
 };

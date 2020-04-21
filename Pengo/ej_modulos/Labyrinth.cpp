@@ -204,3 +204,9 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
         }
     }
 }
+
+
+
+Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
+    return glacier[x][y];
+}

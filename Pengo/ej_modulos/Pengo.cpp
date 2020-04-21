@@ -133,6 +133,8 @@ bool Pengo::loseLife() {
     if (lifes > 0) {
         auxClock.restart();
         isStunned = true;
+        isWalking = false;
+        isPushing = false;
         return true;
     } else {
         return false;

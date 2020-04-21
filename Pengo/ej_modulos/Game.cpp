@@ -35,13 +35,13 @@ Game::Game() {
         {0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
         {0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0},
         {0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0},
-        {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+        {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 2, 1, 0},
         {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
         {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
         {0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0},
         {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
         {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
-        {0, 0, 0, 1, 0, 2, 1, 0, 1, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
         {1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
         {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0},
         {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0},
@@ -72,10 +72,10 @@ Game::Game() {
     camera     = new Camera();
     labyrinth1 = new Labyrinth(&tileset, level1);
     labyrinth2 = new Labyrinth(&tileset, level2);
-    labyrinth  = labyrinth2;
+    labyrinth  = labyrinth1;
     pengo      = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     this->addSwarm(level1);
-   // abeja = new SnoBee(&spriteSheet, 30.0f, 0.2f, sf::Vector2u(0,2), sf::Vector2i(5,3));
+    collision  = new Collision();
 
     // Start game loop...
     GameLoop();
@@ -88,6 +88,7 @@ Game::~Game() {
     for (SnoBee* snobee : swarm) {
         delete snobee;
     }
+    delete collision;
     swarm.clear();
     delete labyrinth1;
     delete labyrinth2;
@@ -101,6 +102,7 @@ Game::~Game() {
     camera       = NULL;
     window       = NULL;
     gameInstance = NULL;
+    collision    = NULL;
 }
 
 
@@ -117,9 +119,25 @@ void Game::GameLoop() {
         pengo->Update(deltaTime, labyrinth);
         camera->Update(pengo->getSprite()->getPosition().y);
         labyrinth->Update(deltaTime);
-     //   abeja->Update(deltaTime, labyrinth);
         for (SnoBee* snobee : swarm) {
-            snobee->Update(deltaTime, labyrinth);
+            if (!snobee->getDead()) {
+                snobee->Update(deltaTime, labyrinth);
+
+                // Check collision snobee-pengo
+                if (collision->checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f))
+                    pengo->loseLife();
+
+                // Check collision snobee-block
+                for (unsigned int i=0; i<size.x; i++) {
+                    Block* _block;
+                    for (unsigned int j=0; j<size.y; j++) {
+                        _block = labyrinth->getBlock(i, j);
+                        if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f))
+                            snobee->getSmashed(_block);
+                        _block = NULL;
+                    }
+                }
+            }
         }
 
 
@@ -154,7 +172,16 @@ void Game::EventsLoop() {
                     case sf::Keyboard::Escape:
                         window->close();
                         break;
+
+                    default:
+                        // std::cout << "No key handled..." << std::endl;
+                        break;
                 }
+                break;
+
+            default:
+                // std::cout << "No event handled..." << std::endl;
+                break;
         }
     }
 }
@@ -170,7 +197,8 @@ void Game::Draw() {
     labyrinth->Draw(*window);
     pengo->Draw(*window);
     for (SnoBee* snobee : swarm) {
-        snobee->Draw(*window);
+        if (snobee  &&  !snobee->getDead())
+            snobee->Draw(*window);
     }
    // abeja->Draw(*window);
     window->setView(camera->getView());

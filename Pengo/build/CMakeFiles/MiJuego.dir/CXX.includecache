@@ -26,6 +26,16 @@ Animation.h
 Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
+math.h
+-
+Pengo.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+SnoBee.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+Block.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
 SFML/Graphics.hpp
 -
@@ -47,6 +57,8 @@ Camera.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 SnoBee.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+Collision.h
+/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp

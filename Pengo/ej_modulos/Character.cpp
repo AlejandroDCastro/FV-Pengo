@@ -12,8 +12,6 @@ Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Ve
     isStunned      = false;
     path           = 0.0f;
     this->position = position;
-    std::cout<< position.x <<std::endl;
-    std::cout<< position.y <<std::endl;
 
     // Create the character...
     body          = new sf::Sprite(*texture);

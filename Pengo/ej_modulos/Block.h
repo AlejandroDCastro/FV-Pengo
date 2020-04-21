@@ -25,4 +25,5 @@ class Block {
         void dontCollide();
         void setPosition(sf::Vector2i );
         sf::Vector2i getPosition();
+        sf::Sprite* getSprite();
 };

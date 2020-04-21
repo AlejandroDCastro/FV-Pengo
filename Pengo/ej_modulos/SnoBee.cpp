@@ -9,6 +9,8 @@ SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u
     direction = 2;
     isStatic  = false;
     column    = (_random == 0  ||  _random%2 == 0) ? _random : _random-1;
+    bomb      = NULL;
+    isDead    = false;
 }
 
 
@@ -19,6 +21,7 @@ SnoBee::~SnoBee() {
     animation = NULL;
     delete body;
     body = NULL;
+    bomb = NULL;
 }
 
 
@@ -30,7 +33,7 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     std::vector<int> _orientation;
     int _index = -1, _random;
 
-    if (!isWalking  &&  !isStatic) {
+    if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
 
         // Check avaliable positions
         if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
@@ -121,9 +124,75 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
             else if (column == 2)
                 body->move(-_displacement, 0);
         }
+
+        animation->Update(row, column, deltaTime);
+        body->setTextureRect(animation->getUVRect());
+
+    } else if (bomb) {
+        sf::Vector2f _displacement(0.0f, 0.0f);
+        sf::Vector2f _position;
+
+        // Suffer the hit...
+        if (bomb->getDirection() > -1) {
+
+            // direction movement...
+            switch (bomb->getDirection()) {
+                case 0:
+                    column = 0;
+                    _displacement.y = -10;
+                    break;
+                case 1:
+                    column = 2;
+                    _displacement.x = +10;
+                    break;
+                case 2:
+                    column = 4;
+                    _displacement.y = +10;
+                    break;
+                case 3:
+                    column = 6;
+                    _displacement.x = -10;
+                    break;
+            }
+
+            if (row != 4) {
+                row = 4;
+                animation->Update(row, column, deltaTime);
+                body->setTextureRect(animation->getUVRect());
+            }
+
+            _position = bomb->getSprite()->getPosition();
+            body->setPosition(_position + _displacement);
+
+        } else {
+
+            isDead = true;
+        }
+
     }
 
-    animation->Update(row, column, deltaTime);
-    body->setTextureRect(animation->getUVRect());
+}
 
+
+
+void SnoBee::getSmashed(Block* block) {
+    bomb      = block;
+
+    isStatic  = false;
+    isWalking = false;
+}
+
+
+
+bool SnoBee::getFree() {
+    if (bomb)
+        return false;
+    else
+        return true;
+}
+
+
+
+bool SnoBee::getDead() {
+    return isDead;
 }

@@ -17,10 +17,21 @@ CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Labyrinth.h
 
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Animation.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Collision.cpp
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/IceBlock.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Labyrinth.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Pengo.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/SnoBee.h
+
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Camera.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Collision.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Game.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Game.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/IceBlock.h
