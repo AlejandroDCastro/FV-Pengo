@@ -1,14 +1,12 @@
 #include "SnoBee.h"
-#include <iostream>
+
 
 
 SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
-    unsigned int _random = rand()%7;
 
   //  this->pengo = pengo;
     direction = 2;
     isStatic  = false;
-    column    = (_random == 0  ||  _random%2 == 0) ? _random : _random-1;
     bomb      = NULL;
     isDead    = false;
 }

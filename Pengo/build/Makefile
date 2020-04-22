@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MiJuego
+# Target rules for targets named Pengo
 
 # Build rule for target.
-MiJuego: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MiJuego
-.PHONY : MiJuego
+Pengo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Pengo
+.PHONY : Pengo
 
 # fast build rule for target.
-MiJuego/fast:
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/build
-.PHONY : MiJuego/fast
+Pengo/fast:
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/build
+.PHONY : Pengo/fast
 
 #=============================================================================
 # Target rules for targets named libModulos
@@ -412,7 +412,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -421,7 +421,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -430,7 +430,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -440,8 +440,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... Pengo"
 	@echo "... edit_cache"
-	@echo "... MiJuego"
 	@echo "... libModulos"
 	@echo "... ej_modulos/Animation.o"
 	@echo "... ej_modulos/Animation.i"

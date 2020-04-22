@@ -33,8 +33,6 @@ SFML/Graphics.hpp
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp
 Character.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
-iostream
--
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 SFML/Graphics.hpp
@@ -99,8 +97,6 @@ Block.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
 Labyrinth.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
-iostream
--
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
@@ -111,8 +107,6 @@ IceBlock.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
 Pengo.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
-iostream
--
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 SFML/Graphics.hpp
@@ -123,8 +117,6 @@ Character.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp
 SnoBee.h
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
-iostream
--
 
 /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 SFML/Graphics.hpp

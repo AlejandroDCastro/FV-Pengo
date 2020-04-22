@@ -43,7 +43,6 @@ class Game {
         Pengo* pengo;
         sf::Clock clock;
         sf::Clock levelClock;
-     //   sf::Clock snoBeeClock;
         float deltaTime;
         sf::Event event;
         sf::Texture spriteSheet, tileset;

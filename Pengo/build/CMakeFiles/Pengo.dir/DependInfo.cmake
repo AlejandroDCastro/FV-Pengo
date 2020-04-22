@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alex/Desktop/FV-Pengo/Pengo/main.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/MiJuego.dir/main.cpp.o"
+  "/home/alex/Desktop/FV-Pengo/Pengo/main.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/Pengo.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,5 +1,5 @@
 #include "Pengo.h"
-#include <iostream>
+
 
 
 Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
@@ -8,7 +8,6 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
     isBlocked     = false;
     push          = false;
-    column        = 0;
     godMode       = false;
     stunnedTime   = 2.5f;
 }
@@ -140,6 +139,7 @@ bool Pengo::loseLife() {
         isStunned = true;
         isWalking = false;
         isPushing = false;
+        row       = 0;
         return true;
     } else {
         return false;

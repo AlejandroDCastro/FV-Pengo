@@ -44,6 +44,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/MiJuego.dir/DependInfo.cmake"
+  "CMakeFiles/Pengo.dir/DependInfo.cmake"
   "CMakeFiles/libModulos.dir/DependInfo.cmake"
   )

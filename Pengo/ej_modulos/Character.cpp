@@ -1,11 +1,12 @@
 #include "Character.h"
-#include <iostream>
+
 
 
 Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) {
 
     // Initial values...
     this->row      = (coordPj.y > 1) ? 1 : 0;
+    this->column   = 0;
     this->speed    = speed;
     isWalking      = false;
     isPushing      = false;

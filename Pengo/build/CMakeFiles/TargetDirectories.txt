@@ -1,6 +1,6 @@
 /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/rebuild_cache.dir
+/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/Pengo.dir
 /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/edit_cache.dir
-/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/MiJuego.dir
 /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir
 /home/alex/Desktop/FV-Pengo/Pengo/build/ej_modulos/CMakeFiles/edit_cache.dir
 /home/alex/Desktop/FV-Pengo/Pengo/build/ej_modulos/CMakeFiles/rebuild_cache.dir

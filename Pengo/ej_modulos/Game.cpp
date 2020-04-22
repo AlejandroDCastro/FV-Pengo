@@ -63,8 +63,6 @@ Game::~Game() {
     delete camera;
     delete window;
     delete gameInstance;
- //   delete clock;
-//    delete levelClock;
     pengo        = NULL;
     labyrinth    = NULL;
     labyrinth1   = NULL;
@@ -73,8 +71,6 @@ Game::~Game() {
     window       = NULL;
     gameInstance = NULL;
     collision    = NULL;
-  //  clock        = NULL;
-  //  levelClock   = NULL;
 }
 
 
@@ -86,52 +82,11 @@ void Game::GameLoop() {
 
         // Events loop...
         EventsLoop();
-/*
-        if (pengo->getDead()  &&  levelClock.getElapsedTime().asSeconds() >= 2.4f) {
-
-            // Restart since first level...
-            this->addSwarm(level1);
-            labyrinth1 = new Labyrinth(&tileset, level1);
-            labyrinth = labyrinth1;
-            pengo->restoreLifes();
-            camera->restorePosition();
-
-        } else {
-
-            if (this->levelCompleted()) {
-                
-                // Next level...
-                if (endGame) {
-                    window->close();
-                } else {
-                    endGame = true;
-                    labyrinth = labyrinth2;
-                    this->addSwarm(level2);
-                    level = 2;
-                    pengo->restartInitialPosition();
-                    camera->restorePosition();
-                }
-
-            } else {
-
-                pengo->Update(deltaTime, labyrinth);
-                if (!pengo->getStunned()) {
-
-                    // Update objects...
-                    GameFunctionality();
-
-                } else if (levelClock.getElapsedTime().asSeconds() >= 2.4f  &&  pengo->getStunned()) {
-                    
-                    this->restoreLevel();
-
-                }
-                
-            }
-        }*/
-
         
+
         if (pengo->getDead()) {
 
+            // Restart since the first level...
             level = 1;
             this->restoreLevel();
             pengo->restoreLifes();
@@ -145,6 +100,8 @@ void Game::GameLoop() {
         } else if (!endGame) {
 
             if (this->levelCompleted()) {
+
+                // Next level...
                 if (level == 1) {
                     level = 2;
                     this->restoreLevel();

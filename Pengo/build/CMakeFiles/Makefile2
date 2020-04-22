@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/alex/Desktop/FV-Pengo/Pengo
 CMAKE_BINARY_DIR = /home/alex/Desktop/FV-Pengo/Pengo/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/MiJuego.dir
+# Target rules for target CMakeFiles/Pengo.dir
 
 # All Build rule for target.
-CMakeFiles/MiJuego.dir/all: CMakeFiles/libModulos.dir/all
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/depend
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=1,2 "Built target MiJuego"
-.PHONY : CMakeFiles/MiJuego.dir/all
+CMakeFiles/Pengo.dir/all: CMakeFiles/libModulos.dir/all
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/depend
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=1,2 "Built target Pengo"
+.PHONY : CMakeFiles/Pengo.dir/all
 
 # Include target in all.
-all: CMakeFiles/MiJuego.dir/all
+all: CMakeFiles/Pengo.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MiJuego.dir/rule: cmake_check_build_system
+CMakeFiles/Pengo.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles 13
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MiJuego.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Pengo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles 0
-.PHONY : CMakeFiles/MiJuego.dir/rule
+.PHONY : CMakeFiles/Pengo.dir/rule
 
 # Convenience name for target.
-MiJuego: CMakeFiles/MiJuego.dir/rule
+Pengo: CMakeFiles/Pengo.dir/rule
 
-.PHONY : MiJuego
-
-# clean rule for target.
-CMakeFiles/MiJuego.dir/clean:
-	$(MAKE) -f CMakeFiles/MiJuego.dir/build.make CMakeFiles/MiJuego.dir/clean
-.PHONY : CMakeFiles/MiJuego.dir/clean
+.PHONY : Pengo
 
 # clean rule for target.
-clean: CMakeFiles/MiJuego.dir/clean
+CMakeFiles/Pengo.dir/clean:
+	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/clean
+.PHONY : CMakeFiles/Pengo.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Pengo.dir/clean
 
 .PHONY : clean
 

@@ -1,5 +1,5 @@
 #include "Labyrinth.h"
-#include <iostream>
+
 
 
 Labyrinth::Labyrinth(sf::Texture* tileset, int level[15][13]) {
