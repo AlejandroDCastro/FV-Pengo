@@ -76,3 +76,9 @@ sf::Vector2f Animation::getOrigin() {
 void Animation::setChangeTime(float changeTime) {
     this->changeTime = changeTime;
 }
+
+
+
+void Animation::setCoordPj(sf::Vector2u coordPj) {
+    this->coordPj = coordPj;
+}

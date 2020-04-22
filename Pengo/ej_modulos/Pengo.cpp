@@ -9,6 +9,7 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     isBlocked     = false;
     push          = false;
     column        = 0;
+    godMode       = false;
 }
 
 
@@ -117,8 +118,11 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
         if (auxClock.getElapsedTime().asSeconds() >= 2.5f) {
             isStunned = false;
+            row       = 0;
+            column    = 0;
             body->setTextureRect(animation->getUVRect());
-            lifes--;
+            if (!godMode)
+                lifes--;
         } else {
             deadAnimation->Update(2, 0, deltaTime);
             body->setTextureRect(deadAnimation->getUVRect());
@@ -156,7 +160,24 @@ bool Pengo::getDead() {
 void Pengo::restartPosition() {
     position.x = 6;
     position.y = 6;
- //   row        = 0;
-  //  column     = 0;
+    path       = 0.0f;
     body->setPosition(16+6*16, 40+6*16);
+}
+
+
+
+void Pengo::restoreLifes() {
+    lifes = 3;
+}
+
+
+
+void Pengo::changeGodMode() {
+    if (godMode) {
+        godMode = false;
+        animation->setCoordPj(sf::Vector2u(0, 0));
+    } else {
+        godMode = true;
+        animation->setCoordPj(sf::Vector2u(2, 0));
+    }
 }

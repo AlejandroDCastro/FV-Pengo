@@ -11,6 +11,7 @@ class Pengo : public Character {
         Animation *deadAnimation;
         bool isBlocked;
         bool push;
+        bool godMode;
 
   
     public:
@@ -20,5 +21,7 @@ class Pengo : public Character {
         bool loseLife();
         bool getDead();
         void restartPosition();
+        void restoreLifes();
+        void changeGodMode();
   
 };

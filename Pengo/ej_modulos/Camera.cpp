@@ -56,3 +56,10 @@ void Camera::Update(float pengoPosY) {
 sf::View Camera::getView() {
     return *view;
 }
+
+
+
+
+void Camera::restorePosition() {
+    view->setCenter(view->getCenter().x, viewRange.x);
+}

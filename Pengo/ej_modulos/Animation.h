@@ -13,10 +13,11 @@ class Animation {
 
 
     public:
-        Animation(sf::Texture *texture, sf::Vector2u coordPj, float changeTime, int numSprites);
+        Animation(sf::Texture* ,sf::Vector2u ,float ,int );
         ~Animation();
-        void Update(unsigned int row, unsigned int column, float deltaTime);
+        void Update(unsigned int ,unsigned int ,float );
         sf::IntRect getUVRect();
         sf::Vector2f getOrigin();
-        void setChangeTime(float changeTime);
+        void setChangeTime(float );
+        void setCoordPj(sf::Vector2u );
 };
