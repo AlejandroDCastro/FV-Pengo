@@ -15,6 +15,6 @@ class Camera {
         ~Camera();
         void Update(float );
         sf::View getView();
-        void restorePosition();
+        void restartPosition();
 
 };

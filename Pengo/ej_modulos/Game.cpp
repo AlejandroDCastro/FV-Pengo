@@ -86,7 +86,7 @@ void Game::GameLoop() {
 
         // Events loop...
         EventsLoop();
-
+/*
         if (pengo->getDead()  &&  levelClock.getElapsedTime().asSeconds() >= 2.4f) {
 
             // Restart since first level...
@@ -108,7 +108,7 @@ void Game::GameLoop() {
                     labyrinth = labyrinth2;
                     this->addSwarm(level2);
                     level = 2;
-                    pengo->restartPosition();
+                    pengo->restartInitialPosition();
                     camera->restorePosition();
                 }
 
@@ -121,20 +121,49 @@ void Game::GameLoop() {
                     GameFunctionality();
 
                 } else if (levelClock.getElapsedTime().asSeconds() >= 2.4f  &&  pengo->getStunned()) {
-                    pengo->restartPosition();
-                    if (level == 1) {
-                        this->addSwarm(level1);
-                        labyrinth1 = new Labyrinth(&tileset, level1);
-                        labyrinth = labyrinth1;
-                    } else {
-                        this->addSwarm(level2);
-                        labyrinth2 = new Labyrinth(&tileset, level2);
-                        labyrinth = labyrinth2;
-                    }
-                    camera->restorePosition();
+                    
+                    this->restoreLevel();
+
                 }
                 
             }
+        }*/
+
+        
+        if (pengo->getDead()) {
+
+            level = 1;
+            this->restoreLevel();
+            pengo->restoreLifes();
+
+        } else if (pengo->getStunned()  &&  !pengo->getGodMode()) {
+
+            pengo->Update(deltaTime, labyrinth);
+            if (levelClock.getElapsedTime().asSeconds() >= 2.45f)
+                this->restoreLevel();
+
+        } else if (!endGame) {
+
+            if (this->levelCompleted()) {
+                if (level == 1) {
+                    level = 2;
+                    this->restoreLevel();
+                } else {
+                    endGame = true;
+                }
+            } else {
+
+                // Update objects...
+                pengo->Update(deltaTime, labyrinth);
+                GameFunctionality();
+                if (pengo->getStunned()  &&  pengo->getGodMode()  &&  levelClock.getElapsedTime().asSeconds() >= 1.15f)
+                    pengo->restartPosition();
+            }
+            
+        } else {
+
+            window->close();
+
         }
 
         // Draw all the objects...
@@ -172,6 +201,18 @@ void Game::EventsLoop() {
                     // Active god mode
                     case sf::Keyboard::G:
                         pengo->changeGodMode();
+                        break;
+
+                    case sf::Keyboard::X:
+                        pengo->restoreLifes();
+                        this->restoreLevel();
+                        break;
+
+                    case sf::Keyboard::N:
+                        if (level == 1) {
+                            level = 2;
+                            this->restoreLevel();
+                        }
                         break;
 
                     default:
@@ -309,6 +350,6 @@ void Game::restoreLevel() {
         labyrinth2 = new Labyrinth(&tileset, level2);
         labyrinth = labyrinth2;
     }
-    pengo->restartPosition();
-    camera->restorePosition();
+    pengo->restartInitialPosition();
+    camera->restartPosition();
 }

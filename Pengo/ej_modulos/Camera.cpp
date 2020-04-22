@@ -60,6 +60,6 @@ sf::View Camera::getView() {
 
 
 
-void Camera::restorePosition() {
+void Camera::restartPosition() {
     view->setCenter(view->getCenter().x, viewRange.x);
 }

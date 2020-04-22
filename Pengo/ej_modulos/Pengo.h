@@ -12,6 +12,7 @@ class Pengo : public Character {
         bool isBlocked;
         bool push;
         bool godMode;
+        float stunnedTime;
 
   
     public:
@@ -20,8 +21,10 @@ class Pengo : public Character {
         void Update(float ,Labyrinth* );
         bool loseLife();
         bool getDead();
-        void restartPosition();
+        void restartInitialPosition();
         void restoreLifes();
         void changeGodMode();
+        bool getGodMode();
+        void restartPosition();
   
 };

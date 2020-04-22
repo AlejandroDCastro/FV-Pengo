@@ -10,6 +10,7 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     push          = false;
     column        = 0;
     godMode       = false;
+    stunnedTime   = 2.5f;
 }
 
 
@@ -49,7 +50,7 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
             isPushing = true;
             push      = true;
             animation->setChangeTime(0.13f);
-            row++;
+            row = 1;
             auxClock.restart();
         }
         
@@ -94,7 +95,7 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
         if (auxClock.getElapsedTime().asSeconds() >= 0.4f) {
             isPushing = false;
-            row--;
+            row = 0;
             animation->setChangeTime(0.2f);
         }
 
@@ -116,13 +117,13 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
     } else if (isStunned) {
 
-        if (auxClock.getElapsedTime().asSeconds() >= 2.5f) {
+        if (auxClock.getElapsedTime().asSeconds() >= stunnedTime) {
             isStunned = false;
-            row       = 0;
-            column    = 0;
+            animation->Update(0, 0, deltaTime);
             body->setTextureRect(animation->getUVRect());
             if (!godMode)
                 lifes--;
+            body->setTextureRect(animation->getUVRect());
         } else {
             deadAnimation->Update(2, 0, deltaTime);
             body->setTextureRect(deadAnimation->getUVRect());
@@ -157,7 +158,7 @@ bool Pengo::getDead() {
 
 
 
-void Pengo::restartPosition() {
+void Pengo::restartInitialPosition() {
     position.x = 6;
     position.y = 6;
     path       = 0.0f;
@@ -174,10 +175,27 @@ void Pengo::restoreLifes() {
 
 void Pengo::changeGodMode() {
     if (godMode) {
-        godMode = false;
+        godMode     = false;
+        stunnedTime = 2.5f;
         animation->setCoordPj(sf::Vector2u(0, 0));
+        deadAnimation->setCoordPj(sf::Vector2u(0, 0));
     } else {
         godMode = true;
+        stunnedTime = 1.2f;
         animation->setCoordPj(sf::Vector2u(2, 0));
+        deadAnimation->setCoordPj(sf::Vector2u(2, 0));
     }
+}
+
+
+
+bool Pengo::getGodMode() {
+    return godMode;
+}
+
+
+
+void Pengo::restartPosition() {
+    body->setPosition(16+position.y*16, 40+position.x*16);
+    path = 0.0f;
 }
