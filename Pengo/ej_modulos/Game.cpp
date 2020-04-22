@@ -28,45 +28,9 @@ Game::Game() {
         exit(0);
     }
 
-    // Create labyrinth structure for two levels...
-    size.x = 15;
-    size.y = 13;
-    int level1[15][13] = {
-        {0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0},
-        {0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0},
-        {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 2, 1, 0},
-        {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
-        {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0},
-        {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
-        {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
-        {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-        {1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0},
-        {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0},
-        {0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0},
-        {2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}
-    };
-    int level2[15][13] = {
-        {0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0},
-        {0, 1, 2, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-        {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2},
-        {0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0},
-        {0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1},
-        {0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-        {0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0},
-        {0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0},
-        {0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0},
-        {0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 2, 1, 0},
-        {0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0},
-        {0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0},
-        {0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 1, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}
-    };
-
     // Initialize variables...
+    size.x     = 15;
+    size.y     = 13;
     window     = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     window->setFramerateLimit(60);
     camera          = new Camera();
@@ -77,6 +41,8 @@ Game::Game() {
     this->addSwarm(level1);
     collision       = new Collision();
     snoBeesPerLevel = 8;
+    endGame         = false;
+    level           = 1;
 
     // Start game loop...
     GameLoop();
@@ -120,41 +86,50 @@ void Game::GameLoop() {
         // Events loop...
         EventsLoop();
 
-        // Update objects...
-        pengo->Update(deltaTime, labyrinth);
-        camera->Update(pengo->getSprite()->getPosition().y);
-        labyrinth->Update(deltaTime);
-        for (SnoBee* snobee : swarm) {
-            if (snobee  &&  !snobee->getDead()) {
-                snobee->Update(deltaTime, labyrinth);
+        if (this->levelCompleted()) {
+            
+            // Next level...
+            if (endGame)
+                window->close();
+            else
+                endGame = true;
+            labyrinth = labyrinth2;
+            this->addSwarm(level2);
+            level = 2;
+            pengo->restartPosition();
 
-                // Check collision snobee-pengo
-                if (collision->checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f))
-                    pengo->loseLife();
+        } else {
 
-                // Check collision snobee-block
-                for (unsigned int i=0; i<size.x; i++) {
-                    Block* _block;
-                    for (unsigned int j=0; j<size.y; j++) {
-                        _block = labyrinth->getBlock(i, j);
+            pengo->Update(deltaTime, labyrinth);
+            if (!pengo->getStunned()) {
 
-                        // If we smashes Sno-Bee add other one
-                        if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f)) {
-                            snobee->getSmashed(_block);
-                            this->addSnoBee();
-                        }
-                        _block = NULL;
+                // Update objects...
+                GameFunctionality();
+
+            } else if (levelClock.getElapsedTime().asSeconds() >= 2.4f  &&  pengo->getStunned()) {
+                if (pengo->getDead()) {
+                    window->close();
+                } else {
+                    pengo->restartPosition();
+                    if (level == 1) {
+                        this->addSwarm(level1);
+                        labyrinth1 = new Labyrinth(&tileset, level1);
+                        labyrinth = labyrinth1;
+                    } else {
+                        this->addSwarm(level2);
+                        labyrinth2 = new Labyrinth(&tileset, level2);
+                        labyrinth = labyrinth2;
                     }
                 }
             }
+            
         }
-
 
         // Draw all the objects...
         Draw();
     }
 
-    // Free all memory
+    // Break free all memory...
     delete gameInstance;
     gameInstance = NULL;
 }
@@ -197,6 +172,43 @@ void Game::EventsLoop() {
 
 
 
+
+void Game::GameFunctionality() {
+
+    camera->Update(pengo->getSprite()->getPosition().y);
+    labyrinth->Update(deltaTime);
+    for (SnoBee* snobee : swarm) {
+        if (snobee  &&  !snobee->getDead()) {
+            snobee->Update(deltaTime, labyrinth);
+
+            // Check collision snobee-pengo
+            if (collision->checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
+                pengo->loseLife();
+                levelClock.restart();
+            }
+
+            // Check collision snobee-block
+            for (unsigned int i=0; i<size.x; i++) {
+                Block* _block;
+                for (unsigned int j=0; j<size.y; j++) {
+                    _block = labyrinth->getBlock(i, j);
+
+                    // If we smashes Sno-Bee add other one
+                    if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f)) {
+                        snobee->getSmashed(_block);
+                        this->addSnoBee();
+                    }
+                    _block = NULL;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
 void Game::Draw() {
 
     // Clear viewport...
@@ -221,10 +233,15 @@ void Game::Draw() {
 // Create the sno-bees for level
 void Game::addSwarm(int level[15][13]) {
 
+    for (SnoBee* snobee : swarm) {
+        delete snobee;
+    }
+    swarm.clear();
+
     for (int i=0; i<15; i++) {
         for (int j=0; j<13; j++) {
             if (level[i][j] == 2) {
-                swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.3f, sf::Vector2u(0, 2), sf::Vector2i(i, j)));
+                swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), sf::Vector2i(i, j)));
             }
         }
     }
@@ -238,6 +255,25 @@ void Game::addSnoBee() {
     if (swarm.size() < snoBeesPerLevel) {
         sf::Vector2i _newPosition = labyrinth->getFreePosition();
 
-        swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.3f, sf::Vector2u(0, 2), _newPosition));
+        swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
+    }
+}
+
+
+
+
+// Verify if the level has been completed
+bool Game::levelCompleted() {
+    unsigned int _counter = 0;
+
+    if (swarm.size() == snoBeesPerLevel)
+        for (SnoBee* snobee : swarm)
+            if (snobee  &&  snobee->getDead())
+                _counter++;
+
+    if (_counter == snoBeesPerLevel) {
+        return true;
+    } else {
+        return false;
     }
 }
