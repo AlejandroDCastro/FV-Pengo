@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#define BLOCK_SIZE 16
 
 
 class Block {
@@ -26,4 +27,6 @@ class Block {
         void setPosition(sf::Vector2i );
         sf::Vector2i getPosition();
         sf::Sprite* getSprite();
+        sf::Vector2i getNextPosition();
+        float getPath();
 };

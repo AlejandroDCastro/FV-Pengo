@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Desktop/FV-Pengo/Pengo/ej_modulos
+# Install script for directory: /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "SnoBee.h"
 
 
@@ -31,9 +32,9 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     std::vector<int> _orientation;
     int _index = -1, _random;
 
+    // Check avaliable positions
     if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
 
-        // Check avaliable positions
         if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
             _movement.push_back(sf::Vector2i(position.x-1, position.y));
             _orientation.push_back(0);
@@ -96,18 +97,19 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     }
 
 
+    // Move SnoBee
     if (isStatic  ||  isWalking) {
 
-        // Move Sno-Bee...
+        // Sno-Bee displacement
         float _displacement = speed*deltaTime;
 
         // Calculate the displacement...
-        if (path+_displacement >= 16.0f) {
-            _displacement = 16.0f - path;
+        if (path+_displacement >= TRAVEL_DISTANCE_OF_BLOCK) {
+            _displacement = TRAVEL_DISTANCE_OF_BLOCK - path;
             isWalking     = false;
             isStatic      = false;
             path          = 0.0f;
-            body->setPosition(16+position.y*16, 40+position.x*16);
+            body->setPosition(16+position.y*TRAVEL_DISTANCE_OF_BLOCK, 40+position.x*TRAVEL_DISTANCE_OF_BLOCK);
         } else {
             path += _displacement;
         }
@@ -133,32 +135,56 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
         // Suffer the hit...
         if (bomb->getDirection() > -1) {
 
-            // direction movement...
-            switch (bomb->getDirection()) {
-                case 0:
-                    column = 0;
-                    _displacement.y = -10;
-                    break;
-                case 1:
-                    column = 2;
-                    _displacement.x = +10;
-                    break;
-                case 2:
-                    column = 4;
-                    _displacement.y = +10;
-                    break;
-                case 3:
-                    column = 6;
-                    _displacement.x = -10;
-                    break;
+            // Direction movement when the block does not raise his limit
+            if (labyrinth->checkPosition(bomb->getNextPosition())) {
+                switch (bomb->getDirection()) {
+                    case 0:
+                        column = 0;
+                        _displacement.y = -9;
+                        break;
+                    case 1:
+                        column = 2;
+                        _displacement.x = +9;
+                        break;
+                    case 2:
+                        column = 4;
+                        _displacement.y = +9;
+                        break;
+                    case 3:
+                        column = 6;
+                        _displacement.x = -9;
+                        break;
+                }
+            } else {    // Direction movement when the block raises his limit
+                switch (bomb->getDirection()) {
+                    case 0:
+                        column = 1;
+                        _displacement.y = -5;
+                        break;
+                    case 1:
+                        column = 3;
+                        _displacement.x = +5;
+                        break;
+                    case 2:
+                        column = 5;
+                        _displacement.y = +5;
+                        break;
+                    case 3:
+                        column = 7;
+                        _displacement.x = -5;
+                        break;
+                }
             }
+            
 
+            // Set the clipping to the SnoBee suffering the one hit of a block
             if (row != 4) {
                 row = 4;
                 animation->Update(row, column, deltaTime);
                 body->setTextureRect(animation->getUVRect());
             }
 
+            // Set his position next to the block
             _position = bomb->getSprite()->getPosition();
             body->setPosition(_position + _displacement);
 
@@ -175,7 +201,6 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
 
 void SnoBee::getSmashed(Block* block) {
     bomb      = block;
-
     isStatic  = false;
     isWalking = false;
 }

@@ -26,48 +26,13 @@ Pengo::~Pengo() {
 
 
 void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
-    sf::Vector2i _auxPosition = position;
-    
-    if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            isWalking = true;
-            column = 4;
-            position.x--;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            isWalking = true;
-            column = 6;
-            position.y++;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            isWalking = true;
-            column = 0;
-            position.x++;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            isWalking = true;
-            column = 2;
-            position.y--;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-            isPushing = true;
-            push      = true;
-            animation->setChangeTime(0.13f);
-            row = 1;
-            auxClock.restart();
-        }
-        
-        // Invalid positon...
-        if (labyrinth->checkPosition(position)) {
-            isBlocked = false;
-        } else {
-            isBlocked = true;
-            position  = _auxPosition;
-        }
-    }
 
     if (isWalking) {
         float _displacement;
 
         // Calculate the displacement...
-        if (path+speed*deltaTime >= 16.0f) {
-            _displacement = 16.0f - path;
+        if (path+speed*deltaTime >= TRAVEL_DISTANCE_OF_PENGO) {
+            _displacement = TRAVEL_DISTANCE_OF_PENGO - path;
             isWalking     = false;
             path          = 0.0f;
         } else {
@@ -133,6 +98,53 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
 
 
+void Pengo::UpdateMovement(int direction, Labyrinth* labyrinth) {
+    sf::Vector2i _auxPosition = position;
+
+    if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
+        switch (direction)
+        {
+            case 0: // UP
+                isWalking = true;
+                column = 4;
+                position.x--;
+                break;
+            case 1: // RIGHT
+                isWalking = true;
+                column = 6;
+                position.y++;
+                break;
+            case 2: // DOWN
+                isWalking = true;
+                column = 0;
+                position.x++;
+                break;
+            case 3: // LEFT
+                isWalking = true;
+                column = 2;
+                position.y--;
+                break;
+            case 4: // PUSH
+                isPushing = true;
+                push      = true;
+                animation->setChangeTime(0.13f);
+                row = 1;
+                auxClock.restart();
+                break;
+        }
+
+        // Invalid positon...
+        if (labyrinth->checkPosition(position)) {
+            isBlocked = false;
+        } else {
+            isBlocked = true;
+            position  = _auxPosition;
+        }
+    }
+}
+
+
+
 bool Pengo::loseLife() {
     if (lifes > 0) {
         auxClock.restart();
@@ -159,10 +171,10 @@ bool Pengo::getDead() {
 
 
 void Pengo::restartInitialPosition() {
-    position.x = 6;
-    position.y = 6;
+    position.x = INITIAL_POSITION_X_Y;
+    position.y = INITIAL_POSITION_X_Y;
     path       = 0.0f;
-    body->setPosition(16+6*16, 40+6*16);
+    body->setPosition(16+INITIAL_POSITION_X_Y*BLOCK_SIZE, 40+INITIAL_POSITION_X_Y*BLOCK_SIZE);
 }
 
 
@@ -173,7 +185,7 @@ void Pengo::restoreLifes() {
 
 
 
-void Pengo::changeGodMode() {
+void Pengo::changeGodMode(sf::RenderWindow* window, float deltaTime) {
     if (godMode) {
         godMode     = false;
         stunnedTime = 2.5f;
@@ -185,6 +197,8 @@ void Pengo::changeGodMode() {
         animation->setCoordPj(sf::Vector2u(2, 0));
         deadAnimation->setCoordPj(sf::Vector2u(2, 0));
     }
+    animation->Update(row, column, deltaTime);
+    body->setTextureRect(animation->getUVRect());
 }
 
 
@@ -196,6 +210,6 @@ bool Pengo::getGodMode() {
 
 
 void Pengo::restartPosition() {
-    body->setPosition(16+position.y*16, 40+position.x*16);
+    body->setPosition(16+position.y*BLOCK_SIZE, 40+position.x*BLOCK_SIZE);
     path = 0.0f;
 }

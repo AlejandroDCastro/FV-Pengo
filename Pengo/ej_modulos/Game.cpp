@@ -29,24 +29,24 @@ Game::Game() {
     }
 
     // Initialize variables...
-    size.x     = 15;
-    size.y     = 13;
-    window     = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
+    size.x          = 15;
+    size.y          = 13;
+    window          = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     window->setFramerateLimit(60);
     camera          = new Camera();
     labyrinth1      = new Labyrinth(&tileset, level1);
     labyrinth2      = new Labyrinth(&tileset, level2);
     labyrinth       = labyrinth1;
     pengo           = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
-    this->addSwarm(level1);
+    addSwarm(level1);
     collision       = new Collision();
     snoBeesPerLevel = 8;
     endGame         = false;
     level           = 1;
 
     // Start game loop...
-    this->Draw();
-    this->GameLoop();
+    Render();
+    GameLoop();
 }
 
 
@@ -88,23 +88,23 @@ void Game::GameLoop() {
 
             // Restart since the first level...
             level = 1;
-            this->restoreLevel();
+            restoreLevel();
             pengo->restoreLifes();
 
         } else if (pengo->getStunned()  &&  !pengo->getGodMode()) {
 
             pengo->Update(deltaTime, labyrinth);
             if (levelClock.getElapsedTime().asSeconds() >= 2.45f)
-                this->restoreLevel();
+                restoreLevel();
 
         } else if (!endGame) {
 
-            if (this->levelCompleted()) {
+            if (levelCompleted()) {
 
                 // Next level...
                 if (level == 1) {
                     level = 2;
-                    this->restoreLevel();
+                    restoreLevel();
                 } else {
                     endGame = true;
                 }
@@ -124,7 +124,7 @@ void Game::GameLoop() {
         }
 
         // Draw all the objects...
-        Draw();
+        Render();
     }
 
     // Break free all memory...
@@ -136,6 +136,21 @@ void Game::GameLoop() {
 
 void Game::EventsLoop() {
 
+
+    // Input for Pengo action
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        pengo->UpdateMovement(0, labyrinth);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        pengo->UpdateMovement(1, labyrinth);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        pengo->UpdateMovement(2, labyrinth);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        pengo->UpdateMovement(3, labyrinth);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        pengo->UpdateMovement(4, labyrinth);
+
+
+    // Input for global game
     while (window->pollEvent(event)) {
 
         switch (event.type) {
@@ -157,18 +172,18 @@ void Game::EventsLoop() {
 
                     // Active god mode
                     case sf::Keyboard::G:
-                        pengo->changeGodMode();
+                        pengo->changeGodMode(window, deltaTime);
                         break;
 
                     case sf::Keyboard::X:
                         pengo->restoreLifes();
-                        this->restoreLevel();
+                        restoreLevel();
                         break;
 
                     case sf::Keyboard::N:
                         if (level == 1) {
                             level = 2;
-                            this->restoreLevel();
+                            restoreLevel();
                         }
                         break;
 
@@ -211,7 +226,7 @@ void Game::GameFunctionality() {
                     // If we smashes Sno-Bee add other one
                     if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f)) {
                         snobee->getSmashed(_block);
-                        this->addSnoBee();
+                        addSnoBee();
                     }
                     _block = NULL;
                 }
@@ -224,7 +239,7 @@ void Game::GameFunctionality() {
 
 
 
-void Game::Draw() {
+void Game::Render() {
 
     // Clear viewport...
     window->clear(sf::Color::Black);
@@ -236,7 +251,6 @@ void Game::Draw() {
         if (snobee  &&  !snobee->getDead())
             snobee->Draw(*window);
     }
-   // abeja->Draw(*window);
     window->setView(camera->getView());
 
     // Display them on it...
@@ -299,11 +313,11 @@ bool Game::levelCompleted() {
 void Game::restoreLevel() {
 
     if (level == 1) {
-        this->addSwarm(level1);
+        addSwarm(level1);
         labyrinth1 = new Labyrinth(&tileset, level1);
         labyrinth = labyrinth1;
     } else {
-        this->addSwarm(level2);
+        addSwarm(level2);
         labyrinth2 = new Labyrinth(&tileset, level2);
         labyrinth = labyrinth2;
     }

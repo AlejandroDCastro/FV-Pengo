@@ -13,6 +13,12 @@
 #include "Collision.h"
 
 
+///////////////////////   EXECUTE ALL COMMANDS AT THE SAME TIME   //////////////////////
+/**
+ * alias do="cmake -H. -Bbuild && cd build/ && make && mv Pengo .. && cd .. && ./Pengo"
+ * do
+ **/
+
 
 class Game {
 
@@ -26,7 +32,7 @@ class Game {
         void GameLoop();
         void EventsLoop();
         void GameFunctionality();
-        void Draw();
+        void Render();
         void addSwarm(int[15][13]);
         void addSnoBee();
         bool levelCompleted();

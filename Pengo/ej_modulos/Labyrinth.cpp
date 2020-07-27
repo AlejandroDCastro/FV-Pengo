@@ -10,12 +10,14 @@ Labyrinth::Labyrinth(sf::Texture* tileset, int level[15][13]) {
     rightWall  = new sf::Sprite(*tileset);
     topWall    = new sf::Sprite(*tileset);
     bottomWall = new sf::Sprite(*tileset);
-
+    
+    // Set the texture for each wall
     leftWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
     rightWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
     topWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
     bottomWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
 
+    // Set their positions
     leftWall->setPosition(0, 24);
     leftWall->setOrigin(4, 0);
     leftWall->setScale(-1, 1);
@@ -122,7 +124,7 @@ void Labyrinth::Update(float deltaTime) {
         if (block) {
             if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
                 if (ice->getBroke()) {
-                //    delete block;
+                 //   delete block;
                     block = NULL;
                 } else {
                     block->Update(deltaTime);
@@ -178,20 +180,20 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 
     // Check a block position...
     if (!this->checkPosition(position)  &&  _x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
-        sf::Vector2i _nextPosition = position;
+        sf::Vector2i _next_position = position;
 
         // Calculate the following position from block...
         if (direction == 0)
-            _nextPosition.x--;
+            _next_position.x--;
         else if (direction == 1)
-            _nextPosition.y++;
+            _next_position.y++;
         else if (direction == 2)
-            _nextPosition.x++;
+            _next_position.x++;
         else if (direction == 3)
-            _nextPosition.y--;
+            _next_position.y--;
 
         // Move the block or break it if cotains ice...
-        if (this->checkPosition(_nextPosition)) {
+        if (this->checkPosition(_next_position)) {
             glacier[_x][_y]->setDirection(direction);
         } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
             if (breakIt) {
@@ -207,9 +209,11 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 
 
 
+
 Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
     return glacier[x][y];
 }
+
 
 
 

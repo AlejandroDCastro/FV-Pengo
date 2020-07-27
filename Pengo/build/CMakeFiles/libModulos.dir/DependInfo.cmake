@@ -4,16 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
-  "/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp" "/home/alex/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

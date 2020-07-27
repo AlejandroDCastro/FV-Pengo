@@ -28,20 +28,19 @@ void IceBlock::Update(float deltaTime) {
             float _displacement = speed*deltaTime;
 
             // Calculate the block position
-            if (_displacement+path >= 16.0f) {
-                _displacement  = 16.0f - path;
+            if (_displacement+path >= BLOCK_SIZE) {
+                _displacement  = BLOCK_SIZE - path;
                 path           = 0.0f;
                 canCollide     = true;
 
-                if (direction == 0) {
+                if (direction == 0)
                     position->x--;
-                } else if (direction == 1) {
+                else if (direction == 1)
                     position->y++;
-                } else if (direction == 2) {
+                else if (direction == 2)
                     position->x++;
-                } else if (direction == 3) {
+                else if (direction == 3)
                     position->y--;
-                }
 
             } else {
                 path += _displacement;
@@ -65,10 +64,10 @@ void IceBlock::Update(float deltaTime) {
         }
     } else if (isBreaking) {
         if (clock.getElapsedTime().asSeconds() > 0.05f) {
-            sf::IntRect _cutout = block->getTextureRect();
-            _cutout.left += 16;
-            if (_cutout.left <= 160) {
-                block->setTextureRect(_cutout);
+            sf::IntRect _clipping = block->getTextureRect();
+            _clipping.left += 16;
+            if (_clipping.left <= 160) {
+                block->setTextureRect(_clipping);
             } else {
                 isBreaking = false;
                 isBroke    = true;

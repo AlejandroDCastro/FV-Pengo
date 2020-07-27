@@ -13,9 +13,9 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Building ice block
     block = new sf::Sprite(*texture);
-    block->setTextureRect(sf::IntRect(16, 16, 16, 16));
-    block->setOrigin(8, 8);
-    block->setPosition(16+x*16, 40+y*16);
+    block->setTextureRect(sf::IntRect(BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE));
+    block->setOrigin(BLOCK_SIZE/2, BLOCK_SIZE/2);
+    block->setPosition(16+x*BLOCK_SIZE, 40+y*BLOCK_SIZE);
 }
 
 
@@ -77,4 +77,34 @@ sf::Vector2i Block::getPosition() {
 
 sf::Sprite* Block::getSprite() {
     return block;
+}
+
+
+
+sf::Vector2i Block::getNextPosition() {
+    sf::Vector2i _next_position = *position;
+
+    switch (direction) {
+        case 0:
+            _next_position.x--;
+            break;
+        case 1:
+            _next_position.y++;
+            break;
+        case 2:
+            _next_position.x++;
+            break;
+        case 3:
+            _next_position.y--;
+            break;
+    }
+
+    return _next_position;
+}
+
+
+
+
+float Block::getPath() {
+    return path;
 }

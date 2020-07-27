@@ -6,89 +6,89 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 SFML/Graphics.hpp
 -
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 SFML/Graphics.hpp
 -
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 SFML/Graphics.hpp
 -
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 SFML/Graphics.hpp
 -
 Animation.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 Labyrinth.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
 math.h
 -
 Pengo.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 SnoBee.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 Block.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Block.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 Character.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 Animation.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
 IceBlock.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 Pengo.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 Labyrinth.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 Camera.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 SnoBee.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 Collision.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 SFML/Graphics.hpp
 -
 Block.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
 -
 IceBlock.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 SFML/Graphics.hpp
 -
 Character.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 SFML/Graphics.hpp
 -
 Character.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 Pengo.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 
-/home/alex/Desktop/FV-Pengo/Pengo/main.cpp
+/home/alexx/Desktop/FV-Pengo/Pengo/main.cpp
 SFML/Graphics.hpp
 -
 ej_modulos/Game.h
-/home/alex/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
 
