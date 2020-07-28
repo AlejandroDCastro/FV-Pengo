@@ -10,6 +10,8 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/SnoBee.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Labyrinth.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Collision.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Swarm.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Level.cpp"
 )
 
 #Y donde se encuentran los .h

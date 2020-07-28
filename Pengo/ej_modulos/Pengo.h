@@ -2,9 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include "Character.h"
 
+
 #define TRAVEL_DISTANCE_OF_PENGO 16.f
 #define INITIAL_POSITION_X_Y     6
 #define BLOCK_SIZE               16
+
 
 class Pengo : public Character {
     

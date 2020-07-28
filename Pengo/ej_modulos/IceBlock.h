@@ -8,7 +8,7 @@ class IceBlock : public Block {
     private:
         bool isBreaking;
         bool isBroke;
-        sf::Clock clock;
+        sf::Clock clock;    // Clock for breaking animation
 
     public:
         IceBlock(sf::Texture* ,unsigned int ,unsigned int );

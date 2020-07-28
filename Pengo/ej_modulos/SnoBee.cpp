@@ -1,4 +1,3 @@
-#include <iostream>
 #include "SnoBee.h"
 
 
@@ -159,19 +158,19 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
                 switch (bomb->getDirection()) {
                     case 0:
                         column = 1;
-                        _displacement.y = -5;
+                        _displacement.y = -4;
                         break;
                     case 1:
                         column = 3;
-                        _displacement.x = +5;
+                        _displacement.x = +4;
                         break;
                     case 2:
                         column = 5;
-                        _displacement.y = +5;
+                        _displacement.y = +4;
                         break;
                     case 3:
                         column = 7;
-                        _displacement.x = -5;
+                        _displacement.x = -4;
                         break;
                 }
             }

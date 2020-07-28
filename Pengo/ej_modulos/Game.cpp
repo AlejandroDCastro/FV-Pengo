@@ -211,13 +211,13 @@ void Game::GameFunctionality() {
         if (snobee  &&  !snobee->getDead()) {
             snobee->Update(deltaTime, labyrinth);
 
-            // Check collision snobee-pengo
+            // Check collision Snobee-Pengo
             if (collision->checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
                 pengo->loseLife();
                 levelClock.restart();
             }
 
-            // Check collision snobee-block
+            // Check collision Snobee-block
             for (unsigned int i=0; i<size.x; i++) {
                 Block* _block;
                 for (unsigned int j=0; j<size.y; j++) {
@@ -282,9 +282,9 @@ void Game::addSwarm(int level[15][13]) {
 void Game::addSnoBee() {
 
     if (swarm.size() < snoBeesPerLevel) {
-        sf::Vector2i _newPosition = labyrinth->getFreePosition();
+        sf::Vector2i _new_position = labyrinth->getFreePosition();
 
-        swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
+        swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _new_position));
     }
 }
 
