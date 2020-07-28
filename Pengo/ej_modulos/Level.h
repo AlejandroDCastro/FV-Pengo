@@ -9,12 +9,13 @@
 class Level {
 
     public:
-        Level();
+        Level(int[15][13] );
         ~Level();
         void Update(float );
 
     private:
         Swarm swarm;
+        Labyrinth* labyrinth;
 
 
 };
