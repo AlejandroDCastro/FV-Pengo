@@ -198,7 +198,7 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
 
 
 
-void SnoBee::getSmashed(Block* block) {
+void SnoBee::collideBlock(Block* block) {
     bomb      = block;
     isStatic  = false;
     isWalking = false;
@@ -217,4 +217,14 @@ bool SnoBee::getFree() {
 
 bool SnoBee::getDead() {
     return isDead;
+}
+
+
+
+
+bool SnoBee::getSmashed() {
+    if (bomb)
+        return true;
+    else
+        return false;
 }

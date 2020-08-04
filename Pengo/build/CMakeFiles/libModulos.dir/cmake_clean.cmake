@@ -9,6 +9,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )

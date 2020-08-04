@@ -9,7 +9,6 @@ Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u c
     isBlocked     = false;
     push          = false;
     godMode       = false;
-    stunnedTime   = 2.5f;
 }
 
 
@@ -57,7 +56,7 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
     } else if (isPushing) {
 
-        if (auxClock.getElapsedTime().asSeconds() >= 0.4f) {
+        if (pushClock.getElapsedTime().asSeconds() >= 0.4f) {
             isPushing = false;
             row = 0;
             animation->setChangeTime(0.2f);
@@ -81,17 +80,8 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
 
     } else if (isStunned) {
 
-        if (auxClock.getElapsedTime().asSeconds() >= stunnedTime) {
-            isStunned = false;
-            animation->Update(0, 0, deltaTime);
-            body->setTextureRect(animation->getUVRect());
-            if (!godMode)
-                lifes--;
-            body->setTextureRect(animation->getUVRect());
-        } else {
-            deadAnimation->Update(2, 0, deltaTime);
-            body->setTextureRect(deadAnimation->getUVRect());
-        }
+        deadAnimation->Update(2, 0, deltaTime);
+        body->setTextureRect(deadAnimation->getUVRect());
 
     }
 }
@@ -129,7 +119,7 @@ void Pengo::UpdateMovement(int direction, Labyrinth* labyrinth) {
                 push      = true;
                 animation->setChangeTime(0.13f);
                 row = 1;
-                auxClock.restart();
+                pushClock.restart();
                 break;
         }
 
@@ -147,7 +137,8 @@ void Pengo::UpdateMovement(int direction, Labyrinth* labyrinth) {
 
 bool Pengo::loseLife() {
     if (lifes > 0) {
-        auxClock.restart();
+        if (!godMode)
+            lifes--;
         isStunned = true;
         isWalking = false;
         isPushing = false;
@@ -170,7 +161,11 @@ bool Pengo::getDead() {
 
 
 
-void Pengo::restartInitialPosition() {
+// This method is used to locate Pengo in the initial position after being stunned by a SnoBee
+void Pengo::restartInitialState(float deltaTime) {
+    isStunned = false;
+    animation->Update(0, 0, deltaTime);
+    body->setTextureRect(animation->getUVRect());
     position.x = INITIAL_POSITION_X_Y;
     position.y = INITIAL_POSITION_X_Y;
     path       = 0.0f;
@@ -209,6 +204,7 @@ bool Pengo::getGodMode() {
 
 
 
+// This method go back Pengo in God Mode after being stunned by a SnoBee
 void Pengo::restartPosition() {
     body->setPosition(16+position.y*BLOCK_SIZE, 40+position.x*BLOCK_SIZE);
     path = 0.0f;

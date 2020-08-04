@@ -9,7 +9,10 @@ CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Collision.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Game.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Labyrinth.h
+CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Level.h
+CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/MazeGenerator.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/SnoBee.h
+CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Swarm.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../main.cpp
 

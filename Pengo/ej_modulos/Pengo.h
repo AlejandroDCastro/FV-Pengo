@@ -12,7 +12,7 @@ class Pengo : public Character {
     
     private:
         unsigned int lifes;
-        sf::Clock auxClock;
+        sf::Clock pushClock;
         Animation *deadAnimation;
         bool isBlocked;
         bool push;
@@ -23,13 +23,13 @@ class Pengo : public Character {
     public:
         Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
-        void Update(float ,Labyrinth* );
-        void UpdateMovement(int, Labyrinth* );       // 0:Up - 1:Right - 2:Down - 3:Left - 4:Push
+        void Update(float ,Labyrinth *);
+        void UpdateMovement(int ,Labyrinth *);       // 0:Up - 1:Right - 2:Down - 3:Left - 4:Push
         bool loseLife();
         bool getDead();
-        void restartInitialPosition();
+        void restartInitialState(float deltaTime);
         void restoreLifes();
-        void changeGodMode(sf::RenderWindow* ,float );
+        void changeGodMode(sf::RenderWindow *,float );
         bool getGodMode();
         void restartPosition();
   

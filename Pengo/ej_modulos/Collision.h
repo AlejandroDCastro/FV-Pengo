@@ -11,7 +11,5 @@ class Collision {
 
 
     public:
-        Collision();
-        ~Collision();
-        bool checkCollision(sf::Sprite* ,sf::Sprite* ,float );
+        static bool checkCollision(sf::Sprite* ,sf::Sprite* ,float );
 };

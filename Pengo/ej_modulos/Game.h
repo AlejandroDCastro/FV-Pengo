@@ -10,7 +10,13 @@
 #include "Labyrinth.h"
 #include "Camera.h"
 #include "SnoBee.h"
-#include "Collision.h"
+#include "Swarm.h"
+#include "Level.h"
+
+
+#define TOTAL_LEVELS            16
+#define RESTART_TRANSITION_TIME 2.5f
+
 
 
 ///////////////////////   EXECUTE ALL COMMANDS AT THE SAME TIME   //////////////////////
@@ -20,7 +26,13 @@
  **/
 
 
-class Game {
+
+// States during the game
+enum State { play, stun, next };
+
+
+
+class Game {    // Control the level change
 
     public:
         static Game* getInstance();
@@ -31,66 +43,23 @@ class Game {
         ~Game();
         void GameLoop();
         void EventsLoop();
-        void GameFunctionality();
         void Render();
-        void addSwarm(int[15][13]);
-        void addSnoBee();
-        bool levelCompleted();
-        void restoreLevel();
 
 
     private:
         static Game* gameInstance;
         sf::RenderWindow* window;
+        sf::Texture tileset, spriteSheet;
+        sf::Clock* restartLevelClock;
+        State state;
         Camera* camera;
-        Labyrinth* labyrinth1;
-        Labyrinth* labyrinth2;
-        Labyrinth* labyrinth;
         Pengo* pengo;
         sf::Clock clock;
         sf::Clock levelClock;
         float deltaTime;
         sf::Event event;
-        sf::Texture spriteSheet, tileset;
-        sf::Vector2u size;
-        std::vector<SnoBee*> swarm;
-        unsigned int snoBeesPerLevel;
-        Collision* collision;
-        int level;
-        bool endGame;
-        int level1[15][13] = {
-            {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 1, 2, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0},
-            {0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0},
-            {0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-            {0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 2, 1, 0},
-            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
-            {0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0},
-            {0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-            {1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0},
-            {0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0},
-            {2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}
-        };
-        int level2[15][13] = {
-            {0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-            {0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0},
-            {0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2},
-            {0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1},
-            {0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0},
-            {0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0},
-            {0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0},
-            {0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0},
-            {0, 1, 2, 1, 0, 1, 0, 1, 0, 0, 2, 1, 0},
-            {0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0},
-            {0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0},
-            {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0}
-        };
+        Level* level;
+        std::vector<Level*> levels;      // In the same game levels are the same
+        unsigned int currentLevel;
 
 };

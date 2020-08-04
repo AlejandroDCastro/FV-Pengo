@@ -352,6 +352,60 @@ ej_modulos/Labyrinth.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
 .PHONY : ej_modulos/Labyrinth.cpp.s
 
+ej_modulos/Level.o: ej_modulos/Level.cpp.o
+
+.PHONY : ej_modulos/Level.o
+
+# target to build an object file
+ej_modulos/Level.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o
+.PHONY : ej_modulos/Level.cpp.o
+
+ej_modulos/Level.i: ej_modulos/Level.cpp.i
+
+.PHONY : ej_modulos/Level.i
+
+# target to preprocess a source file
+ej_modulos/Level.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.i
+.PHONY : ej_modulos/Level.cpp.i
+
+ej_modulos/Level.s: ej_modulos/Level.cpp.s
+
+.PHONY : ej_modulos/Level.s
+
+# target to generate assembly for a file
+ej_modulos/Level.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.s
+.PHONY : ej_modulos/Level.cpp.s
+
+ej_modulos/MazeGenerator.o: ej_modulos/MazeGenerator.cpp.o
+
+.PHONY : ej_modulos/MazeGenerator.o
+
+# target to build an object file
+ej_modulos/MazeGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o
+.PHONY : ej_modulos/MazeGenerator.cpp.o
+
+ej_modulos/MazeGenerator.i: ej_modulos/MazeGenerator.cpp.i
+
+.PHONY : ej_modulos/MazeGenerator.i
+
+# target to preprocess a source file
+ej_modulos/MazeGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.i
+.PHONY : ej_modulos/MazeGenerator.cpp.i
+
+ej_modulos/MazeGenerator.s: ej_modulos/MazeGenerator.cpp.s
+
+.PHONY : ej_modulos/MazeGenerator.s
+
+# target to generate assembly for a file
+ej_modulos/MazeGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.s
+.PHONY : ej_modulos/MazeGenerator.cpp.s
+
 ej_modulos/Pengo.o: ej_modulos/Pengo.cpp.o
 
 .PHONY : ej_modulos/Pengo.o
@@ -405,6 +459,33 @@ ej_modulos/SnoBee.s: ej_modulos/SnoBee.cpp.s
 ej_modulos/SnoBee.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.s
 .PHONY : ej_modulos/SnoBee.cpp.s
+
+ej_modulos/Swarm.o: ej_modulos/Swarm.cpp.o
+
+.PHONY : ej_modulos/Swarm.o
+
+# target to build an object file
+ej_modulos/Swarm.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o
+.PHONY : ej_modulos/Swarm.cpp.o
+
+ej_modulos/Swarm.i: ej_modulos/Swarm.cpp.i
+
+.PHONY : ej_modulos/Swarm.i
+
+# target to preprocess a source file
+ej_modulos/Swarm.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.i
+.PHONY : ej_modulos/Swarm.cpp.i
+
+ej_modulos/Swarm.s: ej_modulos/Swarm.cpp.s
+
+.PHONY : ej_modulos/Swarm.s
+
+# target to generate assembly for a file
+ej_modulos/Swarm.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.s
+.PHONY : ej_modulos/Swarm.cpp.s
 
 main.o: main.cpp.o
 
@@ -467,12 +548,21 @@ help:
 	@echo "... ej_modulos/Labyrinth.o"
 	@echo "... ej_modulos/Labyrinth.i"
 	@echo "... ej_modulos/Labyrinth.s"
+	@echo "... ej_modulos/Level.o"
+	@echo "... ej_modulos/Level.i"
+	@echo "... ej_modulos/Level.s"
+	@echo "... ej_modulos/MazeGenerator.o"
+	@echo "... ej_modulos/MazeGenerator.i"
+	@echo "... ej_modulos/MazeGenerator.s"
 	@echo "... ej_modulos/Pengo.o"
 	@echo "... ej_modulos/Pengo.i"
 	@echo "... ej_modulos/Pengo.s"
 	@echo "... ej_modulos/SnoBee.o"
 	@echo "... ej_modulos/SnoBee.i"
 	@echo "... ej_modulos/SnoBee.s"
+	@echo "... ej_modulos/Swarm.o"
+	@echo "... ej_modulos/Swarm.i"
+	@echo "... ej_modulos/Swarm.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

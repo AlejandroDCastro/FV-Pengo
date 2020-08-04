@@ -2,17 +2,6 @@
 
 
 
-Collision::Collision() {
-
-}
-
-
-
-Collision::~Collision() {
-
-}
-
-
 
 // Collision between two sprites with a minimun distance
 bool Collision::checkCollision(sf::Sprite* sprite1, sf::Sprite* sprite2, float minimum) {
