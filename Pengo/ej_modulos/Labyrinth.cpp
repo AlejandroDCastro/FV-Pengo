@@ -2,9 +2,8 @@
 
 
 
-Labyrinth::Labyrinth(sf::Texture *tileset) {
-    isHit         = false;
-    this->texture = tileset;
+Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
+    isHit = false;
 
     // Build the walls and put them on screen...
     leftWall   = new sf::Sprite(*tileset);
@@ -30,15 +29,8 @@ Labyrinth::Labyrinth(sf::Texture *tileset) {
     topWall->setOrigin(0, 8);
     bottomWall->setPosition(0, 272);
 
-    size.x = 15;  size.y = 13;
-
-    // Generate the random maze
-    map = new int*[size.x];
-    for (unsigned int i=0; i<size.x; i++)
-        map[i] = new int[size.y];
-    MazeGenerator::generateRandomMaze(map);
-
     // Reserve momory for the matrix...
+    size.x = 15;  size.y = 13;
     glacier = new Block**[size.x];
     for (unsigned int i=0; i<size.x; i++)
         glacier[i] = new Block*[size.y];
@@ -63,9 +55,6 @@ Labyrinth::~Labyrinth() {
     delete rightWall;
     delete topWall;
     delete bottomWall;
-    for (unsigned int i=0; i<size.x; i++)
-        delete[] map[i];
-    delete[] map;
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
             if (glacier[i][j])
@@ -86,7 +75,6 @@ Labyrinth::~Labyrinth() {
     leftWall   = NULL;
     topWall    = NULL;
     glacier    = NULL;
-    texture    = NULL;
 }
 
 
@@ -230,23 +218,4 @@ sf::Vector2i Labyrinth::getFreePosition() {
     } while (!this->checkPosition(_freePosition));
 
     return _freePosition;
-}
-
-
-
-
-void Labyrinth::rebuild() {
-    
-    // Free memory...
-    for (unsigned int i=0; i<size.x; i++)
-        for (unsigned int j=0; j<size.y; j++)
-            if (glacier[i][j]) {
-                delete glacier[i][j];
-                glacier[i][j] = NULL;
-            }
-
-    // Put all the ice blocks as dynamic objects...
-    for (unsigned int i=0; i<size.x; i++)
-        for (unsigned int j=0; j<size.y; j++)
-            glacier[i][j] = (map[i][j] == 1) ? new IceBlock(texture, j, i) : NULL;
 }

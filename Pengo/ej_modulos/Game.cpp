@@ -35,7 +35,7 @@ Game::Game() {
     pengo             = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     currentLevel      = 0;
     level             = NULL;
-    state             = play;
+    state             = change;
     window->setFramerateLimit(60);
 
     // Start game loop...
@@ -68,73 +68,59 @@ void Game::GameLoop() {
         deltaTime = clock.restart().asSeconds();
 
         // Events loop...
-        EventsLoop();
+        if (!pengo->getStunned())
+            EventsLoop();
 
-/*
+
         switch (state) {
 
             case play:  // Update all game
-
-                level->Update(deltaTime);
-                camera->Update(pengo->getSprite()->getPosition().y);
 
                 // Change state
                 if (pengo->getStunned())
                     state = stun;
                 else if (level->completed())
-                    state = next;
+                    state = change;
                 break;
+
 
             case stun:  // Pengo is stunned
 
-                break;
-
-            case next:  // Next level
-
-                if ()
-                break;
-        }*/
-
-        if (pengo->getDead())
-            window->close();
-
-        // Check if the current level has been completed and go to the next
-        if (currentLevel == 0  ||  level->completed()) {
-            Level* _new_level;
-            currentLevel++;
-
-            // Close the window...
-            if (currentLevel == TOTAL_LEVELS)
-                window->close();
-
-            _new_level = new Level(&spriteSheet, &tileset, pengo, restartLevelClock);
-                
-            level = _new_level;
-            levels.push_back(level);
-
-            pengo->restartInitialState(deltaTime);
-            camera->restartPosition();
-            _new_level = NULL;
-        } else {
-            
-            if (pengo->getStunned()  &&  restartLevelClock->getElapsedTime().asSeconds() > RESTART_TRANSITION_TIME) {
-             /*   if (currentLevel == 1)
-                    level->restart(&spriteSheet, &tileset, 1);
-                else
-                    level->restart(&spriteSheet, &tileset, 2);*/
-
-                if (pengo->getGodMode()) {
-                    pengo->restartPosition();
-                } else {
-                    pengo->restartInitialState(deltaTime);
-                    camera->restartPosition();
+                if (restartLevelClock->getElapsedTime().asSeconds() > RESTART_TRANSITION_TIME) {
+                    if (pengo->getGodMode()) {
+                        pengo->restartPosition(deltaTime);
+                    } else {
+                        level->restart();
+                        pengo->restartInitialState(deltaTime);
+                        camera->restartPosition();
+                    }
+                    state = play;
                 }
+                break;
 
-            }
 
-            level->Update(deltaTime);
-            camera->Update(pengo->getSprite()->getPosition().y);
+            case change:  // Next level
+                Level* _new_level;
+
+                // Create the new level
+                currentLevel++;
+                _new_level = new Level(&spriteSheet, &tileset, pengo, restartLevelClock);
+                level = _new_level;
+                levels.push_back(level); // Save the level for restarting
+
+                // Go back to the initial view
+                pengo->restartInitialState(deltaTime);
+                camera->restartPosition();
+                _new_level = NULL;
+                state = play;
+                break;
         }
+
+
+        // Update all game...
+        level->Update(deltaTime);
+        camera->Update(pengo->getSprite()->getPosition().y);
+
 
         // Draw all the objects...
         Render();
@@ -187,18 +173,18 @@ void Game::EventsLoop() {
                     case sf::Keyboard::G:
                         pengo->changeGodMode(window, deltaTime);
                         break;
-/*
+
                     case sf::Keyboard::X:
+                        level->restart();
+                        pengo->restartInitialState(deltaTime);
                         pengo->restoreLifes();
+                        camera->restartPosition();
                         break;
 
                     case sf::Keyboard::N:
-                        if (level == 1) {
-                            level = 2;
-                            restore level
-                        }
+                        state = change;
                         break;
-*/
+
                     default:
                         // std::cout << "No key handled..." << std::endl;
                         break;

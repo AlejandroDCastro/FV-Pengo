@@ -22,7 +22,7 @@ Swarm::~Swarm() {
     for (SnoBee* snobee : snobees)
         delete snobee;
     snobees.clear();
-    texture   = NULL;
+    texture = NULL;
 }
 
 
@@ -88,13 +88,4 @@ int Swarm::getDeadSnobees() {
                 _deaths++;
 
     return _deaths;
-}
-
-
-
-
-void Swarm::rebuild() {
-    for (SnoBee* snobee : snobees)
-        delete snobee;
-    snobees.clear();
 }

@@ -28,7 +28,7 @@
 
 
 // States during the game
-enum State { play, stun, next };
+enum State { change, play, stun };
 
 
 

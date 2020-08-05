@@ -22,7 +22,6 @@ class Swarm {
         void Update(float ,Labyrinth *,Pengo *,sf::Clock *);
         void Draw(sf::RenderWindow &);
         int getDeadSnobees();
-        void rebuild();
 
 
 

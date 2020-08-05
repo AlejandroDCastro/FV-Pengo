@@ -205,7 +205,10 @@ bool Pengo::getGodMode() {
 
 
 // This method go back Pengo in God Mode after being stunned by a SnoBee
-void Pengo::restartPosition() {
+void Pengo::restartPosition(float deltaTime) {
+    isStunned = false;
+    animation->Update(0, 0, deltaTime);
+    body->setTextureRect(animation->getUVRect());
     body->setPosition(16+position.y*BLOCK_SIZE, 40+position.x*BLOCK_SIZE);
     path = 0.0f;
 }

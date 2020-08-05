@@ -73,8 +73,6 @@ SFML/Graphics.hpp
 -
 IceBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
-MazeGenerator.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Level.h
 SFML/Graphics.hpp
@@ -83,6 +81,8 @@ Swarm.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.h
 Labyrinth.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
+MazeGenerator.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
 iostream

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Swarm.h"
 #include "Labyrinth.h"
+#include "MazeGenerator.h"
 
 
 class Level {
@@ -22,4 +23,6 @@ class Level {
         Labyrinth* labyrinth;
         Pengo* pengo;
         sf::Clock* restartClock;
+        sf::Texture *spriteSheet, *tileset;
+        int **map;  // Maze structure
 };

@@ -31,6 +31,6 @@ class Pengo : public Character {
         void restoreLifes();
         void changeGodMode(sf::RenderWindow *,float );
         bool getGodMode();
-        void restartPosition();
+        void restartPosition(float );
   
 };
