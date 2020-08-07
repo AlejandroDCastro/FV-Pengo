@@ -78,10 +78,11 @@ void Level::inputPlayer(int direction) {
 
 
 // Restart all level structure less the Snobees position
-void Level::restart() {
+void Level::restart(float deltaTime) {
     delete labyrinth;
     delete swarm;
 
     labyrinth = new Labyrinth(tileset, map);
     swarm     = new Swarm(spriteSheet, labyrinth);
+    pengo->restartInitialState(deltaTime);
 }

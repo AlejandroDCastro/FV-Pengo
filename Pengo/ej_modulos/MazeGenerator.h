@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <math.h>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class MazeGenerator {
         static void agregarParOrdenado(int [][2], int &, int , int );
         static void obtenerParOrdenadoRandom(int [][2], int &, int &, int &);
         static void crearLaberinto( int [][nMax],int , int );
+        static bool comprobarPosiciones(int[][2]);
         static void generateRandomMaze(int** );
 
 

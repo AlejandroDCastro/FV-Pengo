@@ -14,8 +14,7 @@
 #include "Level.h"
 
 
-#define TOTAL_LEVELS            16
-#define RESTART_TRANSITION_TIME 2.5f
+#define TOTAL_LEVELS 16
 
 
 
@@ -28,7 +27,7 @@
 
 
 // States during the game
-enum State { change, play, stun };
+enum State { change, play, stun, restart };
 
 
 
@@ -57,6 +56,7 @@ class Game {    // Control the level change
         sf::Clock clock;
         sf::Clock levelClock;
         float deltaTime;
+        float restartTransitionTime;
         sf::Event event;
         Level* level;
         std::vector<Level*> levels;      // In the same game levels are the same

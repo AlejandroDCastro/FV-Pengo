@@ -37,8 +37,14 @@ Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
     
     // Put all the ice blocks as dynamic objects...
     for (unsigned int i=0; i<size.x; i++)
-        for (unsigned int j=0; j<size.y; j++)
-            glacier[i][j] = (map[i][j] == 1) ? new IceBlock(tileset, j, i) : NULL;
+        for (unsigned int j=0; j<size.y; j++) {
+            if (map[i][j] == 1)
+                glacier[i][j] = new IceBlock(tileset, j, i);
+            else if (map[i][j] == 2)
+                glacier[i][j] = new DiamondBlock(tileset, j, i);
+            else
+                glacier[i][j] = NULL;
+        }
 
     // Important position...
     for (int i=0; i<int(size.x); i++)
@@ -184,15 +190,19 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
         else if (direction == 3)
             _next_position.y--;
 
-        // Move the block or break it if cotains ice...
+        // Move the block or break it if cotains ice or dont break it if contains diamond...
         if (this->checkPosition(_next_position)) {
             glacier[_x][_y]->setDirection(direction);
-        } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
-            if (breakIt) {
-                ice->breakDown();
-                icicles.push_back(glacier[_x][_y]);
-                glacier[_x][_y] = NULL;
-            } else {
+        } else {
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
+                if (breakIt) {
+                    ice->breakDown();
+                    icicles.push_back(glacier[_x][_y]);
+                    glacier[_x][_y] = NULL;
+                } else {
+                    glacier[_x][_y]->setDirection(-1);
+                }
+            } else { // Its a diamond block
                 glacier[_x][_y]->setDirection(-1);
             }
         }
@@ -209,13 +219,23 @@ Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
 
 
 
+// Free position for including SnoBees into the map
 sf::Vector2i Labyrinth::getFreePosition() {
-    sf::Vector2i _freePosition(0, 0);
+    sf::Vector2i _free_position(0, 0);
 
     do {
-        _freePosition.x = rand()%15,
-        _freePosition.y = rand()%13;
-    } while (!this->checkPosition(_freePosition));
+        _free_position.x = rand()%15,
+        _free_position.y = rand()%13;
+    } while (!this->checkPosition(_free_position));
 
-    return _freePosition;
+    return _free_position;
+}
+
+
+
+
+DiamondBlock** Labyrinth::getDiamondBlocks() {
+    DiamondBlock **diamonds = new DiamondBlock*[TOTAL_DIAMOND_BLOCK];
+
+
 }

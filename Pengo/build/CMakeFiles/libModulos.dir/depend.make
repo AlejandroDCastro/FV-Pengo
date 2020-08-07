@@ -14,6 +14,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o: ../ej_modulos/Labyrinth.h
 
@@ -22,16 +23,22 @@ CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Collision.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o: ../ej_modulos/SnoBee.h
+
+CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o: ../ej_modulos/DiamondBlock.cpp
+CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o: ../ej_modulos/DiamondBlock.h
 
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Camera.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Game.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Game.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/IceBlock.h
@@ -47,6 +54,7 @@ CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/IceBlock.cpp
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/IceBlock.h
 
 CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.cpp
 CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o: ../ej_modulos/Labyrinth.h
@@ -55,6 +63,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Level.cpp
@@ -70,6 +79,7 @@ CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o: ../ej_modulos/MazeGene
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Pengo.cpp
@@ -78,6 +88,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Character.h
+CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Pengo.h
@@ -88,6 +99,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Pengo.h

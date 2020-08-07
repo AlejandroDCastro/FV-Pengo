@@ -56,6 +56,16 @@ SnoBee.h
 Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.cpp
+DiamondBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+SFML/Graphics.hpp
+-
+Block.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp
 Game.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
@@ -105,6 +115,8 @@ SFML/Graphics.hpp
 -
 IceBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+DiamondBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Level.cpp
 Level.h
@@ -130,6 +142,8 @@ iostream
 stdlib.h
 -
 time.h
+-
+math.h
 -
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp

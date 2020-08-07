@@ -110,6 +110,39 @@ void MazeGenerator::crearLaberinto( int M[][nMax],int m, int n){
 
 
 
+// Comprobamos que los bloques no sean contiguos
+bool MazeGenerator::comprobarPosiciones(int posiciones[3][2]) {
+    int _coinciden = 0;
+
+    if (abs(posiciones[0][0]-posiciones[1][0]) == 1  &&  abs(posiciones[0][1]-posiciones[1][1]) == 0)
+        _coinciden++;
+    else if (abs(posiciones[0][0]-posiciones[1][0]) == 0  &&  abs(posiciones[0][1]-posiciones[1][1]) == 1)
+        _coinciden++;
+    else if (posiciones[0][0] == posiciones[1][0]  &&  posiciones[0][1] == posiciones[1][1])
+        _coinciden++;
+
+    if (abs(posiciones[0][0]-posiciones[2][0]) == 1  &&  abs(posiciones[0][1]-posiciones[2][1]) == 0)
+        _coinciden++;
+    else if (abs(posiciones[0][0]-posiciones[2][0]) == 0  &&  abs(posiciones[0][1]-posiciones[2][1]) == 1)
+        _coinciden++;
+    else if (posiciones[0][0] == posiciones[2][0]  &&  posiciones[0][1] == posiciones[2][1])
+        _coinciden++;
+
+    if (abs(posiciones[1][0]-posiciones[2][0]) == 1  &&  abs(posiciones[1][1]-posiciones[2][1]) == 0)
+        _coinciden++;
+    else if (abs(posiciones[1][0]-posiciones[2][0]) == 0  &&  abs(posiciones[1][1]-posiciones[2][1]) == 1)
+        _coinciden++;
+    else if (posiciones[1][0] == posiciones[2][0]  &&  posiciones[1][1] == posiciones[2][1])
+        _coinciden++;
+
+    if (_coinciden == 0)
+        return true;
+    else
+        return false;
+} 
+
+
+
 void MazeGenerator::generateRandomMaze(int **map)
 {
     srand (time(NULL));
@@ -147,4 +180,20 @@ void MazeGenerator::generateRandomMaze(int **map)
     
     // Pengo position is free
     map[6][6] = 0;
+
+    // Three diamonds block
+    int _x, _y, _positions[3][2];
+    do {
+        for (int i=0; i<3; i++) {
+            do {
+                _x = rand()%15;
+                _y = rand()%13;
+            } while (map[_x][_y] == 0);
+            _positions[i][0] = _x;
+            _positions[i][1] = _y;
+        }
+    } while (!comprobarPosiciones(_positions));
+
+    for (int i=0; i<3; i++)
+        map[_positions[i][0]][_positions[i][1]] = 2;
 }

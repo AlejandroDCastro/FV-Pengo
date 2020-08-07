@@ -6,6 +6,7 @@ CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Block.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Camera.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Character.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Collision.h
+CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/DiamondBlock.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Game.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/IceBlock.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Labyrinth.h

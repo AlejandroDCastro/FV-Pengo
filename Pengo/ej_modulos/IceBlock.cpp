@@ -5,6 +5,7 @@
 IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block(texture, x, y) {
 
     // Initial values
+    block->setTextureRect(sf::IntRect(BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE));
     isBreaking = false;
     isBroke    = false;
     path       = 0.0f;

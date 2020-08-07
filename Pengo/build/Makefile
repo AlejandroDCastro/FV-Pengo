@@ -271,6 +271,33 @@ ej_modulos/Collision.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.s
 .PHONY : ej_modulos/Collision.cpp.s
 
+ej_modulos/DiamondBlock.o: ej_modulos/DiamondBlock.cpp.o
+
+.PHONY : ej_modulos/DiamondBlock.o
+
+# target to build an object file
+ej_modulos/DiamondBlock.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o
+.PHONY : ej_modulos/DiamondBlock.cpp.o
+
+ej_modulos/DiamondBlock.i: ej_modulos/DiamondBlock.cpp.i
+
+.PHONY : ej_modulos/DiamondBlock.i
+
+# target to preprocess a source file
+ej_modulos/DiamondBlock.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.i
+.PHONY : ej_modulos/DiamondBlock.cpp.i
+
+ej_modulos/DiamondBlock.s: ej_modulos/DiamondBlock.cpp.s
+
+.PHONY : ej_modulos/DiamondBlock.s
+
+# target to generate assembly for a file
+ej_modulos/DiamondBlock.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.s
+.PHONY : ej_modulos/DiamondBlock.cpp.s
+
 ej_modulos/Game.o: ej_modulos/Game.cpp.o
 
 .PHONY : ej_modulos/Game.o
@@ -539,6 +566,9 @@ help:
 	@echo "... ej_modulos/Collision.o"
 	@echo "... ej_modulos/Collision.i"
 	@echo "... ej_modulos/Collision.s"
+	@echo "... ej_modulos/DiamondBlock.o"
+	@echo "... ej_modulos/DiamondBlock.i"
+	@echo "... ej_modulos/DiamondBlock.s"
 	@echo "... ej_modulos/Game.o"
 	@echo "... ej_modulos/Game.i"
 	@echo "... ej_modulos/Game.s"

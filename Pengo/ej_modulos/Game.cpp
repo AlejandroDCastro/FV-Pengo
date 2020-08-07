@@ -29,13 +29,14 @@ Game::Game() {
     }
 
     // Initialize variables...
-    window            = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
-    camera            = new Camera();
-    restartLevelClock = new sf::Clock();
-    pengo             = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
-    currentLevel      = 0;
-    level             = NULL;
-    state             = change;
+    window                = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
+    camera                = new Camera();
+    restartLevelClock     = new sf::Clock();
+    pengo                 = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
+    currentLevel          = 0;
+    level                 = NULL;
+    state                 = change;
+    restartTransitionTime = 2.5f;
     window->setFramerateLimit(60);
 
     // Start game loop...
@@ -68,8 +69,7 @@ void Game::GameLoop() {
         deltaTime = clock.restart().asSeconds();
 
         // Events loop...
-        if (!pengo->getStunned())
-            EventsLoop();
+        EventsLoop();
 
 
         switch (state) {
@@ -86,30 +86,48 @@ void Game::GameLoop() {
 
             case stun:  // Pengo is stunned
 
-                if (restartLevelClock->getElapsedTime().asSeconds() > RESTART_TRANSITION_TIME) {
+                if (restartLevelClock->getElapsedTime().asSeconds() > restartTransitionTime) {
+
+                    // Restart Pengo position...
                     if (pengo->getGodMode()) {
                         pengo->restartPosition(deltaTime);
                     } else {
-                        level->restart();
-                        pengo->restartInitialState(deltaTime);
+                        level->restart(deltaTime);
                         camera->restartPosition();
                     }
-                    state = play;
+
+                    // Restart game...
+                    if (pengo->getDead()) {
+                        pengo->restoreLifes();
+                        currentLevel = 0;
+                        state = change;
+                    } else {
+                        state = play;
+                    }
                 }
                 break;
 
 
             case change:  // Next level
-                Level* _new_level;
+                Level* _new_level = NULL;
+
+                // The game ends when player reaches total levels
+                if (currentLevel == TOTAL_LEVELS)
+                    window->close();
 
                 // Create the new level
                 currentLevel++;
-                _new_level = new Level(&spriteSheet, &tileset, pengo, restartLevelClock);
-                level = _new_level;
-                levels.push_back(level); // Save the level for restarting
+                if (currentLevel > levels.size()) {
+                    _new_level = new Level(&spriteSheet, &tileset, pengo, restartLevelClock);
+                    level = _new_level;
+                    levels.push_back(level); // Save the level for restarting
+                    pengo->restartInitialState(deltaTime);
+                } else { //  Play a existing level
+                    level = levels[currentLevel-1];
+                    level->restart(deltaTime);
+                }
 
                 // Go back to the initial view
-                pengo->restartInitialState(deltaTime);
                 camera->restartPosition();
                 _new_level = NULL;
                 state = play;
@@ -172,11 +190,11 @@ void Game::EventsLoop() {
                     // Active god mode
                     case sf::Keyboard::G:
                         pengo->changeGodMode(window, deltaTime);
+                        restartTransitionTime = (pengo->getGodMode()) ? 1.5f : 2.5f;
                         break;
 
                     case sf::Keyboard::X:
-                        level->restart();
-                        pengo->restartInitialState(deltaTime);
+                        level->restart(deltaTime);
                         pengo->restoreLifes();
                         camera->restartPosition();
                         break;

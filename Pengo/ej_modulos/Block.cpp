@@ -13,7 +13,6 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Building ice block
     block = new sf::Sprite(*texture);
-    block->setTextureRect(sf::IntRect(BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE));
     block->setOrigin(BLOCK_SIZE/2, BLOCK_SIZE/2);
     block->setPosition(16+x*BLOCK_SIZE, 40+y*BLOCK_SIZE);
 }

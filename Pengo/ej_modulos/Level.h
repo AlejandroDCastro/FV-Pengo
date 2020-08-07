@@ -6,6 +6,7 @@
 #include "MazeGenerator.h"
 
 
+
 class Level {
 
     public:
@@ -15,7 +16,7 @@ class Level {
         void Draw(sf::RenderWindow &);
         bool completed();
         void inputPlayer(int );
-        void restart();
+        void restart(float );
 
 
     private:
