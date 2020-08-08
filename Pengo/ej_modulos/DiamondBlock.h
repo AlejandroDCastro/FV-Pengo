@@ -4,9 +4,6 @@
 #include "Block.h"
 
 
-#define TOTAL_DIAMOND_BLOCK
-
-
 
 class DiamondBlock : public Block {
 

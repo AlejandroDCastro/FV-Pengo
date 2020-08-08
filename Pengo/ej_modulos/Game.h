@@ -27,7 +27,7 @@
 
 
 // States during the game
-enum State { change, play, stun, restart };
+enum GameState { change, play, stun, restart };
 
 
 
@@ -50,7 +50,7 @@ class Game {    // Control the level change
         sf::RenderWindow* window;
         sf::Texture tileset, spriteSheet;
         sf::Clock* restartLevelClock;
-        State state;
+        GameState state;
         Camera* camera;
         Pengo* pengo;
         sf::Clock clock;

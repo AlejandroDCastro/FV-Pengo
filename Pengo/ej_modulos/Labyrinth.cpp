@@ -234,8 +234,21 @@ sf::Vector2i Labyrinth::getFreePosition() {
 
 
 
+
 DiamondBlock** Labyrinth::getDiamondBlocks() {
-    DiamondBlock **diamonds = new DiamondBlock*[TOTAL_DIAMOND_BLOCK];
+    DiamondBlock **_diamonds;
+    int _cont = 0;
 
+    // Reserve memory for pointers...
+    _diamonds = new DiamondBlock*[TOTAL_DIAMOND_BLOCK];
+    for (unsigned int i=0; i<size.x; i++)
+        for (unsigned int j=0; j<size.y; j++)
+            if (glacier[i][j]) {
+                if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[i][j]))
+                    _diamonds[_cont++] = diamond;
+                if (_cont == 3)
+                    break;
+            }
 
+    return _diamonds;
 }

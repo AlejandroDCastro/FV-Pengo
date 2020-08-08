@@ -5,6 +5,10 @@
 
 
 
+#define TOTAL_DIAMOND_BLOCK 3
+
+
+
 class Labyrinth {
 
     public:

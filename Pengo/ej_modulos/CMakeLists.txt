@@ -14,6 +14,7 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Level.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/MazeGenerator.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/DiamondBlock.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/StarPlay.cpp"
 )
 
 #Y donde se encuentran los .h
