@@ -1,11 +1,14 @@
+#include <iostream>
 #include "StarPlay.h"
 
 
 
 
 StarPlay::StarPlay(Labyrinth *labyrinth) {
-    diamonds = labyrinth->getDiamondBlocks();
-    state    = inactive;
+    diamonds   = labyrinth->getDiamondBlocks();
+    state      = inactive;
+    used       = false;
+    clockColor = new sf::Clock();
 }
 
 
@@ -26,24 +29,57 @@ void StarPlay::Update() {
     DiamondBlock *_block1, *_block2;
     sf::Vector2i _pos1, _pos2, _sum_distance;
 
-    // Only needed three checks between blocks
-    for (unsigned int i=0; i<3; i++) {
-        _block1 = (i == 2) ? diamonds[1] : diamonds[0];
-        _block2 = (i == 0) ? diamonds[1] : diamonds[2];
-        _pos1   = _block1->getPosition();
-        _pos2   = _block2->getPosition();
+    if (!used) {
 
-        _distance[i][0] = abs(_pos1.x - _pos2.x);
-        _distance[i][1] = abs(_pos1.y - _pos2.y);
+        // Only needed three checks between blocks
+        for (unsigned int i=0; i<3; i++) {
+            _block1 = (i == 2) ? diamonds[1] : diamonds[0];
+            _block2 = (i == 0) ? diamonds[1] : diamonds[2];
+            _pos1   = _block1->getPosition();
+            _pos2   = _block2->getPosition();
+
+            _distance[i][0] = abs(_pos1.x - _pos2.x);
+            _distance[i][1] = abs(_pos1.y - _pos2.y);
+        }
+
+        _sum_distance.x = _distance[0][0] + _distance[1][0] + _distance[2][0];
+        _sum_distance.y = _distance[0][1] + _distance[1][1] + _distance[2][1];
+
+
+        // Check if whe active the play
+        if ((_sum_distance.x == 4 && _sum_distance.y == 0)  ||  (_sum_distance.x == 0 && _sum_distance.y == 4)) {
+            state = active;
+
+        // If there are two continuous blocks
+        } else if ((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0)) {
+            clockColor->restart();
+            state = half;
+
+        // Inactive play...
+        } else {
+            state = inactive;
+        }
+
+
+        // Set the play state...
+        switch (state) {
+            case active:
+                std::cout << "Jugada activada" << std::endl;
+                break;
+
+            case half:
+                if (clockColor->getElapsedTime().asSeconds() >= 0.1f) {
+                    for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+                        
+                }
+                break;
+
+            case inactive:
+                std::cout << "NO HAY NADA" << std::endl;
+                break;
+        }
     }
 
-    _sum_distance.x = _distance[0][0] + _distance[1][0] + _distance[2][0];
-    _sum_distance.y = _distance[0][1] + _distance[1][1] + _distance[2][1];
-
-    // Check if whe active the play
-    if ((_sum_distance.x == 3 && _sum_distance.y == 0)  ||  (_sum_distance.x == 0 && _sum_distance.y == 3)) {
-        state = active;
-    }
 
     _block1 = NULL;
     _block2 = NULL;

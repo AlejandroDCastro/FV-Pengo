@@ -487,6 +487,33 @@ ej_modulos/SnoBee.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.s
 .PHONY : ej_modulos/SnoBee.cpp.s
 
+ej_modulos/StarPlay.o: ej_modulos/StarPlay.cpp.o
+
+.PHONY : ej_modulos/StarPlay.o
+
+# target to build an object file
+ej_modulos/StarPlay.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o
+.PHONY : ej_modulos/StarPlay.cpp.o
+
+ej_modulos/StarPlay.i: ej_modulos/StarPlay.cpp.i
+
+.PHONY : ej_modulos/StarPlay.i
+
+# target to preprocess a source file
+ej_modulos/StarPlay.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.i
+.PHONY : ej_modulos/StarPlay.cpp.i
+
+ej_modulos/StarPlay.s: ej_modulos/StarPlay.cpp.s
+
+.PHONY : ej_modulos/StarPlay.s
+
+# target to generate assembly for a file
+ej_modulos/StarPlay.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.s
+.PHONY : ej_modulos/StarPlay.cpp.s
+
 ej_modulos/Swarm.o: ej_modulos/Swarm.cpp.o
 
 .PHONY : ej_modulos/Swarm.o
@@ -590,6 +617,9 @@ help:
 	@echo "... ej_modulos/SnoBee.o"
 	@echo "... ej_modulos/SnoBee.i"
 	@echo "... ej_modulos/SnoBee.s"
+	@echo "... ej_modulos/StarPlay.o"
+	@echo "... ej_modulos/StarPlay.i"
+	@echo "... ej_modulos/StarPlay.s"
 	@echo "... ej_modulos/Swarm.o"
 	@echo "... ej_modulos/Swarm.i"
 	@echo "... ej_modulos/Swarm.s"

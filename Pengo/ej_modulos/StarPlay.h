@@ -1,4 +1,6 @@
 #pragma once
+
+#include <math.h>
 #include "DiamondBlock.h"
 #include "Labyrinth.h"
 
@@ -19,5 +21,7 @@ class StarPlay {
     private:
         DiamondBlock **diamonds;
         PlayState state;
+        sf::Clock *clockColor;
+        bool used;
         
 };

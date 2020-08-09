@@ -393,6 +393,30 @@ CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o.provides: CMakeFiles/lib
 CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o
 
 
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/StarPlay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o -c /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp > CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.i
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp -o CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.s
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.requires
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.provides
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o
+
+
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o" \
@@ -408,7 +432,8 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o"
+"CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o" \
+"CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
@@ -427,9 +452,10 @@ liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -452,6 +478,7 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Swarm.c
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

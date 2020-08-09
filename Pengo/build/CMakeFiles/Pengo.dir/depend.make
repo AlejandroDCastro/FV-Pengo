@@ -14,6 +14,7 @@ CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Level.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/MazeGenerator.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/SnoBee.h
+CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/StarPlay.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../ej_modulos/Swarm.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../main.cpp
 

@@ -47,6 +47,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Level.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/MazeGenerator.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/SnoBee.h
+CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/StarPlay.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o: ../ej_modulos/Swarm.h
 
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: ../ej_modulos/Block.h
@@ -71,6 +72,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Level.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/MazeGenerator.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/SnoBee.h
+CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/StarPlay.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o: ../ej_modulos/Swarm.h
 
 CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o: ../ej_modulos/MazeGenerator.cpp
@@ -94,6 +96,13 @@ CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Labyrinth.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/Pengo.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/SnoBee.cpp
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o: ../ej_modulos/SnoBee.h
+
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/Block.h
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/DiamondBlock.h
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/IceBlock.h
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/Labyrinth.h
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/StarPlay.cpp
+CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o: ../ej_modulos/StarPlay.h
 
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Animation.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o: ../ej_modulos/Block.h

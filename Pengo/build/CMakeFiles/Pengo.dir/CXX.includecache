@@ -91,6 +91,8 @@ Labyrinth.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 MazeGenerator.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
+StarPlay.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
 iostream
@@ -115,6 +117,14 @@ Character.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 Pengo.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+math.h
+-
+DiamondBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+Labyrinth.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.h
 SFML/Graphics.hpp
