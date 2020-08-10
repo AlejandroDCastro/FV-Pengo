@@ -7,13 +7,6 @@
 
 class SnoBee : public Character {
 
-    private:
-        int direction; // 0:Up - 1:Right - 2:Down - 3:Left
-        bool isStatic;
-        bool isDead;
-        Block* bomb;
-
-
     public:
         SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~SnoBee();
@@ -22,4 +15,11 @@ class SnoBee : public Character {
         bool getFree();
         bool getDead();
         bool getSmashed();
+
+
+    private:
+        int direction; // 0:Up - 1:Right - 2:Down - 3:Left
+        bool isStatic;
+        bool isDead;
+        Block* bomb;
 };

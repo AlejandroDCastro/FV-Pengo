@@ -6,6 +6,17 @@
 
 class Character {
 
+    public:
+        Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
+        virtual ~Character();
+        virtual void Update(float ,Labyrinth* );
+        void Draw(sf::RenderWindow &);
+        sf::Vector2i getPosition();
+        sf::Sprite* getSprite();
+        bool getStunned();
+
+
+
     protected:
         float speed;
         unsigned int row;
@@ -17,14 +28,4 @@ class Character {
         bool isStunned;
         sf::Vector2i position;
         float path;
-
-
-    public:
-        Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
-        virtual ~Character();
-        virtual void Update(float ,Labyrinth* );
-        void Draw(sf::RenderWindow &);
-        sf::Vector2i getPosition();
-        sf::Sprite* getSprite();
-        bool getStunned();
 };

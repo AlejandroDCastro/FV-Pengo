@@ -1,4 +1,3 @@
-#include <iostream>
 #include "StarPlay.h"
 
 
@@ -64,18 +63,18 @@ void StarPlay::Update() {
         // Set the play state...
         switch (state) {
             case active:
-                std::cout << "Jugada activada" << std::endl;
+               /// std::cout << "Jugada activada" << std::endl;
                 break;
 
             case half:
                 if (clockColor->getElapsedTime().asSeconds() >= 0.1f) {
                     for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
-                        
+                        // El asunto ahora es como conectar los bloques del laberinto con el estado actual
                 }
                 break;
 
             case inactive:
-                std::cout << "NO HAY NADA" << std::endl;
+                //std::cout << "NO HAY NADA" << std::endl;
                 break;
         }
     }

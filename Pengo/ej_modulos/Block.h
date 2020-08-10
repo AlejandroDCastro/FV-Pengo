@@ -1,5 +1,8 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+#include "AnimationBlock.h"
+
 
 #define BLOCK_SIZE 16
 
@@ -13,6 +16,7 @@ class Block {
         float path;
         bool canCollide;
         sf::Vector2i* position;
+        AnimationBlock *animation;
 
 
     public:

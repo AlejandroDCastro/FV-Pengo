@@ -46,9 +46,8 @@ void Animation::Update(unsigned int row, unsigned int column, float deltaTime) {
         totalTime -= changeTime;
         actualCoord.x++;
 
-        if (actualCoord.x > range.y) {
+        if (actualCoord.x > range.y)
             actualCoord.x = range.x;
-        }
     }
 
     // Update uvRect...

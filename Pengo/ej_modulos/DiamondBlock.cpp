@@ -14,9 +14,11 @@ DiamondBlock::DiamondBlock(sf::Texture* texture, unsigned int x, unsigned int y)
 
 DiamondBlock::~DiamondBlock() {
     delete block;
-    block = NULL;
     delete position;
-    position = NULL;
+    delete animation;
+    block     = NULL;
+    position  = NULL;
+    animation = NULL;
 }
 
 
