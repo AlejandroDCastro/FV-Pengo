@@ -3,6 +3,9 @@
 
 
 Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
+    DiamondBlock **_diamonds;
+    int _cont = 0;
+
     isHit = false;
 
     // Build the walls and put them on screen...
@@ -29,21 +32,28 @@ Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
     topWall->setOrigin(0, 8);
     bottomWall->setPosition(0, 272);
 
-    // Reserve momory for the matrix...
+    // Reserve momory for block matrix...
     size.x = 15;  size.y = 13;
     glacier = new Block**[size.x];
     for (unsigned int i=0; i<size.x; i++)
         glacier[i] = new Block*[size.y];
+
+    // Reserve memory for diamonds blocks...
+    _diamonds = new DiamondBlock*[TOTAL_DIAMOND_BLOCK];
     
     // Put all the ice blocks as dynamic objects...
+    DiamondBlock* diamond;
     for (unsigned int i=0; i<size.x; i++)
         for (unsigned int j=0; j<size.y; j++) {
-            if (map[i][j] == 1)
+            if (map[i][j] == 1) {
                 glacier[i][j] = new IceBlock(tileset, j, i);
-            else if (map[i][j] == 2)
+            } else if (map[i][j] == 2) {
                 glacier[i][j] = new DiamondBlock(tileset, j, i);
-            else
+                diamond = dynamic_cast<DiamondBlock*>(glacier[i][j]);
+                _diamonds[_cont++] = diamond;
+            } else {
                 glacier[i][j] = NULL;
+            }
         }
 
     // Important position...
@@ -51,6 +61,9 @@ Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
         for (int j=0; j<int(size.y); j++)
             if (glacier[i][j])
                 glacier[i][j]->setPosition(sf::Vector2i(i, j));
+
+    // Create the star play of level
+    starPlay = new StarPlay(_diamonds);
 
 }
 
@@ -61,6 +74,7 @@ Labyrinth::~Labyrinth() {
     delete rightWall;
     delete topWall;
     delete bottomWall;
+    delete starPlay;
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
             if (glacier[i][j])
@@ -80,6 +94,7 @@ Labyrinth::~Labyrinth() {
     bottomWall = NULL;
     leftWall   = NULL;
     topWall    = NULL;
+    starPlay   = NULL;
     glacier    = NULL;
 }
 
@@ -113,8 +128,16 @@ void Labyrinth::Update(float deltaTime) {
                     this->pengoPush(_pos, glacier[i][j]->getDirection(), false);
                     glacier[i][j]->dontCollide();
                 }
+
+                if (starPlay->getPlayState() == active)
+                    glacier[i][j]->setActived(true);
+
                 glacier[i][j]->Update(deltaTime);
             }
+
+
+    // Check diamonds position...
+    starPlay->Update();
 
 
     // Delete the ice block falling...
@@ -229,26 +252,4 @@ sf::Vector2i Labyrinth::getFreePosition() {
     } while (!this->checkPosition(_free_position));
 
     return _free_position;
-}
-
-
-
-
-
-DiamondBlock** Labyrinth::getDiamondBlocks() {
-    DiamondBlock **_diamonds;
-    int _cont = 0;
-
-    // Reserve memory for pointers...
-    _diamonds = new DiamondBlock*[TOTAL_DIAMOND_BLOCK];
-    for (unsigned int i=0; i<size.x; i++)
-        for (unsigned int j=0; j<size.y; j++)
-            if (glacier[i][j]) {
-                if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[i][j]))
-                    _diamonds[_cont++] = diamond;
-                if (_cont == 3)
-                    break;
-            }
-
-    return _diamonds;
 }

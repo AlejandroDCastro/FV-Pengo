@@ -14,6 +14,14 @@ Animation.h
 SFML/Graphics.hpp
 -
 
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp
+AnimationBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
+SFML/Graphics.hpp
+-
+
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp
 Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
@@ -21,6 +29,8 @@ Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 SFML/Graphics.hpp
 -
+AnimationBlock.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp
 Camera.h
@@ -115,8 +125,8 @@ SFML/Graphics.hpp
 -
 IceBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
-DiamondBlock.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+StarPlay.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Level.cpp
 Level.h
@@ -131,8 +141,6 @@ Labyrinth.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 MazeGenerator.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
-StarPlay.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.cpp
 MazeGenerator.h
@@ -181,8 +189,6 @@ math.h
 -
 DiamondBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
-Labyrinth.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.cpp
 Swarm.h

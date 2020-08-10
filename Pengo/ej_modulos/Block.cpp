@@ -9,6 +9,7 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
     speed      = 250.0f;
     canCollide = false;
     position   = new sf::Vector2i(0, 0);
+    actived    = false;
     
 
     // Building ice block
@@ -107,4 +108,11 @@ sf::Vector2i Block::getNextPosition() {
 
 float Block::getPath() {
     return path;
+}
+
+
+
+
+void Block::setActived(bool actived) {
+    this->actived = actived;
 }

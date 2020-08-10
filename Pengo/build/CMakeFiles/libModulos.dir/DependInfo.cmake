@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"

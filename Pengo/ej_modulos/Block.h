@@ -9,16 +9,6 @@
 
 class Block {
 
-    protected:
-        sf::Sprite *block;
-        float speed;            // Movement speed
-        int direction;          // Displacement direction
-        float path;
-        bool canCollide;
-        sf::Vector2i* position;
-        AnimationBlock *animation;
-
-
     public:
         Block(sf::Texture* ,unsigned int ,unsigned int );
         virtual ~Block();
@@ -33,4 +23,17 @@ class Block {
         sf::Sprite* getSprite();
         sf::Vector2i getNextPosition();
         float getPath();
+        void setActived(bool );
+
+
+
+    protected:
+        sf::Sprite *block;
+        float speed;            // Movement speed
+        int direction;          // Displacement direction
+        float path;
+        bool canCollide;
+        sf::Vector2i* position;
+        AnimationBlock *animation;
+        bool actived;           // For checking if star play has been activated
 };

@@ -4,7 +4,6 @@
 #include "Swarm.h"
 #include "Labyrinth.h"
 #include "MazeGenerator.h"
-#include "StarPlay.h"
 
 
 
@@ -24,7 +23,6 @@ class Level {
         Swarm* swarm;
         Labyrinth* labyrinth;
         Pengo* pengo;
-        StarPlay* starPlay;
         sf::Clock* restartClock;
         sf::Texture *spriteSheet, *tileset;
         int **map;  // Maze structure

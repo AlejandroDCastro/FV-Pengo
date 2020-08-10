@@ -63,4 +63,11 @@ void DiamondBlock::Update(float deltaTime) {
                 break;
         }
     }
+
+
+    // Star play actived so change the block color
+    if (actived) {
+        animation->Update(3, deltaTime);
+        block->setTextureRect(animation->getUVRect());
+    }
 }

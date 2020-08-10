@@ -1,13 +1,14 @@
+#include <iostream>
 #include "StarPlay.h"
 
 
 
 
-StarPlay::StarPlay(Labyrinth *labyrinth) {
-    diamonds   = labyrinth->getDiamondBlocks();
+StarPlay::StarPlay(DiamondBlock **blocks) {
+    diamonds   = blocks;
     state      = inactive;
     used       = false;
-    clockColor = new sf::Clock();
+   // clockColor = new sf::Clock();
 }
 
 
@@ -51,7 +52,7 @@ void StarPlay::Update() {
 
         // If there are two continuous blocks
         } else if ((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0)) {
-            clockColor->restart();
+         //   clockColor->restart();
             state = half;
 
         // Inactive play...
@@ -63,23 +64,31 @@ void StarPlay::Update() {
         // Set the play state...
         switch (state) {
             case active:
-               /// std::cout << "Jugada activada" << std::endl;
+               std::cout << "Jugada activada" << std::endl;
                 break;
 
             case half:
-                if (clockColor->getElapsedTime().asSeconds() >= 0.1f) {
-                    for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+              //  if (clockColor->getElapsedTime().asSeconds() >= 0.1f) {
+                  //  for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
                         // El asunto ahora es como conectar los bloques del laberinto con el estado actual
-                }
+                //}
+                std::cout << "Se han juntado dos bloques" << std::endl;
                 break;
 
             case inactive:
-                //std::cout << "NO HAY NADA" << std::endl;
+                std::cout << "NO HAY NADA" << std::endl;
                 break;
         }
     }
 
-
     _block1 = NULL;
     _block2 = NULL;
+}
+
+
+
+
+
+PlayState StarPlay::getPlayState() {
+    return state;
 }
