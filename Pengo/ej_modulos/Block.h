@@ -23,7 +23,7 @@ class Block {
         sf::Sprite* getSprite();
         sf::Vector2i getNextPosition();
         float getPath();
-        void setActived(bool );
+        virtual void setActived(bool );
         bool getActived();
 
 

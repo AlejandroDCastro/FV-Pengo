@@ -129,8 +129,11 @@ void Labyrinth::Update(float deltaTime) {
                     glacier[i][j]->dontCollide();
                 }
 
+                // Change the block color for star play...
                 if (starPlay->getPlayState() == active  &&  !glacier[i][j]->getActived())
                     glacier[i][j]->setActived(true);
+                else if (starPlay->getPlayState() == inactive  &&  glacier[i][j]->getActived())
+                    glacier[i][j]->setActived(false);
 
                 glacier[i][j]->Update(deltaTime);
             }
@@ -252,4 +255,11 @@ sf::Vector2i Labyrinth::getFreePosition() {
     } while (!this->checkPosition(_free_position));
 
     return _free_position;
+}
+
+
+
+
+PlayState Labyrinth::getPlayState() {
+    return starPlay->getPlayState();
 }

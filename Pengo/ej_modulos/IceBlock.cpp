@@ -104,3 +104,12 @@ bool IceBlock::getBroke() {
 bool IceBlock::getBreaking() {
     return isBreaking;
 }
+
+
+
+
+void IceBlock::setActived(bool actived) {
+    this->actived = actived;
+    if (!actived)
+        block->setTextureRect(sf::IntRect(BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE));
+}

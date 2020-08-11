@@ -71,3 +71,24 @@ void DiamondBlock::Update(float deltaTime) {
         block->setTextureRect(animation->getUVRect());
     }
 }
+
+
+
+
+
+void DiamondBlock::setActived(bool actived) {
+    this->actived = actived;
+    if (!actived)
+        block->setTextureRect(sf::IntRect(BLOCK_SIZE, BLOCK_SIZE*3, BLOCK_SIZE, BLOCK_SIZE));
+}
+
+
+
+
+void DiamondBlock::setActived(bool activate) {
+    if (activate) {
+
+    } else {
+        
+    }
+}

@@ -27,7 +27,7 @@ Block::~Block() {
 
 
 
-void Block::Update(float deltaTime) {
+void Block::Update(float ) {
     
 }
 
@@ -113,8 +113,8 @@ float Block::getPath() {
 
 
 
-void Block::setActived(bool actived) {
-    this->actived = actived;
+void Block::setActived(bool ) {
+    
 }
 
 

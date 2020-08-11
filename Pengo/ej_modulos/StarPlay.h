@@ -21,7 +21,7 @@ class StarPlay {
     private:
         DiamondBlock **diamonds;
         PlayState state;
-       // sf::Clock *clockColor;
+        sf::Clock *clockColor;
         bool used;
         
 };

@@ -11,6 +11,9 @@ class DiamondBlock : public Block {
         DiamondBlock(sf::Texture* ,unsigned int ,unsigned int );
         ~DiamondBlock();
         void Update(float deltaTime);
+        void setActived(bool );
+        void activateBlock(bool );
+        
 
 
     private:

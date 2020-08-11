@@ -14,6 +14,7 @@ class AnimationBlock {
         void Update(unsigned int ,float );
         sf::IntRect getUVRect();
         sf::Vector2f getOrigin();
+        void setRange(unsigned int ,unsigned int );
 
 
 

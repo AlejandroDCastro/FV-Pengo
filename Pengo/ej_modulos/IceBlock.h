@@ -17,4 +17,5 @@ class IceBlock : public Block {
         void breakDown();
         bool getBroke();
         bool getBreaking();
+        void setActived(bool );
 };
