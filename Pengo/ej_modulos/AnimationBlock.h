@@ -9,7 +9,7 @@
 class AnimationBlock {
     
     public:
-        AnimationBlock(sf::Texture *,sf::Vector2u );
+        AnimationBlock(sf::Texture *);
         ~AnimationBlock();
         void Update(unsigned int ,float );
         sf::IntRect getUVRect();

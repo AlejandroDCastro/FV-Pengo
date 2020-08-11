@@ -82,7 +82,7 @@ void IceBlock::Update(float deltaTime) {
 
     // Star play actived so change the block color
     if (actived) {
-        animation->Update(3, deltaTime);
+        animation->Update(2, deltaTime);
         block->setTextureRect(animation->getUVRect());
     }
 }

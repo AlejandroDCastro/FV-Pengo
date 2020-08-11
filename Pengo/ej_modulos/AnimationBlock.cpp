@@ -1,16 +1,16 @@
+#include <iostream>
 #include "AnimationBlock.h"
 
 
 
 
 
-AnimationBlock::AnimationBlock(sf::Texture *texture, sf::Vector2u range) {
-    this->range    = &range;
-
-    changeTime  = 0.2f;
+AnimationBlock::AnimationBlock(sf::Texture *texture) {
+    changeTime  = 1.2f;
     totalTime   = 0.0f;
+    range       = new sf::Vector2u(2, 9);
     uvRect      = new sf::IntRect(0, 0, texture->getSize().x/14, texture->getSize().y/18);
-    actualCoord = new sf::Vector2u(0, 0);
+    actualCoord = new sf::Vector2u(range->x, 0);
 }
 
 
@@ -37,8 +37,11 @@ void AnimationBlock::Update(unsigned int row, float deltaTime) {
 
     // Check if we need to restart animation or continue
     if (totalTime >= changeTime) {
+        std::cout << "1x: " << actualCoord->x << std::endl;
         totalTime -= changeTime;
         actualCoord->x++;
+        std::cout << "2x: " << actualCoord->x << std::endl;
+        std::cout << "Rango: " << range->y << std::endl;
 
         if (actualCoord->x > range->y)
             actualCoord->x = range->x;

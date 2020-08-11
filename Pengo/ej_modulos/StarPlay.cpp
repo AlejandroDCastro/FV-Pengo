@@ -51,7 +51,7 @@ void StarPlay::Update() {
             state = active;
 
         // If there are two continuous blocks
-        } else if ((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0)) {
+        } else if (((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0))  &&  diamonds[0]->getDirection() == -1  &&  diamonds[1]->getDirection() == -1  &&  diamonds[2]->getDirection() == -1) {
          //   clockColor->restart();
             state = half;
 
@@ -59,7 +59,7 @@ void StarPlay::Update() {
         } else {
             state = inactive;
         }
-
+/*
 
         // Set the play state...
         switch (state) {
@@ -78,7 +78,7 @@ void StarPlay::Update() {
             case inactive:
                 std::cout << "NO HAY NADA" << std::endl;
                 break;
-        }
+        }*/
     }
 
     _block1 = NULL;

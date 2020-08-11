@@ -24,6 +24,7 @@ class Block {
         sf::Vector2i getNextPosition();
         float getPath();
         void setActived(bool );
+        bool getActived();
 
 
 

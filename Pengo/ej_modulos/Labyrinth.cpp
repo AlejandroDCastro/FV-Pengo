@@ -129,7 +129,7 @@ void Labyrinth::Update(float deltaTime) {
                     glacier[i][j]->dontCollide();
                 }
 
-                if (starPlay->getPlayState() == active)
+                if (starPlay->getPlayState() == active  &&  !glacier[i][j]->getActived())
                     glacier[i][j]->setActived(true);
 
                 glacier[i][j]->Update(deltaTime);

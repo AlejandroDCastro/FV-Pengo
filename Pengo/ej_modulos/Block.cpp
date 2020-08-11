@@ -14,7 +14,7 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Building ice block
     block     = new sf::Sprite(*texture);
-    animation = new AnimationBlock(texture, sf::Vector2u(1, 9));
+    animation = new AnimationBlock(texture);
     block->setOrigin(animation->getOrigin());
     block->setPosition(16+x*BLOCK_SIZE, 40+y*BLOCK_SIZE);
 }
@@ -115,4 +115,11 @@ float Block::getPath() {
 
 void Block::setActived(bool actived) {
     this->actived = actived;
+}
+
+
+
+
+bool Block::getActived() {
+    return actived;
 }
