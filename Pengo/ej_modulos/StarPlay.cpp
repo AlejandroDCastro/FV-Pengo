@@ -69,18 +69,28 @@ void StarPlay::Update() {
         // Set the play state...
         switch (state) {
             case active:
+
+                // Desacivate blocks before activating star play
+                for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+                    diamonds[i]->preActivateBlock(false);
                 if (clockColor->getElapsedTime().asSeconds() >= 5.0f) {
                     state = inactive;
                     used  = true;
                 }
-               std::cout << "Jugada activada" << std::endl;
+                std::cout << "Jugada activada" << std::endl;
                 break;
 
             case half:
                 std::cout << "Se han juntado dos bloques" << std::endl;
+                for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+                    if (!diamonds[i]->getActived())
+                        diamonds[i]->preActivateBlock(true);
                 break;
 
             case inactive:
+                for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+                    if (diamonds[i]->getActived())
+                        diamonds[i]->preActivateBlock(false);
                 std::cout << "NO HAY NADA" << std::endl;
                 break;
         }

@@ -68,3 +68,16 @@ void AnimationBlock::setRange(unsigned int x, unsigned int y) {
     range->x = x;
     range->y = y;
 }
+
+
+
+
+void AnimationBlock::setChangeTime(float changeTime) {
+    this->changeTime = changeTime;
+}
+
+
+
+void AnimationBlock::restartAnimation() {
+    actualCoord->x = range->x;      // Arreglar coordinacion diamantes-hielo
+}

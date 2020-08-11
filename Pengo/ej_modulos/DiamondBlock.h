@@ -12,8 +12,8 @@ class DiamondBlock : public Block {
         ~DiamondBlock();
         void Update(float deltaTime);
         void setActived(bool );
-        void activateBlock(bool );
-        
+        void preActivateBlock(bool );
+
 
 
     private:

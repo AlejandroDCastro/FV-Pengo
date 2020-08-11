@@ -15,6 +15,8 @@ class AnimationBlock {
         sf::IntRect getUVRect();
         sf::Vector2f getOrigin();
         void setRange(unsigned int ,unsigned int );
+        void setChangeTime(float );
+        void restartAnimation();
 
 
 

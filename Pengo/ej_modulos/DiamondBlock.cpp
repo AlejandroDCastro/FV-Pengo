@@ -76,6 +76,7 @@ void DiamondBlock::Update(float deltaTime) {
 
 
 
+// Change the color because of the star play
 void DiamondBlock::setActived(bool actived) {
     this->actived = actived;
     if (!actived)
@@ -85,10 +86,16 @@ void DiamondBlock::setActived(bool actived) {
 
 
 
-void DiamondBlock::setActived(bool activate) {
+// Pre-Activating the block color puting together two of them
+void DiamondBlock::preActivateBlock(bool activate) {
     if (activate) {
-
+        actived = true;
+        animation->setRange(1, 2);
+        animation->setChangeTime(.2f);
     } else {
-        
+        actived = false;
+        animation->setRange(2, 9);
+        animation->setChangeTime(.08f);
+        animation->restartAnimation();
     }
 }

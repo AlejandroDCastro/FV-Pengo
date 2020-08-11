@@ -107,7 +107,7 @@ bool IceBlock::getBreaking() {
 
 
 
-
+// Change the color because of the star play
 void IceBlock::setActived(bool actived) {
     this->actived = actived;
     if (!actived)
