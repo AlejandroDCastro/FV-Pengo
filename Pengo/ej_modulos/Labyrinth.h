@@ -16,7 +16,7 @@ class Labyrinth {
         void Draw(sf::RenderWindow &);
         bool checkPosition(sf::Vector2i );
         void pengoPush(sf::Vector2i ,int ,bool );
-        Block* getBlock(unsigned int, unsigned int);
+        Block* getBlock(unsigned int ,unsigned int );
         sf::Vector2i getFreePosition();
         PlayState getPlayState();
 

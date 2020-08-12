@@ -1,4 +1,3 @@
-#include <iostream>
 #include "StarPlay.h"
 
 
@@ -59,7 +58,7 @@ void StarPlay::Update() {
                     diamonds[i]->preActivateBlock(false);
 
             // If there are two continuous blocks
-            } else if ((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0)) {
+            } else if ((_distance[0][0]==0 && _distance[0][1]==1)  ||  (_distance[0][0]==1 && _distance[0][1]==0)  ||  (_distance[1][0]==0 && _distance[1][1]==1)  ||  (_distance[1][0]==1 && _distance[1][1]==0)  ||  (_distance[2][0]==0 && _distance[2][1]==1)  ||  (_distance[2][0]==1 && _distance[2][1]==0)) {
                 clockColor->restart();
                 state = half;
 
@@ -79,11 +78,9 @@ void StarPlay::Update() {
                     state = inactive;
                     used  = true;
                 }
-                std::cout << "Jugada activada" << std::endl;
                 break;
 
             case half:
-                std::cout << "Se han juntado dos bloques" << std::endl;
                 for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
                     if (!diamonds[i]->getActived())
                         diamonds[i]->preActivateBlock(true);
@@ -93,7 +90,6 @@ void StarPlay::Update() {
                 for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
                     if (diamonds[i]->getActived())
                         diamonds[i]->preActivateBlock(false);
-                std::cout << "NO HAY NADA" << std::endl;
                 break;
         }
     }
