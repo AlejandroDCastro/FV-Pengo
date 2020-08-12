@@ -48,11 +48,15 @@ void StarPlay::Update() {
         _sum_distance.y = _distance[0][1] + _distance[1][1] + _distance[2][1];
 
 
-        if (diamonds[0]->getDirection() == -1  &&  diamonds[1]->getDirection() == -1  &&  diamonds[2]->getDirection() == -1) {
+        if (diamonds[0]->getDirection() == -1  &&  diamonds[1]->getDirection() == -1  &&  diamonds[2]->getDirection() == -1  &&  state != active) {
 
             // Check if whe active the play
             if ((_sum_distance.x == 4 && _sum_distance.y == 0)  ||  (_sum_distance.x == 0 && _sum_distance.y == 4)) {
                 state = active;
+
+                // Desacivate blocks before activating star play
+                for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
+                    diamonds[i]->preActivateBlock(false);
 
             // If there are two continuous blocks
             } else if ((abs(_distance[0][0]-_distance[1][0])==1 && abs(_distance[0][1]-_distance[1][1])==0)  ||  (abs(_distance[0][0]-_distance[2][0])==1 && abs(_distance[0][1]-_distance[2][1])==0)  ||  (abs(_distance[1][0]-_distance[2][0])==1 && abs(_distance[1][1]-_distance[2][1])==0)  ||  (abs(_distance[0][1]-_distance[1][1])==1 && abs(_distance[0][0]-_distance[1][0])==0)  ||  (abs(_distance[0][1]-_distance[2][1])==1 && abs(_distance[0][0]-_distance[2][0])==0)  ||  (abs(_distance[1][1]-_distance[2][1])==1 && abs(_distance[1][0]-_distance[2][0])==0)) {
@@ -70,10 +74,8 @@ void StarPlay::Update() {
         switch (state) {
             case active:
 
-                // Desacivate blocks before activating star play
-                for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
-                    diamonds[i]->preActivateBlock(false);
-                if (clockColor->getElapsedTime().asSeconds() >= 5.0f) {
+                // Star Play duration...
+                if (clockColor->getElapsedTime().asSeconds() >= STAR_PLAY_DURATION) {
                     state = inactive;
                     used  = true;
                 }

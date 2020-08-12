@@ -5,6 +5,7 @@
 
 
 #define TOTAL_DIAMOND_BLOCK 3
+#define STAR_PLAY_DURATION  5.f
 
 
 enum PlayState { inactive, half, active };

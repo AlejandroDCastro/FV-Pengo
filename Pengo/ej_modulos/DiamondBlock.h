@@ -15,7 +15,6 @@ class DiamondBlock : public Block {
         void preActivateBlock(bool );
 
 
-
     private:
 
 };

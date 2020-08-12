@@ -117,6 +117,10 @@ void Labyrinth::Update(float deltaTime) {
             }
 
 
+    // Check diamonds position...
+    starPlay->Update();
+
+
     // Update each block...
     for (unsigned int i=0; i<size.x; i++)
         for (unsigned int j=0; j<size.y; j++)
@@ -137,10 +141,6 @@ void Labyrinth::Update(float deltaTime) {
 
                 glacier[i][j]->Update(deltaTime);
             }
-
-
-    // Check diamonds position...
-    starPlay->Update();
 
 
     // Delete the ice block falling...

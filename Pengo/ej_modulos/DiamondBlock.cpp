@@ -89,13 +89,12 @@ void DiamondBlock::setActived(bool actived) {
 // Pre-Activating the block color puting together two of them
 void DiamondBlock::preActivateBlock(bool activate) {
     if (activate) {
-        actived = true;
+        this->setActived(true);
         animation->setRange(1, 2);
         animation->setChangeTime(.2f);
     } else {
-        actived = false;
+        this->setActived(false);
         animation->setRange(2, 9);
-        animation->setChangeTime(.08f);
-        animation->restartAnimation();
+        animation->setChangeTime(.1f);
     }
 }

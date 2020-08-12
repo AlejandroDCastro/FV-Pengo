@@ -5,7 +5,7 @@
 
 
 AnimationBlock::AnimationBlock(sf::Texture *texture) {
-    changeTime  = .08f;
+    changeTime  = .1f;
     totalTime   = 0.0f;
     range       = new sf::Vector2u(2, 9);
     uvRect      = new sf::IntRect(0, 0, texture->getSize().x/14, texture->getSize().y/18);
@@ -67,6 +67,7 @@ sf::Vector2f AnimationBlock::getOrigin() {
 void AnimationBlock::setRange(unsigned int x, unsigned int y) {
     range->x = x;
     range->y = y;
+    actualCoord->x = (x == 1) ? x+1 : x;
 }
 
 
@@ -74,10 +75,4 @@ void AnimationBlock::setRange(unsigned int x, unsigned int y) {
 
 void AnimationBlock::setChangeTime(float changeTime) {
     this->changeTime = changeTime;
-}
-
-
-
-void AnimationBlock::restartAnimation() {
-    actualCoord->x = range->x;      // Arreglar coordinacion diamantes-hielo
 }
