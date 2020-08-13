@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "IceBlock.h"
 #include "StarPlay.h"
+#include "Wall.h"
 
 
 #define TOTAL_DIAMOND_BLOCK 3
@@ -23,10 +24,7 @@ class Labyrinth {
 
 
     private:
-        sf::Sprite *leftWall;
-        sf::Sprite *rightWall;
-        sf::Sprite *topWall;
-        sf::Sprite *bottomWall;
+        Wall *leftWall, *rightWall, *topWall, *bottomWall;
         bool isHit;
         Block ***glacier;             // All blocks
         sf::Vector2u size;

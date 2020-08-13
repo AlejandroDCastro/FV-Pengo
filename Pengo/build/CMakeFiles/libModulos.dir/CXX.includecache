@@ -127,6 +127,8 @@ IceBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 StarPlay.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+Wall.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Level.cpp
 Level.h
@@ -179,8 +181,6 @@ Pengo.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp
-iostream
--
 StarPlay.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
 
@@ -205,4 +205,12 @@ Pengo.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
 Collision.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.cpp
+Wall.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
+SFML/Graphics.hpp
+-
 

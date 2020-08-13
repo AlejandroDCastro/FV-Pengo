@@ -7,7 +7,7 @@ StarPlay::StarPlay(DiamondBlock **blocks) {
     diamonds   = blocks;
     state      = inactive;
     used       = false;
-    clockColor = new sf::Clock();
+    colorClock = new sf::Clock();
 }
 
 
@@ -17,8 +17,8 @@ StarPlay::~StarPlay() {
     for (unsigned int i=0; i<TOTAL_DIAMOND_BLOCK; i++)
         diamonds[i] = NULL;
     delete[] diamonds;
-    delete clockColor;
-    clockColor = NULL;
+    delete colorClock;
+    colorClock = NULL;
 }
 
 
@@ -59,7 +59,7 @@ void StarPlay::Update() {
 
             // If there are two continuous blocks
             } else if ((_distance[0][0]==0 && _distance[0][1]==1)  ||  (_distance[0][0]==1 && _distance[0][1]==0)  ||  (_distance[1][0]==0 && _distance[1][1]==1)  ||  (_distance[1][0]==1 && _distance[1][1]==0)  ||  (_distance[2][0]==0 && _distance[2][1]==1)  ||  (_distance[2][0]==1 && _distance[2][1]==0)) {
-                clockColor->restart();
+                colorClock->restart();
                 state = half;
 
             // Inactive play...
@@ -74,7 +74,7 @@ void StarPlay::Update() {
             case active:
 
                 // Star Play duration...
-                if (clockColor->getElapsedTime().asSeconds() >= STAR_PLAY_DURATION) {
+                if (colorClock->getElapsedTime().asSeconds() >= STAR_PLAY_DURATION) {
                     state = inactive;
                     used  = true;
                 }

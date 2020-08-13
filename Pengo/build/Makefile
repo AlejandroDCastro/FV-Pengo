@@ -568,6 +568,33 @@ ej_modulos/Swarm.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.s
 .PHONY : ej_modulos/Swarm.cpp.s
 
+ej_modulos/Wall.o: ej_modulos/Wall.cpp.o
+
+.PHONY : ej_modulos/Wall.o
+
+# target to build an object file
+ej_modulos/Wall.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o
+.PHONY : ej_modulos/Wall.cpp.o
+
+ej_modulos/Wall.i: ej_modulos/Wall.cpp.i
+
+.PHONY : ej_modulos/Wall.i
+
+# target to preprocess a source file
+ej_modulos/Wall.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.i
+.PHONY : ej_modulos/Wall.cpp.i
+
+ej_modulos/Wall.s: ej_modulos/Wall.cpp.s
+
+.PHONY : ej_modulos/Wall.s
+
+# target to generate assembly for a file
+ej_modulos/Wall.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.s
+.PHONY : ej_modulos/Wall.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -653,6 +680,9 @@ help:
 	@echo "... ej_modulos/Swarm.o"
 	@echo "... ej_modulos/Swarm.i"
 	@echo "... ej_modulos/Swarm.s"
+	@echo "... ej_modulos/Wall.o"
+	@echo "... ej_modulos/Wall.i"
+	@echo "... ej_modulos/Wall.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

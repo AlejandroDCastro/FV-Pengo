@@ -9,30 +9,12 @@ Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
     isHit = false;
 
     // Build the walls and put them on screen...
-    leftWall   = new sf::Sprite(*tileset);
-    rightWall  = new sf::Sprite(*tileset);
-    topWall    = new sf::Sprite(*tileset);
-    bottomWall = new sf::Sprite(*tileset);
-    
-    // Set the texture for each wall
-    leftWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
-    rightWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
-    topWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
-    bottomWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
+    leftWall   = new Wall(tileset, 3);
+    rightWall  = new Wall(tileset, 1);
+    topWall    = new Wall(tileset, 0);
+    bottomWall = new Wall(tileset, 2);
 
-    // Set their positions
-    leftWall->setPosition(0, 24);
-    leftWall->setOrigin(4, 0);
-    leftWall->setScale(-1, 1);
-    leftWall->setOrigin(8, 0);
-    rightWall->setPosition(216, 24);
-    topWall->setPosition(0, 24);
-    topWall->setOrigin(0, 4);
-    topWall->setScale(1, -1);
-    topWall->setOrigin(0, 8);
-    bottomWall->setPosition(0, 272);
-
-    // Reserve momory for block matrix...
+    // Reserve memory for block matrix...
     size.x = 15;  size.y = 13;
     glacier = new Block**[size.x];
     for (unsigned int i=0; i<size.x; i++)
@@ -102,6 +84,17 @@ Labyrinth::~Labyrinth() {
 
 void Labyrinth::Update(float deltaTime) {
 
+    // Check diamonds position...
+    starPlay->Update();
+
+
+    // Update all walls
+    leftWall->Update();
+    rightWall->Update();
+    topWall->Update();
+    bottomWall->Update();
+    
+
     // Update the position for each block...
     for (int i=0; i<int(size.x); i++)
         for (int j=0; j<int(size.y); j++)
@@ -115,10 +108,6 @@ void Labyrinth::Update(float deltaTime) {
                 }
                 
             }
-
-
-    // Check diamonds position...
-    starPlay->Update();
 
 
     // Update each block...
@@ -161,10 +150,10 @@ void Labyrinth::Update(float deltaTime) {
 
 
 void Labyrinth::Draw(sf::RenderWindow &window) {
-    window.draw(*leftWall);
-    window.draw(*rightWall);
-    window.draw(*topWall);
-    window.draw(*bottomWall);
+    leftWall->Draw(window);
+    bottomWall->Draw(window);
+    rightWall->Draw(window);
+    topWall->Draw(window);
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
             if (glacier[i][j])
@@ -203,35 +192,48 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
     int _x = position.x, _y = position.y;
 
     // Check a block position...
-    if (!this->checkPosition(position)  &&  _x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
-        sf::Vector2i _next_position = position;
+    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
+        if (!this->checkPosition(position)) {
+            sf::Vector2i _next_position = position;
 
-        // Calculate the following position from block...
-        if (direction == 0)
-            _next_position.x--;
-        else if (direction == 1)
-            _next_position.y++;
-        else if (direction == 2)
-            _next_position.x++;
-        else if (direction == 3)
-            _next_position.y--;
+            // Calculate the following position from block...
+            if (direction == 0)
+                _next_position.x--;
+            else if (direction == 1)
+                _next_position.y++;
+            else if (direction == 2)
+                _next_position.x++;
+            else if (direction == 3)
+                _next_position.y--;
 
-        // Move the block or break it if cotains ice or dont break it if contains diamond...
-        if (this->checkPosition(_next_position)) {
-            glacier[_x][_y]->setDirection(direction);
-        } else {
-            if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
-                if (breakIt) {
-                    ice->breakDown();
-                    icicles.push_back(glacier[_x][_y]);
-                    glacier[_x][_y] = NULL;
-                } else {
+            // Move the block or break it if cotains ice or dont break it if contains diamond...
+            if (this->checkPosition(_next_position)) {
+                glacier[_x][_y]->setDirection(direction);
+            } else {
+                if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
+                    if (breakIt) {
+                        ice->breakDown();
+                        icicles.push_back(glacier[_x][_y]);
+                        glacier[_x][_y] = NULL;
+                    } else {
+                        glacier[_x][_y]->setDirection(-1);
+                    }
+                } else { // Its a diamond block
                     glacier[_x][_y]->setDirection(-1);
                 }
-            } else { // Its a diamond block
-                glacier[_x][_y]->setDirection(-1);
             }
         }
+
+    } else { // Push a wall...
+
+        if (_x < 0  &&  !topWall->getReeling())
+            topWall->setReeling(true);
+        else if (_y < 0  &&  !leftWall->getReeling())
+            leftWall->setReeling(true);
+        else if (_x >= int(size.x)  &&  !bottomWall->getReeling())
+            bottomWall->setReeling(true);
+        else if (_y >= int(size.y)  &&  !rightWall->getReeling())
+            rightWall->setReeling(true);
     }
 }
 

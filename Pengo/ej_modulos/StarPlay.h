@@ -10,6 +10,7 @@
 
 enum PlayState { inactive, half, active };
 
+
 class StarPlay {
 
     public:
@@ -22,7 +23,7 @@ class StarPlay {
     private:
         DiamondBlock **diamonds;
         PlayState state;
-        sf::Clock *clockColor;
+        sf::Clock *colorClock;
         bool used;
         
 };

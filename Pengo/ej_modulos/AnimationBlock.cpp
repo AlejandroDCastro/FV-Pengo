@@ -67,8 +67,7 @@ sf::Vector2f AnimationBlock::getOrigin() {
 void AnimationBlock::setRange(unsigned int x, unsigned int y) {
     range->x = x;
     range->y = y;
-    //actualCoord->x = (x == 1) ? x+1 : x;
-    actualCoord->x = x;
+    actualCoord->x = (x == 1) ? x+1 : x;
 }
 
 
@@ -76,4 +75,5 @@ void AnimationBlock::setRange(unsigned int x, unsigned int y) {
 
 void AnimationBlock::setChangeTime(float changeTime) {
     this->changeTime = changeTime;
+    totalTime = 0;
 }
