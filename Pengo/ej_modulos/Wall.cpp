@@ -57,6 +57,7 @@ Wall::~Wall() {
 
 void Wall::Update() {
     sf::IntRect _rectangle = sprite->getTextureRect();
+    sf::Vector2f _scale    = sprite->getScale();
 
     if (isReeling) {
         totalTime += reelingClock->getElapsedTime().asSeconds();
@@ -68,11 +69,12 @@ void Wall::Update() {
         }
 
         // Set orientation to give a sensation of movement
-        if (reelingClock->getElapsedTime().asSeconds() >= .2f) {
+        if (reelingClock->getElapsedTime().asSeconds() >= 0.2f) {
             if (_rectangle.top == 16)
-                sprite->setScale(-1, 1);
+                sprite->setScale(_scale.x*(-1), _scale.y);
             else
-                sprite->setScale(1, -1);
+                sprite->setScale(_scale.x, _scale.y*(-1));
+            reelingClock->restart();
         }
     }
 }
