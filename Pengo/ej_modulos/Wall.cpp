@@ -12,32 +12,28 @@ Wall::Wall(sf::Texture *texture, int side) {
     switch (side) {
         case 0:
             sprite->setTextureRect(sf::IntRect(0, 8, 224, 8));
-            sprite->setPosition(0, 24);
+            sprite->setPosition(0, 28);
             sprite->setOrigin(0, 4);
             sprite->setScale(1, -1);
-            sprite->setOrigin(0, 8);
-        //    sprite->setTextureRect(sf::IntRect(0, 0, 224, 8));
             break;
 
         case 1:
             sprite->setTextureRect(sf::IntRect(8, 16, 8, 256));
-            sprite->setPosition(216, 24);
-        //    sprite->setTextureRect(sf::IntRect(0, 16, 8, 256));
+            sprite->setPosition(220, 24);
+            sprite->setOrigin(4, 0);
             break;
 
         case 2:
             sprite->setTextureRect(sf::IntRect(0, 8, 224, 8));
-            sprite->setPosition(0, 272);
-        //    sprite->setTextureRect(sf::IntRect(0, 0, 224, 8));
+            sprite->setPosition(0, 276);
+            sprite->setOrigin(0, 4);
             break;
         
         default:
             sprite->setTextureRect(sf::IntRect(8, 16, 8, 256));
-            sprite->setPosition(0, 24);
+            sprite->setPosition(4, 28);
             sprite->setOrigin(4, 0);
             sprite->setScale(-1, 1);
-            sprite->setOrigin(8, 0);
-        //    sprite->setTextureRect(sf::IntRect(0, 16, 8, 256));
             break;
     }
 }
@@ -69,7 +65,7 @@ void Wall::Update() {
         }
 
         // Set orientation to give a sensation of movement
-        if (reelingClock->getElapsedTime().asSeconds() >= 0.2f) {
+        if (reelingClock->getElapsedTime().asSeconds() >= WALL_REELING_CHANGE) {
             if (_rectangle.top == 16)
                 sprite->setScale(_scale.x*(-1), _scale.y);
             else

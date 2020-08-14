@@ -8,9 +8,9 @@
 class SnoBee : public Character {
 
     public:
-        SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
+        SnoBee(sf::Texture *,float ,float ,sf::Vector2u ,sf::Vector2i );
         ~SnoBee();
-        void Update(float ,Labyrinth* );
+        void Update(float ,Labyrinth *,Pengo *);
         void collideBlock(Block* );
         bool getFree();
         bool getDead();
@@ -21,5 +21,6 @@ class SnoBee : public Character {
         int direction; // 0:Up - 1:Right - 2:Down - 3:Left
         bool isStatic;
         bool isDead;
-        Block* bomb;
+        Block *bomb;
+        Pengo *pengo;
 };

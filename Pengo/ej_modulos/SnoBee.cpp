@@ -5,10 +5,10 @@
 SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
 
   //  this->pengo = pengo;
-    direction = 2;
-    isStatic  = false;
-    bomb      = NULL;
-    isDead    = false;
+    direction   = 2;
+    isStatic    = false;
+    bomb        = NULL;
+    isDead      = false;
 }
 
 
@@ -16,20 +16,98 @@ SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u
 
 SnoBee::~SnoBee() {
     delete animation;
-    animation = NULL;
     delete body;
-    body = NULL;
-    bomb = NULL;
+    animation = NULL;
+    body      = NULL;
+    bomb      = NULL;
+    pengo     = NULL;
 }
 
 
 
 
 // IA SnoBees...
-void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
+void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
     std::vector<sf::Vector2i> _movement;
     std::vector<int> _orientation;
     int _index = -1, _random;
+
+/*
+    // Check avaliable positions
+    if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
+
+        if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
+            _movement.push_back(sf::Vector2i(position.x-1, position.y));
+            _orientation.push_back(0);
+        }
+        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y+1))) {
+            _movement.push_back(sf::Vector2i(position.x, position.y+1));
+            _orientation.push_back(1);
+        }
+        if (labyrinth->checkPosition(sf::Vector2i(position.x+1, position.y))) {
+            _movement.push_back(sf::Vector2i(position.x+1, position.y));
+            _orientation.push_back(2);
+        }
+        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y-1))) {
+            _movement.push_back(sf::Vector2i(position.x, position.y-1));
+            _orientation.push_back(3);
+        }
+
+        if (_movement.size() > 0) {
+            
+            // Follow your way...
+            for (unsigned int i=0; i<_orientation.size(); i++) {
+                if (direction == _orientation[i]) {
+                    _index = int(i);
+                    position = _movement[i];
+                }
+            }
+
+            // Turn to one direction...
+            if (_index > -1) {
+                isStatic  = false;
+                isWalking = true;
+            } else {
+                _random = rand()%_movement.size();
+                _index = _random;
+
+                direction = _orientation[_index];
+                switch (_orientation[_index]) {
+                    case 0:
+                        column = 4;
+                        break;
+                    case 1:
+                        column = 6;
+                        break;
+                    case 2:
+                        column = 0;
+                        break;
+                    case 3:
+                        column = 2;
+                        break;
+                }
+
+                isStatic  = true;
+                isWalking = false;
+            }
+
+            _orientation.clear();
+            _movement.clear();
+        }
+
+    }
+*/
+
+    // Primero calculamos la posicion de pengo, luego del entorno que lo rodea: Lo hacemos viendo en cual de los dos ejes x/y esta mas cerca, a partir de este punto ya decidiremos aleatoriamente, en que direccion tiene que ir, teniendo en cuenta las probabilidades de cada direccio:
+    /**
+     * 1. Si el camino esta totalmente bloqueado (muuro o bloque de diamante), estara obligado a cambiar de direccion.
+     * 2. Probabilidad 1: Direccion a la estaba orientado
+     * 3. Probabilidad 2: Direccion en el eje mas corta
+     * 4. Probabilidad 3: Direccion en el eje mas larga
+     * 5. Probabilidad 4: Las otras direcciones
+     * 6. Si en algun punto se interpone algun bloque de hielo, el snobee lo destruye
+     * 7. Quizas en las probabilidades 2, 3 y 4, se aumente levemente al no tener un bloque de hielo delante
+     */
 
     // Check avaliable positions
     if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
@@ -94,6 +172,7 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
         }
 
     }
+
 
 
     // Move SnoBee

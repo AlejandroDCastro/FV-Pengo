@@ -10,7 +10,7 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
         do {
             _position = labyrinth->getFreePosition();
         } while (_position.x == 6  &&  _position.y == 6);
-        snobees.push_back(new SnoBee(texture, 45.0f, 0.2f, sf::Vector2u(0, 2), _position));
+        snobees.push_back(new SnoBee(texture, 57.5f, 0.15f, sf::Vector2u(0, 2), _position));
     }
 
     this->texture = texture;
@@ -32,13 +32,13 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
 
     for (SnoBee* snobee : snobees) {
         if (snobee  &&  !snobee->getDead()) {
-            snobee->Update(deltaTime, labyrinth);
+            snobee->Update(deltaTime, labyrinth, pengo);
 
             if (snobee->getSmashed()) {
 
                 // If SnoBee get dead add other one on a free position
                 if (snobee->getDead()  &&  snobees.size() < TOTAL_SNOWBEES)
-                    snobees.push_back(new SnoBee(texture, 45.0f, 0.2f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                    snobees.push_back(new SnoBee(texture, 57.5f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
 
             } else {
 

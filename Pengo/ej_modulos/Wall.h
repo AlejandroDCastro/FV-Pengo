@@ -3,7 +3,8 @@
 #include <SFML/Graphics.hpp>
 
 
-#define WALL_REELING_DURATION 5.0f
+#define WALL_REELING_DURATION 2.0f
+#define WALL_REELING_CHANGE   0.15f
 
 
 class Wall {

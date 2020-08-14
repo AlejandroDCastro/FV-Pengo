@@ -5,7 +5,7 @@
 Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
 
     lifes         = 3;
-    deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
+    deadAnimation = new Animation(texture, coordPj, 0.13f, 2);
     isBlocked     = false;
     push          = false;
     godMode       = false;
