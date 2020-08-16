@@ -32,7 +32,6 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
     std::vector<int> _orientation;
     int _index = -1, _random;
 
-/*
     // Check avaliable positions
     if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
 
@@ -96,84 +95,51 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
         }
 
     }
-*/
+
 
     // Primero calculamos la posicion de pengo, luego del entorno que lo rodea: Lo hacemos viendo en cual de los dos ejes x/y esta mas cerca, a partir de este punto ya decidiremos aleatoriamente, en que direccion tiene que ir, teniendo en cuenta las probabilidades de cada direccio:
     /**
      * 1. Si el camino esta totalmente bloqueado (muuro o bloque de diamante), estara obligado a cambiar de direccion.
-     * 2. Probabilidad 1: Direccion a la estaba orientado
-     * 3. Probabilidad 2: Direccion en el eje mas corta
-     * 4. Probabilidad 3: Direccion en el eje mas larga
+     * 2. Probabilidad 1: Direccion a la estaba orientado 3
+     * 3. Probabilidad 2: Direccion en el eje mas larga 3
+     * 4. Probabilidad 3: Direccion en el eje mas corta 2
      * 5. Probabilidad 4: Las otras direcciones
      * 6. Si en algun punto se interpone algun bloque de hielo, el snobee lo destruye
      * 7. Quizas en las probabilidades 2, 3 y 4, se aumente levemente al no tener un bloque de hielo delante
      */
-
-    // Check avaliable positions
-    if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
-
-        if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
-            _movement.push_back(sf::Vector2i(position.x-1, position.y));
-            _orientation.push_back(0);
-        }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y+1))) {
-            _movement.push_back(sf::Vector2i(position.x, position.y+1));
-            _orientation.push_back(1);
-        }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x+1, position.y))) {
-            _movement.push_back(sf::Vector2i(position.x+1, position.y));
-            _orientation.push_back(2);
-        }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y-1))) {
-            _movement.push_back(sf::Vector2i(position.x, position.y-1));
-            _orientation.push_back(3);
-        }
-
-        if (_movement.size() > 0) {
-            
-            // Follow your way...
-            for (unsigned int i=0; i<_orientation.size(); i++) {
-                if (direction == _orientation[i]) {
-                    _index = int(i);
-                    position = _movement[i];
-                }
-            }
-
-            // Turn to one direction...
-            if (_index > -1) {
-                isStatic  = false;
-                isWalking = true;
-            } else {
-                _random = rand()%_movement.size();
-                _index = _random;
-
-                direction = _orientation[_index];
-                switch (_orientation[_index]) {
-                    case 0:
-                        column = 4;
-                        break;
-                    case 1:
-                        column = 6;
-                        break;
-                    case 2:
-                        column = 0;
-                        break;
-                    case 3:
-                        column = 2;
-                        break;
-                }
-
-                isStatic  = true;
-                isWalking = false;
-            }
-
-            _orientation.clear();
-            _movement.clear();
-        }
-
-    }
+/*
+    int _probabilities[10], _direction, _counter = 0, _probability;
+    sf::Vector2i _distance;
 
 
+    // Oriented position
+    _direction = direction;
+    for (unsigned int i=0; i<HIGH_PROBABILITY; i++)
+        _probabilities[_counter++] = _direction;
+
+
+    // Calculate distance with Pengo
+    _distance.x = pengo->getPosition().x-position.x;
+    _distance.y = pengo->getPosition().y-position.y;
+
+    // Set direction until Pengo with the long distance
+    if (abs(_distance.x) > abs(_distance.y))
+        _direction = (_distance.x > 0) ? 2 : 0;
+    else
+        _direction = (_distance.y > 0) ? 1 : 3;
+    for (unsigned int i=0; i<HIGH_PROBABILITY; i++)
+        _probabilities[_counter++] = _direction;
+
+
+    if (_direction == 0  ||  _direction == 2)
+        _direction = (_distance.y > 0) ? 1 : 3;
+    else
+        _direction = (_distance.x > 0) ? 2 : 0;
+    for (unsigned int i=0; i<MEDIUM_PROBABILITY; i++)
+        _probabilities[_counter++] = _direction;
+
+    if (_probabilities[_counter-MEDIUM_PROBABILITY] == )
+*/
 
     // Move SnoBee
     if (isStatic  ||  isWalking) {
