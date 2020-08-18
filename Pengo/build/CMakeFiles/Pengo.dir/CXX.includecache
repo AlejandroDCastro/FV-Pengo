@@ -119,6 +119,10 @@ Character.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
 SFML/Graphics.hpp
 -
+stdlib.h
+-
+time.h
+-
 Character.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
 Pengo.h

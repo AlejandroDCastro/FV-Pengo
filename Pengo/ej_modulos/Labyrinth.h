@@ -20,6 +20,7 @@ class Labyrinth {
         Block* getBlock(unsigned int ,unsigned int );
         sf::Vector2i getFreePosition();
         PlayState getPlayState();
+        bool checkLimit(sf::Vector2i );
 
 
 

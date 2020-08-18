@@ -6,7 +6,7 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
     sf::Vector2i _position;
 
     // Create swarm with all SnoBees
-    for (int i=0; i<PLAY_SNOBEES; i++) {
+    for (int i=0; i<1; i++) {
         do {
             _position = labyrinth->getFreePosition();
         } while (_position.x == 6  &&  _position.y == 6);

@@ -1,12 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <stdlib.h>
+#include <time.h>
 #include "Character.h"
 #include "Pengo.h"
 
 
 #define TRAVEL_DISTANCE_OF_BLOCK 16.f
-#define HIGH_PROBABILITY         3
-#define MEDIUM_PROBABILITY       2
+#define HIGH_PROBABILITY         4
+#define MEDIUM_PROBABILITY       3
+#define LOW_PROBABILITY          2
 
 
 

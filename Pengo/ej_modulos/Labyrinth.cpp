@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Labyrinth.h"
 
 
@@ -192,7 +193,7 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
     int _x = position.x, _y = position.y;
 
     // Check a block position...
-    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
+    if (this->checkLimit(position)) {
         if (!this->checkPosition(position)) {
             sf::Vector2i _next_position = position;
 
@@ -264,4 +265,15 @@ sf::Vector2i Labyrinth::getFreePosition() {
 
 PlayState Labyrinth::getPlayState() {
     return starPlay->getPlayState();
+}
+
+
+
+
+// True --> avaliable position
+bool Labyrinth::checkLimit(sf::Vector2i position) {
+    if (position.x >= 0  &&  position.y >= 0  &&  position.x < int(size.x)  &&  position.y < int(size.y))
+        return true;
+    else
+        return false;
 }
