@@ -13,10 +13,11 @@ class Labyrinth {
     public:
         Labyrinth(sf::Texture *,int **);
         ~Labyrinth();
-        void Update(float deltaTime);
+        void Update(float );
         void Draw(sf::RenderWindow &);
         bool checkPosition(sf::Vector2i );
         void pengoPush(sf::Vector2i ,int ,bool );
+        bool snobeePush(sf::Vector2i );
         Block* getBlock(unsigned int ,unsigned int );
         sf::Vector2i getFreePosition();
         PlayState getPlayState();

@@ -3,6 +3,7 @@
 
 
 
+
 SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
 
   //  this->pengo = pengo;
@@ -110,9 +111,9 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
      * 7. Quizas en las probabilidades 2, 3 y 4, se aumente levemente al no tener un bloque de hielo delante
      */
 
-    int _probabilities[10], _aux_direction, _counter = 0, _probability, _short_direction, _index = -1;
-    sf::Vector2i _distance;
-    std::vector<int> _directions;    // Avaliable directions
+    int _probabilities[10], _aux_direction, _counter = 0, _short_direction, _index = -1, _new_direction;
+    sf::Vector2i _distance, _aux_position = position;
+    std::vector<int> _directions; // Avaliable directions
 
 
     // Check avaliable positions
@@ -168,63 +169,48 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
 
             
             // Choose a direction
-            _index = rand()%10;
+            _index         = rand()%10;
+            _new_direction = _probabilities[_index];
 
 
         } else {    // SnoBee reaches a Wall and set direction randomly
 
-            _index = rand()%_directions.size();
-
+            _index         = rand()%_directions.size();
+            _new_direction = _directions[_index];
+            std::cout << "Nueva dir: " << _new_direction << std::endl;
+            for (unsigned int i=0; i<_directions.size(); i++)
+                std::cout << _directions[i] << " ";
+            std::cout << std::endl;
         }
 
 
         // If gets a new direction only stay static and change direction
-        if (direction == _probabilities[_index]) {
+        if (direction == _new_direction) {
             isStatic  = false;
             isWalking = true;
 
             // Save new position
-            switch (direction) {
-                case 0:
-                    position.x--;
-                    break;
-                case 1:
-                    position.y++;
-                    break;
-                case 2:
-                    position.x++;
-                    break;
-                case 3:
-                    position.y--;
-                    break;
-            }
+            this->setPosition(direction);
 
         } else {
-
             isStatic  = true;
             isWalking = false;
 
-            direction = _probabilities[_index];
-            switch (direction) {
-                case 0:
-                    column = 4;
-                    break;
-                case 1:
-                    column = 6;
-                    break;
-                case 2:
-                    column = 0;
-                    break;
-                case 3:
-                    column = 2;
-                    break;
-            }
+            direction = _new_direction;
+            this->setOrientation(direction);
         }
 
 
-        std::cout << "Direccion: " << direction << std::endl;
-
-
+        // Break an ice block by the way of SnoBee
+        if (labyrinth->snobeePush(position)) {
+            row   = 2;
+            speed = 28.25f;
+        } else {
+            row   = 1;
+            speed = 57.5f;
+        }
+        
+        
         _directions.clear();
     }
 
@@ -361,4 +347,46 @@ bool SnoBee::getSmashed() {
         return true;
     else
         return false;
+}
+
+
+
+
+
+void SnoBee::setOrientation(int dir) {
+    switch (dir) {
+        case 0:
+            column = 4;
+            break;
+        case 1:
+            column = 6;
+            break;
+        case 2:
+            column = 0;
+            break;
+        case 3:
+            column = 2;
+            break;
+    }
+}
+
+
+
+
+
+void SnoBee::setPosition(int dir) {
+    switch (dir) {
+        case 0:
+            position.x--;
+            break;
+        case 1:
+            position.y++;
+            break;
+        case 2:
+            position.x++;
+            break;
+        case 3:
+            position.y--;
+            break;
+    }
 }

@@ -23,6 +23,8 @@ class SnoBee : public Character {
         bool getFree();
         bool getDead();
         bool getSmashed();
+        void setOrientation(int );
+        void setPosition(int );
 
 
     private:

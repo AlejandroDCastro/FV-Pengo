@@ -241,6 +241,25 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 
 
 
+// Return if can break the block
+bool Labyrinth::snobeePush(sf::Vector2i position) {
+    int _x = position.x, _y = position.y;
+    bool _breakIt = true;
+
+    if (this->checkPosition(position)  &&  glacier[_x][_y])
+        if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
+            ice->breakDown();
+            icicles.push_back(glacier[_x][_y]);
+            glacier[_x][_y] = NULL;
+        } else {
+            _breakIt = false;
+        }
+}
+
+
+
+
+
 Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
     return glacier[x][y];
 }
