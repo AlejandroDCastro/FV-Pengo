@@ -1,4 +1,3 @@
-#include <iostream>
 #include "SnoBee.h"
 
 
@@ -177,10 +176,7 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
 
             _index         = rand()%_directions.size();
             _new_direction = _directions[_index];
-            std::cout << "Nueva dir: " << _new_direction << std::endl;
-            for (unsigned int i=0; i<_directions.size(); i++)
-                std::cout << _directions[i] << " ";
-            std::cout << std::endl;
+
         }
 
 
@@ -204,10 +200,15 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
         // Break an ice block by the way of SnoBee
         if (labyrinth->snobeePush(position)) {
             row   = 2;
-            speed = 28.25f;
+            speed = 15.f;
         } else {
             row   = 1;
-            speed = 57.5f;
+            speed = 60.f;
+            if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(labyrinth->getBlock(position.x, position.y))) {
+                position  = _aux_position;
+                isWalking = false;
+                isStatic  = true;
+            }
         }
         
         
@@ -216,10 +217,10 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
 
 
 
-    // Move SnoBee
+    // Move SnoBee...
     if (isStatic  ||  isWalking) {
 
-        // Sno-Bee displacement
+        // Sno-Bee displacement...
         float _displacement = speed*deltaTime;
 
         // Calculate the displacement...

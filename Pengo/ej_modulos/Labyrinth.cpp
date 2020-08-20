@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Labyrinth.h"
 
 
@@ -244,16 +243,17 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 // Return if can break the block
 bool Labyrinth::snobeePush(sf::Vector2i position) {
     int _x = position.x, _y = position.y;
-    bool _breakIt = true;
+    bool _breakIt = false;
 
-    if (this->checkPosition(position)  &&  glacier[_x][_y])
+    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)  &&  glacier[_x][_y])
         if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
             ice->breakDown();
             icicles.push_back(glacier[_x][_y]);
             glacier[_x][_y] = NULL;
-        } else {
-            _breakIt = false;
+            _breakIt = true;
         }
+
+    return _breakIt;
 }
 
 
@@ -291,8 +291,12 @@ PlayState Labyrinth::getPlayState() {
 
 // True --> avaliable position
 bool Labyrinth::checkLimit(sf::Vector2i position) {
-    if (position.x >= 0  &&  position.y >= 0  &&  position.x < int(size.x)  &&  position.y < int(size.y))
-        return true;
-    else
-        return false;
+    bool _avaliable = true;
+
+    if (position.x < 0  ||  position.y < 0  ||  position.x >= int(size.x)  ||  position.y >= int(size.y))
+        _avaliable = false;
+    else if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[position.x][position.y]))
+        _avaliable = false;
+
+    return _avaliable;
 }

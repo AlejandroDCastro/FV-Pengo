@@ -32,7 +32,7 @@ Game::Game() {
     window                = new sf::RenderWindow(sf::VideoMode(610.f, 506.f), "MSX-Pengo FV");
     camera                = new Camera();
     restartLevelClock     = new sf::Clock();
-    pengo                 = new Pengo(&spriteSheet, 57.5f, 0.15f, sf::Vector2u(0,0), sf::Vector2i(6,6));
+    pengo                 = new Pengo(&spriteSheet, 60.f, 0.13f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     currentLevel          = 0;
     level                 = NULL;
     state                 = change;

@@ -6,7 +6,7 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
     sf::Vector2i _position;
 
     // Create swarm with all SnoBees
-    for (int i=0; i<1; i++) {
+    for (int i=0; i<4; i++) {
         do {
             _position = labyrinth->getFreePosition();
         } while (_position.x == 6  &&  _position.y == 6);
@@ -38,7 +38,7 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
 
                 // If SnoBee get dead add other one on a free position
                 if (snobee->getDead()  &&  snobees.size() < TOTAL_SNOWBEES)
-                    snobees.push_back(new SnoBee(texture, 57.5f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                    snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
 
             } else {
 
