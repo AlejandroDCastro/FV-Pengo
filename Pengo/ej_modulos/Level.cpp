@@ -50,9 +50,9 @@ void Level::Update(float deltaTime) {
 
 
 void Level::Draw(sf::RenderWindow &window) {
-    pengo->Draw(window);
     labyrinth->Draw(window);
     swarm->Draw(window);
+    pengo->Draw(window);
 }
 
 

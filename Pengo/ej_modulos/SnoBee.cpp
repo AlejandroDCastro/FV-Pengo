@@ -30,7 +30,7 @@ SnoBee::~SnoBee() {
 
 // IA SnoBees...
 void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
-/*    std::vector<sf::Vector2i> _movement;
+ /*   std::vector<sf::Vector2i> _movement;
     std::vector<int> _orientation;
     int _index = -1, _random;
 
@@ -96,8 +96,8 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
             _movement.clear();
         }
 
-    }*/
-
+    }
+*/
 
     // Primero calculamos la posicion de pengo, luego del entorno que lo rodea: Lo hacemos viendo en cual de los dos ejes x/y esta mas cerca, a partir de este punto ya decidiremos aleatoriamente, en que direccion tiene que ir, teniendo en cuenta las probabilidades de cada direccio:
     /**
@@ -111,7 +111,7 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
      */
 
     int _probabilities[10], _aux_direction, _counter = 0, _short_direction, _index = -1, _new_direction;
-    sf::Vector2i _distance, _aux_position = position;
+    sf::Vector2i _distance;
     std::vector<int> _directions; // Avaliable directions
 
 
@@ -204,11 +204,11 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
         } else {
             row   = 1;
             speed = 60.f;
-            if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(labyrinth->getBlock(position.x, position.y))) {
-                position  = _aux_position;
-                isWalking = false;
-                isStatic  = true;
-            }
+        //    if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(labyrinth->getBlock(position.x, position.y))) {
+          //      position  = _aux_position;
+          //      isWalking = false;
+            //    isStatic  = true;
+            //}
         }
         
         

@@ -190,7 +190,7 @@ void Game::EventsLoop() {
                     // Active god mode
                     case sf::Keyboard::G:
                         pengo->changeGodMode(window, deltaTime);
-                        restartTransitionTime = (pengo->getGodMode()) ? 1.5f : 2.5f;
+                        restartTransitionTime = (pengo->getGodMode()) ? 1.f : 2.5f;
                         break;
 
                     case sf::Keyboard::X:

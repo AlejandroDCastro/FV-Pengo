@@ -2,6 +2,7 @@
 
 
 
+
 Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
     DiamondBlock **_diamonds;
     int _cont = 0;
@@ -192,7 +193,7 @@ void Labyrinth::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
     int _x = position.x, _y = position.y;
 
     // Check a block position...
-    if (this->checkLimit(position)) {
+    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
         if (!this->checkPosition(position)) {
             sf::Vector2i _next_position = position;
 
@@ -245,7 +246,7 @@ bool Labyrinth::snobeePush(sf::Vector2i position) {
     int _x = position.x, _y = position.y;
     bool _breakIt = false;
 
-    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)  &&  glacier[_x][_y])
+    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)  &&  glacier[_x][_y] != NULL)
         if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
             ice->breakDown();
             icicles.push_back(glacier[_x][_y]);
@@ -289,14 +290,15 @@ PlayState Labyrinth::getPlayState() {
 
 
 
-// True --> avaliable position
+// True --> avaliable position  // Determine the snobee movement
 bool Labyrinth::checkLimit(sf::Vector2i position) {
     bool _avaliable = true;
 
-    if (position.x < 0  ||  position.y < 0  ||  position.x >= int(size.x)  ||  position.y >= int(size.y))
+    if (position.x < 0  ||  position.y < 0  ||  position.x >= int(size.x)  ||  position.y >= int(size.y)) {
         _avaliable = false;
-    else if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[position.x][position.y]))
+    } else if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[position.x][position.y])) {
         _avaliable = false;
+    }
 
     return _avaliable;
 }
