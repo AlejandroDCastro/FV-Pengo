@@ -37,13 +37,28 @@ Level::~Level() {
 
 void Level::Update(float deltaTime) {
 
-    // When Pengo collides with a SnoBee all game gets frozen
-    pengo->Update(deltaTime, labyrinth);
-    if (!pengo->getStunned()  ||  (pengo->getGodMode() && pengo->getStunned())) { // In God Mode all game continues
+    if (labyrinth->getPlayState() == active) {
 
-        // Update all elements of functionality...
         labyrinth->Update(deltaTime);
-        swarm->Update(deltaTime, labyrinth, pengo, restartClock);
+
+    } else {
+
+        // When Pengo collides with a SnoBee all game gets frozen
+        pengo->Update(deltaTime, labyrinth);
+        if (!pengo->getStunned()  ||  (pengo->getGodMode() && pengo->getStunned())) { // In God Mode all game continue
+
+            // Update all elements of functionality...
+            labyrinth->Update(deltaTime);
+            swarm->Update(deltaTime, labyrinth, pengo, restartClock);
+        }
+
+    }
+
+
+    // Stun all Snobees after activating star play
+    if (labyrinth->getPlayState() == active  &&  labyrinth->getStarPlayUsed()) {
+        swarm->stunSnoBees(-1);
+        labyrinth->setStarPlayState(0);
     }
 }
 

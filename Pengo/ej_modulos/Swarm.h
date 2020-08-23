@@ -22,12 +22,13 @@ class Swarm {
         void Update(float ,Labyrinth *,Pengo *,sf::Clock *);
         void Draw(sf::RenderWindow &);
         int getDeadSnobees();
+        void stunSnoBees(int ); // Direction of stun
 
 
 
     private:
         std::vector<SnoBee*> snobees;     // All the SnoBee playing with Pengo
-        sf::Texture* texture;             // Texture for adding new SnoBee in swarm
-
+        sf::Texture *texture;             // Texture for adding new SnoBee in swarm
+        sf::Clock *clockStun;
 
 };

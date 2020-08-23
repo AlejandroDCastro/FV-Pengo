@@ -18,6 +18,8 @@ class StarPlay {
         ~StarPlay();
         void Update();
         PlayState getPlayState();
+        bool getUsed();
+        void setState(int );
 
 
     private:

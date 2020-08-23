@@ -74,10 +74,8 @@ void StarPlay::Update() {
             case active:
 
                 // Star Play duration...
-                if (colorClock->getElapsedTime().asSeconds() >= STAR_PLAY_DURATION) {
-                    state = inactive;
+                if (colorClock->getElapsedTime().asSeconds() >= STAR_PLAY_DURATION)
                     used  = true;
-                }
                 break;
 
             case half:
@@ -104,4 +102,19 @@ void StarPlay::Update() {
 
 PlayState StarPlay::getPlayState() {
     return state;
+}
+
+
+
+
+
+bool StarPlay::getUsed() {
+    return used;
+}
+
+
+
+
+void StarPlay::setState(int state) {
+    this->state = (PlayState) state;
 }

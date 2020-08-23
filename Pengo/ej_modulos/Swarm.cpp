@@ -14,6 +14,7 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
     }
 
     this->texture = texture;
+    clockStun     = new sf::Clock();
 }
 
 
@@ -22,7 +23,9 @@ Swarm::~Swarm() {
     for (SnoBee* snobee : snobees)
         delete snobee;
     snobees.clear();
-    texture = NULL;
+    delete clockStun;
+    texture   = NULL;
+    clockStun = NULL;
 }
 
 
@@ -30,6 +33,7 @@ Swarm::~Swarm() {
 
 void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Clock* restartClock) {
 
+    // Update all snobees...
     for (SnoBee* snobee : snobees) {
         if (snobee  &&  !snobee->getDead()) {
             snobee->Update(deltaTime, labyrinth, pengo);
@@ -88,4 +92,18 @@ int Swarm::getDeadSnobees() {
                 _deaths++;
 
     return _deaths;
+}
+
+
+
+
+
+void Swarm::stunSnoBees(int side) { /*Falta ver como actualizamos los anobees*/
+    switch (side) {
+        case 0:
+            break;
+        
+        default:
+            break;
+    }
 }

@@ -22,6 +22,8 @@ class Labyrinth {
         sf::Vector2i getFreePosition();
         PlayState getPlayState();
         bool checkLimit(sf::Vector2i );
+        bool getStarPlayUsed();
+        void setStarPlayState(int );
 
 
 

@@ -302,3 +302,20 @@ bool Labyrinth::checkLimit(sf::Vector2i position) {
 
     return _avaliable;
 }
+
+
+
+
+
+
+bool Labyrinth::getStarPlayUsed() {
+    return starPlay->getUsed();
+}
+
+
+
+
+
+void Labyrinth::setStarPlayState(int state) {
+    starPlay->setState(state);
+}
