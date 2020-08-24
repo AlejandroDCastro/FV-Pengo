@@ -7,9 +7,9 @@
 
 
 #define TRAVEL_DISTANCE_OF_BLOCK 16.f
-#define HIGH_PROBABILITY         4
+#define HIGH_PROBABILITY         3
 #define MEDIUM_PROBABILITY       3
-#define LOW_PROBABILITY          2
+#define LOW_PROBABILITY          3
 
 
 
@@ -22,9 +22,11 @@ class SnoBee : public Character {
         void collideBlock(Block* );
         bool getFree();
         bool getDead();
+        void getKilled();
         bool getSmashed();
         void setOrientation(int );
         void setPosition(int );
+        void stunSnoBee(float ,float );
 
 
     private:
@@ -33,4 +35,6 @@ class SnoBee : public Character {
         bool isDead;
         Block *bomb;
         Pengo *pengo;
+        sf::Clock *stunClock;
+        float stunTime;
 };

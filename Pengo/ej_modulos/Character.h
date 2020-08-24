@@ -14,6 +14,8 @@ class Character {
         sf::Vector2i getPosition();
         sf::Sprite* getSprite();
         bool getStunned();
+        void setStunned(bool );
+        void restartPosition(float );
 
 
 

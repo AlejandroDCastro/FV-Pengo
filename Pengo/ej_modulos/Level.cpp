@@ -57,8 +57,10 @@ void Level::Update(float deltaTime) {
 
     // Stun all Snobees after activating star play
     if (labyrinth->getPlayState() == active  &&  labyrinth->getStarPlayUsed()) {
-        swarm->stunSnoBees(-1);
+        swarm->stunSnoBees(deltaTime, 4);
         labyrinth->setStarPlayState(0);
+    } else if (labyrinth->getWallReeling() > -1) { // Stun using a wall
+        swarm->stunSnoBees(deltaTime, labyrinth->getWallReeling());
     }
 }
 

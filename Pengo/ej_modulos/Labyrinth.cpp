@@ -319,3 +319,19 @@ bool Labyrinth::getStarPlayUsed() {
 void Labyrinth::setStarPlayState(int state) {
     starPlay->setState(state);
 }
+
+
+
+
+int Labyrinth::getWallReeling() {
+    if (leftWall->getReeling())
+        return 3;
+    else if (bottomWall->getReeling())
+        return 2;
+    else if (rightWall->getReeling())
+        return 1;
+    else if (topWall->getReeling())
+        return 0;
+    else
+        return -1;
+}

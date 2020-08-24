@@ -14,7 +14,6 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
     }
 
     this->texture = texture;
-    clockStun     = new sf::Clock();
 }
 
 
@@ -23,9 +22,7 @@ Swarm::~Swarm() {
     for (SnoBee* snobee : snobees)
         delete snobee;
     snobees.clear();
-    delete clockStun;
-    texture   = NULL;
-    clockStun = NULL;
+    texture = NULL;
 }
 
 
@@ -48,8 +45,14 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
 
                 // Check collision Snobee-Pengo
                 if (Collision::checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
-                    pengo->loseLife();
-                    restartClock->restart();    // Clock for restarting current level
+                    
+                    // If snobee is stunned then pengo kills him
+                    if (snobee->getStunned()) {
+                        snobee->getKilled();
+                    } else {
+                        pengo->loseLife();
+                        restartClock->restart();    // Clock for restarting current level
+                    }
                 }
 
                 // Check collision Snobee-block
@@ -98,12 +101,16 @@ int Swarm::getDeadSnobees() {
 
 
 
-void Swarm::stunSnoBees(int side) { /*Falta ver como actualizamos los anobees*/
+void Swarm::stunSnoBees(float deltaTime, int side) { /*Falta ver como actualizamos los anobees*/
+    
+    // Stun all snobees...
     switch (side) {
-        case 0:
+        case 4:
+            for (SnoBee *snobee : snobees)
+                snobee->stunSnoBee(deltaTime, STAR_PLAY_STUN_TIME);
             break;
-        
-        default:
+        case 3:
+            
             break;
     }
 }

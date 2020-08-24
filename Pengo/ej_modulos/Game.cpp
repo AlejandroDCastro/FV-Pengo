@@ -91,6 +91,7 @@ void Game::GameLoop() {
                     // Restart Pengo position...
                     if (pengo->getGodMode()) {
                         pengo->restartPosition(deltaTime);
+                        pengo->setStunned(false);
                     } else {
                         level->restart(deltaTime);
                         camera->restartPosition();

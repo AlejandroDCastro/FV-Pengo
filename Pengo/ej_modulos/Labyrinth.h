@@ -24,6 +24,7 @@ class Labyrinth {
         bool checkLimit(sf::Vector2i );
         bool getStarPlayUsed();
         void setStarPlayState(int );
+        int getWallReeling();
 
 
 

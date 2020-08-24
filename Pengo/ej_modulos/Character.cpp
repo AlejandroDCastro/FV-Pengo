@@ -59,3 +59,21 @@ sf::Sprite* Character::getSprite() {
 bool Character::getStunned() {
     return isStunned;
 }
+
+
+
+
+void Character::setStunned(bool isStunned) {
+    this->isStunned = isStunned;
+}
+
+
+
+
+// This method go back Pengo in God Mode after being stunned by a SnoBee
+void Character::restartPosition(float deltaTime) {
+    animation->Update(0, 0, deltaTime);
+    body->setTextureRect(animation->getUVRect());
+    body->setPosition(16+position.y*BLOCK_SIZE, 40+position.x*BLOCK_SIZE);
+    path = 0.0f;
+}

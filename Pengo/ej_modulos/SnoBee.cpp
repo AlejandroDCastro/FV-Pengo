@@ -4,12 +4,12 @@
 
 
 SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
-
-  //  this->pengo = pengo;
-    direction   = 2;
-    isStatic    = false;
-    bomb        = NULL;
-    isDead      = false;
+    direction = 2;
+    isStatic  = false;
+    bomb      = NULL;
+    isDead    = false;
+    stunClock = new sf::Clock();
+    stunTime  = 0.0f;
     srand(time(NULL));
 }
 
@@ -19,6 +19,8 @@ SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u
 SnoBee::~SnoBee() {
     delete animation;
     delete body;
+    delete stunClock;
+    stunClock = NULL;
     animation = NULL;
     body      = NULL;
     bomb      = NULL;
@@ -116,7 +118,7 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
 
 
     // Check avaliable positions
-    if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
+    if (!isWalking  &&  !isStatic  &&  bomb == NULL  &&  !isStunned) {
 
 
         // Save all avaliable positions
@@ -204,11 +206,6 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
         } else {
             row   = 1;
             speed = 60.f;
-        //    if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(labyrinth->getBlock(position.x, position.y))) {
-          //      position  = _aux_position;
-          //      isWalking = false;
-            //    isStatic  = true;
-            //}
         }
         
         
@@ -313,6 +310,16 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
             isDead = true;
         }
 
+    } else if (isStunned) {
+
+        if (stunClock->getElapsedTime().asSeconds() >= stunTime) {
+            row = 1;
+            isStunned = false;
+        }
+
+        animation->Update(row, column, deltaTime);
+        body->setTextureRect(animation->getUVRect());
+
     }
 
 }
@@ -336,8 +343,16 @@ bool SnoBee::getFree() {
 
 
 
+
 bool SnoBee::getDead() {
     return isDead;
+}
+
+
+
+
+void SnoBee::getKilled() {
+    isDead = true;
 }
 
 
@@ -390,4 +405,18 @@ void SnoBee::setPosition(int dir) {
             position.y--;
             break;
     }
+}
+
+
+
+
+
+void SnoBee::stunSnoBee(float deltaTime, float stunTime) {
+    this->stunTime  = stunTime;
+    stunClock->restart();
+    row = 0;  column = 6;
+    isStatic  = false;
+    isWalking = false;
+    isStunned = true;
+    this->restartPosition(deltaTime);
 }
