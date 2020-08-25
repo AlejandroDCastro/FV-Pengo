@@ -26,7 +26,7 @@ class SnoBee : public Character {
         bool getSmashed();
         void setOrientation(int );
         void setPosition(int );
-        void stunSnoBee(float ,float );
+        void stunSnoBee(float );
 
 
     private:

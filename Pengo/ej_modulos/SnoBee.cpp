@@ -315,6 +315,7 @@ void SnoBee::Update(float deltaTime, Labyrinth *labyrinth, Pengo *pengo) {
         if (stunClock->getElapsedTime().asSeconds() >= stunTime) {
             row = 1;
             isStunned = false;
+            this->restartPosition(deltaTime);
         }
 
         animation->Update(row, column, deltaTime);
@@ -368,7 +369,6 @@ bool SnoBee::getSmashed() {
 
 
 
-
 void SnoBee::setOrientation(int dir) {
     switch (dir) {
         case 0:
@@ -411,12 +411,11 @@ void SnoBee::setPosition(int dir) {
 
 
 
-void SnoBee::stunSnoBee(float deltaTime, float stunTime) {
-    this->stunTime  = stunTime;
+void SnoBee::stunSnoBee(float stunTime) {
+    this->stunTime = stunTime;
     stunClock->restart();
     row = 0;  column = 6;
     isStatic  = false;
     isWalking = false;
     isStunned = true;
-    this->restartPosition(deltaTime);
 }

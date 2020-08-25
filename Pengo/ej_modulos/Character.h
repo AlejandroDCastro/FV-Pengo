@@ -16,6 +16,7 @@ class Character {
         bool getStunned();
         void setStunned(bool );
         void restartPosition(float );
+        float getPath();
 
 
 

@@ -2,6 +2,7 @@
 
 
 
+
 Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
     sf::Vector2i _position;
 
@@ -49,6 +50,8 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
                     // If snobee is stunned then pengo kills him
                     if (snobee->getStunned()) {
                         snobee->getKilled();
+                        if (snobees.size() < TOTAL_SNOWBEES)
+                            snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
                     } else {
                         pengo->loseLife();
                         restartClock->restart();    // Clock for restarting current level
@@ -101,16 +104,29 @@ int Swarm::getDeadSnobees() {
 
 
 
-void Swarm::stunSnoBees(float deltaTime, int side) { /*Falta ver como actualizamos los anobees*/
-    
-    // Stun all snobees...
-    switch (side) {
-        case 4:
-            for (SnoBee *snobee : snobees)
-                snobee->stunSnoBee(deltaTime, STAR_PLAY_STUN_TIME);
-            break;
-        case 3:
+void Swarm::stunSnoBees(float deltaTime, int side) {
+    int _snobee_position, _reeling_position;
+
+    for (SnoBee *snobee : snobees) {
+        if (side == 4  &&  !snobee->getStunned()) {    // Stun all snobees...
+            snobee->stunSnoBee(STAR_PLAY_STUN_TIME);
+        } else {            // Stun snobee next to the wall
+            if (side == 0) {
+                _snobee_position  = snobee->getPosition().x;
+                _reeling_position = 0;
+            } else if (side == 1) {
+                _snobee_position  = snobee->getPosition().y;
+                _reeling_position = MAP_COLUMNS-1;
+            } else if (side == 2) {
+                _snobee_position  = snobee->getPosition().x;
+                _reeling_position = MAP_ROWS-1;
+            } else if (side == 3) {
+                _snobee_position  = snobee->getPosition().y;
+                _reeling_position = 0;
+            }
             
-            break;
+            if (_snobee_position == _reeling_position  &&  !snobee->getStunned()  &&  snobee->getPath() == 0.0f)
+                snobee->stunSnoBee(REELING_STUN_TIME);
+        }
     }
 }

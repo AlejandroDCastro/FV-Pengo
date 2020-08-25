@@ -12,6 +12,7 @@
 #define TOTAL_SNOWBEES      8
 #define PLAY_SNOBEES        4
 #define STAR_PLAY_STUN_TIME 6.5f
+#define REELING_STUN_TIME   4.5f
 
 
 class Swarm {

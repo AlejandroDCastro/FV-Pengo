@@ -77,3 +77,10 @@ void Character::restartPosition(float deltaTime) {
     body->setPosition(16+position.y*BLOCK_SIZE, 40+position.x*BLOCK_SIZE);
     path = 0.0f;
 }
+
+
+
+
+float Character::getPath() {
+    return path;
+}
