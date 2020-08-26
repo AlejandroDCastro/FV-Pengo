@@ -81,28 +81,28 @@ CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.provides: CMakeFiles/libMod
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
 
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o: ../ej_modulos/AnimationBlock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o -c /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o: ../ej_modulos/StaticAnimation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o -c /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp > CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.i
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp > CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.i
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp -o CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.s
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp -o CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.s
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.requires:
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.requires:
 
-.PHONY : CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.requires
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.requires
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.provides
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.provides
 
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o
 
 
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o: CMakeFiles/libModulos.dir/flags.make
@@ -468,7 +468,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o.provides.build: CMakeFiles/libMo
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o" \
+"CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o" \
@@ -489,7 +489,7 @@ libModulos_OBJECTS = \
 libModulos_EXTERNAL_OBJECTS =
 
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
@@ -517,7 +517,7 @@ CMakeFiles/libModulos.dir/build: liblibModulos.a
 .PHONY : CMakeFiles/libModulos.dir/build
 
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o.requires

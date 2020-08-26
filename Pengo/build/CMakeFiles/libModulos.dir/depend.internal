@@ -4,19 +4,15 @@
 CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
-CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
 CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
 CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
 CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
@@ -24,10 +20,10 @@ CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.cpp
@@ -38,15 +34,15 @@ CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
 CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
@@ -61,25 +57,25 @@ CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
 CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
@@ -92,6 +88,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Level.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o
@@ -99,7 +96,6 @@ CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/MazeGenerator.h
 CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
@@ -108,10 +104,10 @@ CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
@@ -121,16 +117,19 @@ CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h
 CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
+CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
 CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.h
- /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Collision.h
@@ -140,6 +139,7 @@ CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.h
+ /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.cpp
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.h
  /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.h

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
-  "CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"

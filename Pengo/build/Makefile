@@ -163,33 +163,6 @@ ej_modulos/Animation.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
 .PHONY : ej_modulos/Animation.cpp.s
 
-ej_modulos/AnimationBlock.o: ej_modulos/AnimationBlock.cpp.o
-
-.PHONY : ej_modulos/AnimationBlock.o
-
-# target to build an object file
-ej_modulos/AnimationBlock.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o
-.PHONY : ej_modulos/AnimationBlock.cpp.o
-
-ej_modulos/AnimationBlock.i: ej_modulos/AnimationBlock.cpp.i
-
-.PHONY : ej_modulos/AnimationBlock.i
-
-# target to preprocess a source file
-ej_modulos/AnimationBlock.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.i
-.PHONY : ej_modulos/AnimationBlock.cpp.i
-
-ej_modulos/AnimationBlock.s: ej_modulos/AnimationBlock.cpp.s
-
-.PHONY : ej_modulos/AnimationBlock.s
-
-# target to generate assembly for a file
-ej_modulos/AnimationBlock.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.s
-.PHONY : ej_modulos/AnimationBlock.cpp.s
-
 ej_modulos/Block.o: ej_modulos/Block.cpp.o
 
 .PHONY : ej_modulos/Block.o
@@ -541,6 +514,33 @@ ej_modulos/StarPlay.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.s
 .PHONY : ej_modulos/StarPlay.cpp.s
 
+ej_modulos/StaticAnimation.o: ej_modulos/StaticAnimation.cpp.o
+
+.PHONY : ej_modulos/StaticAnimation.o
+
+# target to build an object file
+ej_modulos/StaticAnimation.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o
+.PHONY : ej_modulos/StaticAnimation.cpp.o
+
+ej_modulos/StaticAnimation.i: ej_modulos/StaticAnimation.cpp.i
+
+.PHONY : ej_modulos/StaticAnimation.i
+
+# target to preprocess a source file
+ej_modulos/StaticAnimation.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.i
+.PHONY : ej_modulos/StaticAnimation.cpp.i
+
+ej_modulos/StaticAnimation.s: ej_modulos/StaticAnimation.cpp.s
+
+.PHONY : ej_modulos/StaticAnimation.s
+
+# target to generate assembly for a file
+ej_modulos/StaticAnimation.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.s
+.PHONY : ej_modulos/StaticAnimation.cpp.s
+
 ej_modulos/Swarm.o: ej_modulos/Swarm.cpp.o
 
 .PHONY : ej_modulos/Swarm.o
@@ -635,9 +635,6 @@ help:
 	@echo "... ej_modulos/Animation.o"
 	@echo "... ej_modulos/Animation.i"
 	@echo "... ej_modulos/Animation.s"
-	@echo "... ej_modulos/AnimationBlock.o"
-	@echo "... ej_modulos/AnimationBlock.i"
-	@echo "... ej_modulos/AnimationBlock.s"
 	@echo "... ej_modulos/Block.o"
 	@echo "... ej_modulos/Block.i"
 	@echo "... ej_modulos/Block.s"
@@ -677,6 +674,9 @@ help:
 	@echo "... ej_modulos/StarPlay.o"
 	@echo "... ej_modulos/StarPlay.i"
 	@echo "... ej_modulos/StarPlay.s"
+	@echo "... ej_modulos/StaticAnimation.o"
+	@echo "... ej_modulos/StaticAnimation.i"
+	@echo "... ej_modulos/StaticAnimation.s"
 	@echo "... ej_modulos/Swarm.o"
 	@echo "... ej_modulos/Swarm.i"
 	@echo "... ej_modulos/Swarm.s"

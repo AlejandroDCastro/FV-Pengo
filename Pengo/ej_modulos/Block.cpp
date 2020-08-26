@@ -14,7 +14,7 @@ Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
 
     // Building ice block
     block     = new sf::Sprite(*texture);
-    animation = new AnimationBlock(texture);
+    animation = new StaticAnimation(texture, .1f, sf::Vector2u(2, 9), sf::Vector2u(14, 18));
     block->setOrigin(animation->getOrigin());
     block->setPosition(16+x*BLOCK_SIZE, 40+y*BLOCK_SIZE);
 }

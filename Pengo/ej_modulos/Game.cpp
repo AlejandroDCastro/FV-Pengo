@@ -129,6 +129,7 @@ void Game::GameLoop() {
                 }
 
                 // Go back to the initial view
+                pengo->restartInitialState(deltaTime);
                 camera->restartPosition();
                 _new_level = NULL;
                 state = play;

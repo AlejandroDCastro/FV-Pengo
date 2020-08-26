@@ -14,14 +14,6 @@ Animation.h
 SFML/Graphics.hpp
 -
 
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp
-AnimationBlock.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
-
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
-SFML/Graphics.hpp
--
-
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp
 Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
@@ -29,8 +21,8 @@ Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 SFML/Graphics.hpp
 -
-AnimationBlock.h
-/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.h
+StaticAnimation.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp
 Camera.h
@@ -193,6 +185,14 @@ math.h
 -
 DiamondBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/DiamondBlock.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp
+StaticAnimation.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.h
+SFML/Graphics.hpp
+-
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.cpp
 Swarm.h

@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Animation {
+class Animation {     // Used for character animation
 
     public:
         Animation(sf::Texture* ,sf::Vector2u ,float ,int );

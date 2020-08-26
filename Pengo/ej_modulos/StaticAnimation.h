@@ -6,11 +6,11 @@
 #define BLOCK_SIZE 16
 
 
-class AnimationBlock {
+class StaticAnimation {     // Used for block and birth snobee animation
     
     public:
-        AnimationBlock(sf::Texture *);
-        ~AnimationBlock();
+        StaticAnimation(sf::Texture *,float ,sf::Vector2u ,sf::Vector2u );
+        ~StaticAnimation();
         void Update(unsigned int ,float );
         sf::IntRect getUVRect();
         sf::Vector2f getOrigin();
@@ -22,7 +22,7 @@ class AnimationBlock {
     private:
         sf::IntRect* uvRect;
         float changeTime, totalTime;
-        sf::Vector2u* actualCoord;   // Actual coordinates of rectangle
-        sf::Vector2u* range;       // Block located on the tileset
+        sf::Vector2u *actualCoord;   // Actual coordinates of rectangle
+        sf::Vector2u range;          // Block located on the tileset
 
 };

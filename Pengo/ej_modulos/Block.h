@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "AnimationBlock.h"
+#include "StaticAnimation.h"
 
 
 #define BLOCK_SIZE 16
@@ -35,6 +35,6 @@ class Block {
         float path;
         bool canCollide;
         sf::Vector2i* position;
-        AnimationBlock *animation;
+        StaticAnimation *animation;
         bool actived;           // For checking if star play has been activated
 };

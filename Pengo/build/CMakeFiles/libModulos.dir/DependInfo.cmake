@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Animation.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
-  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/AnimationBlock.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/AnimationBlock.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Camera.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Camera.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Character.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
@@ -19,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Pengo.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StarPlay.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o"
+  "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/StaticAnimation.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/StaticAnimation.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Swarm.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Swarm.cpp.o"
   "/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Wall.cpp" "/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o"
   )
