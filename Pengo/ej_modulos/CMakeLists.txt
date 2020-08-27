@@ -17,6 +17,7 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/DiamondBlock.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/StarPlay.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Wall.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Egg.cpp"
 )
 
 #Y donde se encuentran los .h

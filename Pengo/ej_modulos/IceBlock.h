@@ -1,14 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Block.h"
+#include "Egg.h"
 
 
 class IceBlock : public Block {
-
-    private:
-        bool isBreaking;
-        bool isBroke;
-        sf::Clock clock;    // Clock for breaking animation
 
     public:
         IceBlock(sf::Texture* ,unsigned int ,unsigned int );
@@ -18,4 +14,11 @@ class IceBlock : public Block {
         bool getBroke();
         bool getBreaking();
         void setActived(bool );
+
+
+    private:
+        bool isBreaking;
+        bool isBroke;
+        sf::Clock clock;    // Clock for breaking animation
+        Egg *egg;
 };

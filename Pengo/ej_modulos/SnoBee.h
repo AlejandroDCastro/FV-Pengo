@@ -24,13 +24,16 @@ class SnoBee : public Character {
         bool getDead();
         void getKilled();
         bool getSmashed();
+        bool getGrownUp();
         void setOrientation(int );
         void setPosition(int );
         void stunSnoBee(float );
 
 
     private:
+        StaticAnimation *growthAnimation;
         int direction; // 0:Up - 1:Right - 2:Down - 3:Left
+        bool grownUp;
         bool isStatic;
         bool isDead;
         Block *bomb;

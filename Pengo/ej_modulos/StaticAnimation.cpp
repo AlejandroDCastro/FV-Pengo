@@ -10,6 +10,7 @@ StaticAnimation::StaticAnimation(sf::Texture *texture, float changeTime, sf::Vec
     this->range      = range;
     uvRect           = new sf::IntRect(0, 0, texture->getSize().x/size.x, texture->getSize().y/size.y);
     actualCoord      = new sf::Vector2u(range.x, 0);
+    isFinished         = false;
 }
 
 
@@ -37,8 +38,12 @@ void StaticAnimation::Update(unsigned int row, float deltaTime) {
         totalTime -= changeTime;
         actualCoord->x++;
 
-        if (actualCoord->x > range.y)
+        if (actualCoord->x > range.y) {
             actualCoord->x = range.x;
+            isFinished = true;
+        } else {
+            isFinished = false;
+        }
     }
 
     uvRect->left = actualCoord->x * uvRect->width;
@@ -74,4 +79,11 @@ void StaticAnimation::setRange(unsigned int x, unsigned int y) {
 void StaticAnimation::setChangeTime(float changeTime) {
     this->changeTime = changeTime;
     totalTime = 0;
+}
+
+
+
+
+bool StaticAnimation::finished() {
+    return isFinished;
 }

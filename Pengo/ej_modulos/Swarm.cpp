@@ -36,41 +36,44 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
         if (snobee  &&  !snobee->getDead()) {
             snobee->Update(deltaTime, labyrinth, pengo);
 
-            if (snobee->getSmashed()) {
+            if (snobee->getGrownUp()) {
 
-                // If SnoBee get dead add other one on a free position
-                if (snobee->getDead()  &&  snobees.size() < TOTAL_SNOWBEES)
-                    snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                if (snobee->getSmashed()) {
 
-            } else {
+                    // If SnoBee get dead add other one on a free position
+                    if (snobee->getDead()  &&  snobees.size() < TOTAL_SNOWBEES)
+                        snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
 
-                // Check collision Snobee-Pengo
-                if (Collision::checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
-                    
-                    // If snobee is stunned then pengo kills him
-                    if (snobee->getStunned()) {
-                        snobee->getKilled();
-                        if (snobees.size() < TOTAL_SNOWBEES)
-                            snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
-                    } else {
-                        pengo->loseLife();
-                        restartClock->restart();    // Clock for restarting current level
+                } else {
+
+                    // Check collision Snobee-Pengo
+                    if (Collision::checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
+                        
+                        // If snobee is stunned then pengo kills him
+                        if (snobee->getStunned()) {
+                            snobee->getKilled();
+                            if (snobees.size() < TOTAL_SNOWBEES)
+                                snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                        } else {
+                            pengo->loseLife();
+                            restartClock->restart();    // Clock for restarting current level
+                        }
                     }
-                }
 
-                // Check collision Snobee-block
-                for (unsigned int i=0; i<MAP_ROWS; i++) {
-                    Block* _block;
-                    for (unsigned int j=0; j<MAP_COLUMNS; j++) {
-                        _block = labyrinth->getBlock(i, j);
+                    // Check collision Snobee-block
+                    for (unsigned int i=0; i<MAP_ROWS; i++) {
+                        Block* _block;
+                        for (unsigned int j=0; j<MAP_COLUMNS; j++) {
+                            _block = labyrinth->getBlock(i, j);
 
-                        // Smash Sno-Bee
-                        if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  Collision::checkCollision(_block->getSprite(), snobee->getSprite(), 20.f))
-                            snobee->collideBlock(_block);
-                        _block = NULL;
+                            // Smash Sno-Bee
+                            if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  Collision::checkCollision(_block->getSprite(), snobee->getSprite(), 20.f))
+                                snobee->collideBlock(_block);
+                            _block = NULL;
+                        }
                     }
-                }
 
+                }
             }
             
         }

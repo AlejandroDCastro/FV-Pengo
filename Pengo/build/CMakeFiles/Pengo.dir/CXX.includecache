@@ -79,6 +79,10 @@ Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.h
 SFML/Graphics.hpp
 -
+stdlib.h
+-
+time.h
+-
 IceBlock.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/IceBlock.h
 StarPlay.h

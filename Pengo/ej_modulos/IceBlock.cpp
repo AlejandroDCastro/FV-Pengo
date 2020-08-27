@@ -9,6 +9,7 @@ IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block
     isBreaking = false;
     isBroke    = false;
     path       = 0.0f;
+    egg        = NULL;
 }
 
 
@@ -20,6 +21,7 @@ IceBlock::~IceBlock() {
     block     = NULL;
     position  = NULL;
     animation = NULL;
+    egg       = NULL;
 }
 
 

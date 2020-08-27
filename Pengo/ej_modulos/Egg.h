@@ -8,13 +8,13 @@
 class Egg {
 
     public:
-        Egg(sf::Texture *,sf::Texture *);
+        Egg(sf::Texture *);
         ~Egg();
 
 
     private:
         sf::Sprite *sprite;
-        StaticAnimation *birth, *increase;
+        StaticAnimation *animation;
         bool isHatched;
         SnoBee *snobee;
 

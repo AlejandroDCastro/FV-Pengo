@@ -7,6 +7,7 @@ Labyrinth::Labyrinth(sf::Texture *tileset, int **map) {
     DiamondBlock **_diamonds;
     int _cont = 0;
 
+    srand(time(NULL));
     isHit = false;
 
     // Build the walls and put them on screen...
