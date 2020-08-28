@@ -24,6 +24,7 @@ class Swarm {
         void Draw(sf::RenderWindow &);
         int getDeadSnobees();
         void stunSnoBees(float ,int ); // Direction of stun
+        void addNextSnoBee(Labyrinth *);
 
 
 

@@ -151,6 +151,7 @@ void Labyrinth::Update(float deltaTime) {
 
 
 
+
 void Labyrinth::Draw(sf::RenderWindow &window) {
     leftWall->Draw(window);
     bottomWall->Draw(window);
@@ -174,6 +175,7 @@ void Labyrinth::Draw(sf::RenderWindow &window) {
 
 
 
+
 bool Labyrinth::checkPosition(sf::Vector2i position) {
     bool _avaliable = false;
     int _x = position.x, _y = position.y;
@@ -187,6 +189,7 @@ bool Labyrinth::checkPosition(sf::Vector2i position) {
 
     return _avaliable;
 }
+
 
 
 
@@ -319,11 +322,13 @@ PlayState Labyrinth::getPlayState() {
 bool Labyrinth::checkLimit(sf::Vector2i position) {
     bool _avaliable = true;
 
-    if (position.x < 0  ||  position.y < 0  ||  position.x >= int(size.x)  ||  position.y >= int(size.y)) {
+    if (position.x < 0  ||  position.y < 0  ||  position.x >= int(size.x)  ||  position.y >= int(size.y))
         _avaliable = false;
-    } else if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[position.x][position.y])) {
+    else if (DiamondBlock* diamond = dynamic_cast<DiamondBlock*>(glacier[position.x][position.y]))
         _avaliable = false;
-    }
+    else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[position.x][position.y]))
+        if (ice->getEgg() != NULL)
+            _avaliable = false;
 
     return _avaliable;
 }
@@ -359,4 +364,15 @@ int Labyrinth::getWallReeling() {
         return 0;
     else
         return -1;
+}
+
+
+
+
+void Labyrinth::breakIceBlock(sf::Vector2i position) {
+    if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[position.x][position.y])) {
+        ice->breakDown();
+        icicles.push_back(ice);
+        glacier[position.x][position.y] = NULL;
+    }
 }

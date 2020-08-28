@@ -14,7 +14,8 @@ class IceBlock : public Block {
         bool getBroke();
         bool getBreaking();
         void setActived(bool );
-        void incubateEgg(sf::Texture *);
+        void incubateEgg(sf::Texture *,sf::Texture *,Labyrinth *);
+        Egg* getEgg();
 
 
     private:

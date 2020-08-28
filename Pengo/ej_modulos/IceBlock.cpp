@@ -120,6 +120,13 @@ void IceBlock::setActived(bool actived) {
 
 
 // Incubate a Egg inside the ice block for hatching after killing a SnoBee
-void IceBlock::incubateEgg(sf::Texture *texture) {
-    egg = new Egg(texture);
+void IceBlock::incubateEgg(sf::Texture *spriteSheet, sf::Texture *tileset) {
+    egg = new Egg(spriteSheet, tileset);
+}
+
+
+
+
+Egg* IceBlock::getEgg() {
+    return egg;
 }

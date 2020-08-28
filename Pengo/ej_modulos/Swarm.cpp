@@ -5,12 +5,19 @@
 
 Swarm::Swarm(sf::Texture *spriteSheet, sf::Texture *tileset, Labyrinth *labyrinth) {
     sf::Vector2i _position;
+    IceBlock *block = NULL;
 
     // Create swarm with all SnoBees
-    for (int i=0; i<TOTAL_SNOWBEES; i++)
-        blocks.push_back(labyrinth->incubateEgg(tileset));
+    for (int i=0; i<TOTAL_SNOWBEES; i++) {
+        block = labyrinth->incubateEgg(tileset);
+        blocks.push_back(block);
+        if (i < 4) {
+            labyrinth->breakIceBlock(block->getPosition());
+            snobees.push_back(block->getEgg()->getSnoBee());
+        }
+    }
 
-    this->texture = texture;
+    texture = tileset;
 }
 
 
@@ -30,9 +37,6 @@ Swarm::~Swarm() {
 
 void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Clock* restartClock) {
 
-
-    // Add SnoBee to the labyrinth
-
     // Tambien hay que hacer que el snobee no rompa un hielo donde esta su hermano jejeje
 
 
@@ -47,7 +51,7 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
 
                     // If SnoBee get dead add other one on a free position
                     if (snobee->getDead()  &&  snobees.size() < TOTAL_SNOWBEES)
-                        snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                        this->addNextSnoBee(labyrinth);
 
                 } else {
 
@@ -58,7 +62,7 @@ void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Cloc
                         if (snobee->getStunned()) {
                             snobee->getKilled();
                             if (snobees.size() < TOTAL_SNOWBEES)
-                                snobees.push_back(new SnoBee(texture, 60.f, 0.15f, sf::Vector2u(0, 2), labyrinth->getFreePosition()));
+                                this->addNextSnoBee(labyrinth);
                         } else {
                             pengo->loseLife();
                             restartClock->restart();    // Clock for restarting current level
@@ -137,4 +141,17 @@ void Swarm::stunSnoBees(float deltaTime, int side) {
                 snobee->stunSnoBee(REELING_STUN_TIME);
         }
     }
+}
+
+
+
+
+
+void Swarm::addNextSnoBee(Labyrinth *labyrinth) {
+    for (IceBlock *block : blocks)
+        if (!block->getBroke()) {
+            labyrinth->breakIceBlock(block->getPosition());
+            snobees.push_back(block->getEgg()->getSnoBee());
+            break;
+        }
 }

@@ -28,6 +28,7 @@ class Labyrinth {
         bool getStarPlayUsed();
         void setStarPlayState(int );
         int getWallReeling();
+        void breakIceBlock(sf::Vector2i );
 
 
 
