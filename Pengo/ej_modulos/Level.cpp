@@ -12,7 +12,7 @@ Level::Level(sf::Texture* spriteSheet, sf::Texture* tileset, Pengo* pengo, sf::C
 
     // Create whole level
     labyrinth          = new Labyrinth(tileset, map);
-    swarm              = new Swarm(spriteSheet, labyrinth);
+    swarm              = new Swarm(spriteSheet, tileset, labyrinth);
     this->pengo        = pengo;
     this->restartClock = restartClock;
     this->spriteSheet  = spriteSheet;
@@ -100,6 +100,6 @@ void Level::restart(float deltaTime) {
     delete swarm;
 
     labyrinth = new Labyrinth(tileset, map);
-    swarm     = new Swarm(spriteSheet, labyrinth);
+    swarm     = new Swarm(spriteSheet, tileset, labyrinth);
     pengo->restartInitialState(deltaTime);
 }

@@ -84,6 +84,7 @@ Labyrinth::~Labyrinth() {
 
 
 
+
 void Labyrinth::Update(float deltaTime) {
 
     // Check diamonds position...
@@ -108,7 +109,6 @@ void Labyrinth::Update(float deltaTime) {
                     glacier[_x][_y] = glacier[i][j];
                     glacier[i][j]   = NULL;
                 }
-                
             }
 
 
@@ -269,17 +269,41 @@ Block* Labyrinth::getBlock(unsigned int x, unsigned int y) {
 
 
 
-// Free position for including SnoBees into the map
+
 sf::Vector2i Labyrinth::getFreePosition() {
     sf::Vector2i _free_position(0, 0);
 
     do {
-        _free_position.x = rand()%15,
+        _free_position.x = rand()%15;
         _free_position.y = rand()%13;
     } while (!this->checkPosition(_free_position));
 
     return _free_position;
 }
+
+
+
+
+// Only by ice blocks
+IceBlock* Labyrinth::incubateEgg(sf::Texture *texture) {
+    sf::Vector2i _free_position(0, 0);
+    IceBlock *_ice_block = NULL;
+
+    do {
+        _free_position.x = rand()%15;
+        _free_position.y = rand()%13;
+        
+        // Check if that position contains an ice block
+        if (!this->checkPosition(_free_position))
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_free_position.x][_free_position.y])) {
+                ice->incubateEgg(texture);
+                _ice_block = ice;
+            }
+    } while (_ice_block != NULL);
+
+    return _ice_block;
+}
+
 
 
 

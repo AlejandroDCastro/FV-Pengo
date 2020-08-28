@@ -164,6 +164,8 @@ bool Pengo::getDead() {
 // This method is used to locate Pengo in the initial position after being stunned by a SnoBee
 void Pengo::restartInitialState(float deltaTime) {
     isStunned = false;
+    isWalking = false;
+    isPushing = false;
     animation->Update(0, 0, deltaTime);
     body->setTextureRect(animation->getUVRect());
     position.x = INITIAL_POSITION_X_Y;

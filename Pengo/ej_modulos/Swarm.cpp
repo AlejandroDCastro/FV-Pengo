@@ -3,16 +3,12 @@
 
 
 
-Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
+Swarm::Swarm(sf::Texture *spriteSheet, sf::Texture *tileset, Labyrinth *labyrinth) {
     sf::Vector2i _position;
 
     // Create swarm with all SnoBees
-    for (int i=0; i<4; i++) {
-        do {
-            _position = labyrinth->getFreePosition();
-        } while (_position.x == 6  &&  _position.y == 6);
-        snobees.push_back(new SnoBee(texture, 57.5f, 0.15f, sf::Vector2u(0, 2), _position));
-    }
+    for (int i=0; i<TOTAL_SNOWBEES; i++)
+        blocks.push_back(labyrinth->incubateEgg(tileset));
 
     this->texture = texture;
 }
@@ -20,9 +16,12 @@ Swarm::Swarm(sf::Texture* texture, Labyrinth* labyrinth) {
 
 
 Swarm::~Swarm() {
-    for (SnoBee* snobee : snobees)
+    for (SnoBee *snobee : snobees)
         delete snobee;
     snobees.clear();
+    for (IceBlock *block : blocks)
+        delete block;
+    blocks.clear();
     texture = NULL;
 }
 
@@ -30,6 +29,12 @@ Swarm::~Swarm() {
 
 
 void Swarm::Update(float deltaTime, Labyrinth* labyrinth, Pengo* pengo, sf::Clock* restartClock) {
+
+
+    // Add SnoBee to the labyrinth
+
+    // Tambien hay que hacer que el snobee no rompa un hielo donde esta su hermano jejeje
+
 
     // Update all snobees...
     for (SnoBee* snobee : snobees) {

@@ -22,6 +22,7 @@ class Labyrinth {
         bool snobeePush(sf::Vector2i );
         Block* getBlock(unsigned int ,unsigned int );
         sf::Vector2i getFreePosition();
+        IceBlock* incubateEgg(sf::Texture *);
         PlayState getPlayState();
         bool checkLimit(sf::Vector2i );
         bool getStarPlayUsed();

@@ -1,5 +1,4 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include "SnoBee.h"
 #include "Labyrinth.h"
@@ -19,7 +18,7 @@ class Swarm {
 
 
     public:
-        Swarm(sf::Texture *,Labyrinth *);
+        Swarm(sf::Texture *,sf::Texture *,Labyrinth *);
         ~Swarm();
         void Update(float ,Labyrinth *,Pengo *,sf::Clock *);
         void Draw(sf::RenderWindow &);
@@ -31,5 +30,6 @@ class Swarm {
     private:
         std::vector<SnoBee*> snobees;     // All the SnoBee playing with Pengo
         sf::Texture *texture;             // Texture for adding new SnoBee in swarm
+        std::vector<IceBlock*> blocks;    // Ice Blocks that contains the SnoBee eggs
 
 };
