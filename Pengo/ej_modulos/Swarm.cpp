@@ -9,7 +9,7 @@ Swarm::Swarm(sf::Texture *spriteSheet, sf::Texture *tileset, Labyrinth *labyrint
 
     // Create swarm with all SnoBees
     for (int i=0; i<TOTAL_SNOWBEES; i++) {
-        block = labyrinth->incubateEgg(tileset);
+        block = (IceBlock*) labyrinth->incubateEgg(spriteSheet, tileset);
         blocks.push_back(block);
         if (i < 4) {
             labyrinth->breakIceBlock(block->getPosition());
@@ -26,9 +26,6 @@ Swarm::~Swarm() {
     for (SnoBee *snobee : snobees)
         delete snobee;
     snobees.clear();
-    for (IceBlock *block : blocks)
-        delete block;
-    blocks.clear();
     texture = NULL;
 }
 

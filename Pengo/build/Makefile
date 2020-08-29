@@ -298,6 +298,33 @@ ej_modulos/DiamondBlock.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.s
 .PHONY : ej_modulos/DiamondBlock.cpp.s
 
+ej_modulos/Egg.o: ej_modulos/Egg.cpp.o
+
+.PHONY : ej_modulos/Egg.o
+
+# target to build an object file
+ej_modulos/Egg.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o
+.PHONY : ej_modulos/Egg.cpp.o
+
+ej_modulos/Egg.i: ej_modulos/Egg.cpp.i
+
+.PHONY : ej_modulos/Egg.i
+
+# target to preprocess a source file
+ej_modulos/Egg.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.i
+.PHONY : ej_modulos/Egg.cpp.i
+
+ej_modulos/Egg.s: ej_modulos/Egg.cpp.s
+
+.PHONY : ej_modulos/Egg.s
+
+# target to generate assembly for a file
+ej_modulos/Egg.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.s
+.PHONY : ej_modulos/Egg.cpp.s
+
 ej_modulos/Game.o: ej_modulos/Game.cpp.o
 
 .PHONY : ej_modulos/Game.o
@@ -650,6 +677,9 @@ help:
 	@echo "... ej_modulos/DiamondBlock.o"
 	@echo "... ej_modulos/DiamondBlock.i"
 	@echo "... ej_modulos/DiamondBlock.s"
+	@echo "... ej_modulos/Egg.o"
+	@echo "... ej_modulos/Egg.i"
+	@echo "... ej_modulos/Egg.s"
 	@echo "... ej_modulos/Game.o"
 	@echo "... ej_modulos/Game.i"
 	@echo "... ej_modulos/Game.s"

@@ -68,6 +68,16 @@ SFML/Graphics.hpp
 Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
 
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.cpp
+Egg.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.h
+
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.h
+SFML/Graphics.hpp
+-
+SnoBee.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/SnoBee.h
+
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.cpp
 Game.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Game.h
@@ -107,6 +117,8 @@ SFML/Graphics.hpp
 -
 Block.h
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Block.h
+Egg.h
+/home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.h
 
 /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Labyrinth.cpp
 Labyrinth.h

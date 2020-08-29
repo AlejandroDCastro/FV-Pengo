@@ -7,7 +7,7 @@
 class Egg {
 
     public:
-        Egg(sf::Texture *,sf::Texture *,Labyrinth *);
+        Egg(sf::Texture *,sf::Texture *,sf::Vector2i );
         ~Egg();
         SnoBee* getSnoBee();
 

@@ -465,6 +465,30 @@ CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o.provides: CMakeFiles/libModulos.
 CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o
 
 
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o: ../ej_modulos/Egg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o -c /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.cpp
+
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.cpp > CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.i
+
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexx/Desktop/FV-Pengo/Pengo/ej_modulos/Egg.cpp -o CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.s
+
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.requires
+
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.provides: CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.provides
+
+CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.provides.build: CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o
+
+
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o" \
@@ -483,7 +507,8 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o" \
 "CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o"
+"CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o" \
+"CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
@@ -505,9 +530,10 @@ liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/MazeGenerator.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexx/Desktop/FV-Pengo/Pengo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -533,6 +559,7 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/MazeGen
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

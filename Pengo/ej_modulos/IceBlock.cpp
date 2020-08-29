@@ -18,6 +18,7 @@ IceBlock::~IceBlock() {
     delete block;
     delete position;
     delete animation;
+    delete egg;
     block     = NULL;
     position  = NULL;
     animation = NULL;
@@ -120,8 +121,8 @@ void IceBlock::setActived(bool actived) {
 
 
 // Incubate a Egg inside the ice block for hatching after killing a SnoBee
-void IceBlock::incubateEgg(sf::Texture *spriteSheet, sf::Texture *tileset) {
-    egg = new Egg(spriteSheet, tileset);
+void IceBlock::incubateEgg(sf::Texture *spriteSheet, sf::Texture *tileset, sf::Vector2i pos) {
+    egg = new Egg(spriteSheet, tileset, pos);
 }
 
 

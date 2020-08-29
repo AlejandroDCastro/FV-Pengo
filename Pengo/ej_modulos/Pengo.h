@@ -10,16 +10,6 @@
 
 class Pengo : public Character {
     
-    private:
-        unsigned int lifes;
-        sf::Clock pushClock;
-        Animation *deadAnimation;
-        bool isBlocked;
-        bool push;
-        bool godMode;
-        float stunnedTime;
-
-  
     public:
         Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
@@ -31,5 +21,15 @@ class Pengo : public Character {
         void restoreLifes();
         void changeGodMode(sf::RenderWindow *,float );
         bool getGodMode();
+
+
+    private:
+        unsigned int lifes;
+        sf::Clock pushClock;
+        Animation *deadAnimation;
+        bool isBlocked;
+        bool push;
+        bool godMode;
+        float stunnedTime;
   
 };

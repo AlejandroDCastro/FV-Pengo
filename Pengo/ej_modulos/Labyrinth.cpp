@@ -288,18 +288,18 @@ sf::Vector2i Labyrinth::getFreePosition() {
 
 
 // Only by ice blocks
-IceBlock* Labyrinth::incubateEgg(sf::Texture *texture) {
-    sf::Vector2i _free_position(0, 0);
+Block* Labyrinth::incubateEgg(sf::Texture *spriteSheet, sf::Texture *tileset) {
+    sf::Vector2i _position(0, 0);
     IceBlock *_ice_block = NULL;
 
     do {
-        _free_position.x = rand()%15;
-        _free_position.y = rand()%13;
+        _position.x = rand()%15;
+        _position.y = rand()%13;
         
         // Check if that position contains an ice block
-        if (!this->checkPosition(_free_position))
-            if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_free_position.x][_free_position.y])) {
-                ice->incubateEgg(texture);
+        if (!this->checkPosition(_position))
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_position.x][_position.y])) {
+                ice->incubateEgg(spriteSheet, tileset, _position);
                 _ice_block = ice;
             }
     } while (_ice_block != NULL);

@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/ej_modulos/DiamondBlock.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/StarPlay.cpp.o"
   "CMakeFiles/libModulos.dir/ej_modulos/Wall.cpp.o"
+  "CMakeFiles/libModulos.dir/ej_modulos/Egg.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )
