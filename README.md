@@ -56,4 +56,12 @@ To see the full details of the development and requirements, click [here](https:
 
 ## Keyboard controls
 
-:arrow_double_up:
+* :arrow_up: Move up
+* :arrow_left: Move left
+* :arrow_down: Move down
+* :arrow_right: Move right
+* `SPACE` Push
+* `G` God mode (Pengo is immortal)
+* `X` Death and level restart
+* `N` Go next level
+* `ESC` Exit
