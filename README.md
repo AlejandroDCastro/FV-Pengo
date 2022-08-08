@@ -9,7 +9,7 @@ Individual practice of the subject of *Fundamentals of Videogames*.
 
 ## Requirements
 * **Ubuntu 16.04** operating system
-* **GCC compiler**
+* **GCC** compiler
 * **CMAKE**
 * **VSCode** editor
 
@@ -70,8 +70,8 @@ To see the full details of the development and requirements, click [here](https:
 
 ## Screenshots
 
-![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic1.png)
+<img src="https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic1.png" alt="Picture 1" width="500">
 
-![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic2.png)
+<img src="https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic2.png" alt="Picture 2" width="500">
 
-![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic3.png)
+<img src="https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic3.png" alt="Picture 3" width="500">
