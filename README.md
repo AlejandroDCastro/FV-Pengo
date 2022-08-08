@@ -56,12 +56,22 @@ To see the full details of the development and requirements, click [here](https:
 
 ## Keyboard controls
 
-* :arrow_up: Move up
-* :arrow_left: Move left
-* :arrow_down: Move down
-* :arrow_right: Move right
+* `UP` Move up
+* `LEFT` Move left
+* `DOWN` Move down
+* `RIGHT` Move right
 * `SPACE` Push
 * `G` God mode (Pengo is immortal)
 * `X` Death and level restart
 * `N` Go next level
 * `ESC` Exit
+
+***
+
+## Screenshots
+
+![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic1.png)
+
+![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic2.png)
+
+![](https://github.com/AlejandroDCastro/FV-Pengo/blob/master/Pengo/pics/pic3.png)
