@@ -16,9 +16,8 @@ Individual practice of the subject of *Fundamentals of Videogames*.
 ***
 
 ## Compilation
-A `template` is used in order to develop all the software.
 
-* `cd template`
+* `cd Pengo`
 * `cmake -H. -Bbuild` generate the makefile
 * `cd build`
 * `make`
